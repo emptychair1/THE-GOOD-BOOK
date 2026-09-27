@@ -1,0 +1,47 @@
+const CACHE = 'the-good-book-shell-v1';
+const SHELL = [
+  './',
+  './index.html',
+  './book.css',
+  './vendor/page-flip.browser.js',
+  './src/main.js',
+  './content/foreword.html',
+  './house-mechanics.js',
+  './book.js',
+  './pages/page-01.js',
+  './pages/page-02.js',
+  './pages/page-03.js',
+  './pages/page-04.js',
+  './assets/0E1202D0-79FD-42D7-BD12-13417A3042B9.png',
+  './assets/474C63C0-32CC-407D-9FCA-1BECE724CB3E.png',
+  './assets/IMG_3301.png',
+  './assets/the_weight_of_infinite_stone.mp3'
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key))))
+      .then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') return;
+
+  event.respondWith(
+    fetch(event.request)
+      .then(response => {
+        if (response && response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE).then(cache => cache.put(event.request, copy));
+        }
+        return response;
+      })
+      .catch(() => caches.match(event.request).then(cached => cached || caches.match('./index.html')))
+  );
+});
