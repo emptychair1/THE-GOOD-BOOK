@@ -1,8 +1,6 @@
-import { PageFlip } from 'page-flip';
-
-window.St = { PageFlip };
-
 (async () => {
+  if (!window.St?.PageFlip) throw new Error('Vendored PageFlip failed to load');
+
   const book = document.getElementById('book');
   const response = await fetch('./content/foreword.html');
   if (!response.ok) throw new Error(`Failed to load foreword content: ${response.status}`);
