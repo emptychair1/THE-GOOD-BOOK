@@ -9,7 +9,15 @@
 
   try {
     mark('PAGEFLIP');
-    if (!window.St?.PageFlip) throw new Error('St.PageFlip missing');
+    if (!window.St?.PageFlip) {
+      mark('PAGEFLIP RECOVERY');
+      const vendorResponse = await fetch('./vendor/page-flip.browser.js', { cache: 'no-store' });
+      if (!vendorResponse.ok) throw new Error(`PageFlip file ${vendorResponse.status}`);
+      const source = await vendorResponse.text();
+      if (!source.startsWith('!function')) throw new Error(`PageFlip invalid payload: ${source.slice(0, 24)}`);
+      Function(source).call(window);
+    }
+    if (!window.St?.PageFlip) throw new Error('St.PageFlip missing after recovery');
 
     mark('CONTENT');
     const book = document.getElementById('book');
