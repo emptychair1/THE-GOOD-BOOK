@@ -126,6 +126,14 @@ The library is the canonical vocabulary for reusable visual semantics. The curre
 
 The library also exposes deterministic ASCII helpers plus ticker and diagnostic helpers. New pages should use these contracts when the intended meaning matches. A page may author composition, trajectory, timing, and sequencing without forking the mechanic itself.
 
+### PWA manuscript geometry restraint
+
+The installed PWA can measure and render manuscript text differently from the browser audition environment. Text movement can therefore change wrapping, paragraph height, pagination, and the location of later authored material.
+
+**For now, this is a documented restraint only. Do not modify existing House Mechanics to solve it without a separate explicit decision and audition.**
+
+When authoring or revising choreography, treat any operation that moves, splits, spaces, transforms, or otherwise changes layout-bearing manuscript text as potentially pagination-affecting. Verify the installed PWA as part of the audition whenever text geometry is touched. Existing mechanics remain unchanged until deliberately revisited.
+
 ## ASCII grammar
 
 ASCII is a substrate, not a single effect.
@@ -239,6 +247,7 @@ The working baseline immediately before this documentation commit is commit `028
 - Keep diagnostics observable enough to identify the failing boot boundary.
 - Do not stack unapproved changes on top of a failed audition.
 - Record meaningful architecture or workflow changes here when they are approved.
+- Treat manuscript text geometry as sensitive in the installed PWA; do not alter existing mechanics under this rule unless that work is explicitly approved as its own change.
 
 ## Current known issues / cleanup
 
