@@ -110,7 +110,7 @@
   const style=document.createElement('style');
   style.textContent='#reading-clock-debug{position:fixed;right:max(.8rem,env(safe-area-inset-right));bottom:max(.8rem,env(safe-area-inset-bottom));z-index:12000;padding:.28rem .42rem;background:rgba(0,0,0,.72);color:rgba(255,255,255,.78);font:600 .52rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.09em;pointer-events:none;border-radius:2px}';
   document.head.appendChild(style);
-  const updateReadout=detail=>{if(!detail||!readout)return;const seconds=(detail.estimatedReadingDurationMs/1000).toFixed(1);readout.textContent=detail.accepted===false&&detail.durationMs!=null?\`READING SPEED · \${seconds}s/page · NAV\`:\`READING SPEED · \${seconds}s/page\`;};
+  const updateReadout=detail=>{if(!detail||!readout)return;const seconds=(detail.estimatedReadingDurationMs/1000).toFixed(1);readout.textContent=detail.accepted===false&&detail.durationMs!=null?`READING SPEED · ${seconds}s/page · NAV`:`READING SPEED · ${seconds}s/page`;};
   window.addEventListener('house:reading-leave',e=>updateReadout(e.detail));
   window.addEventListener('house:reading-enter',()=>{if(window.HouseReadingClock)updateReadout({estimatedReadingDurationMs:window.HouseReadingClock.getEstimate()});});
   window.addEventListener('house:page',e=>{const page=e.detail?.current;if(page!==currentPage){if(enteredAt!==null)leave(currentPage);enter(page);}});
