@@ -1,39 +1,10 @@
 (()=>{
   const PI='31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679';
   const hash=n=>{const x=Math.sin(n*12.9898)*43758.5453;return x-Math.floor(x)};
-  const GLYPHS=`π${PI}`;
-  const COUNT=1000;
-  const PERSIST_MS=110;
-
-  const makeLayer=(name,start,end)=>{
-    const layer=document.createElement('div');
-    layer.className=`void-glyph-swarm void-glyph-swarm-${name}`;
-    layer.setAttribute('aria-hidden','true');
-    for(let i=start;i<end;i++){
-      const glyph=document.createElement('span');
-      glyph.className='void-swarm-glyph';
-      glyph.textContent=GLYPHS[i%GLYPHS.length];
-      const t=(i-start)/Math.max(1,end-start-1),turns=8.5,angle=t*Math.PI*2*turns+hash(i+11)*1.15,y=.045+t*.91+(hash(i+21)-.5)*.075,waist=Math.sin(Math.PI*t),radius=.10+.26*waist+hash(i+31)*.10,x=.56+Math.cos(angle)*radius,rotate=(hash(i+61)*2-1)*34;
-      glyph.style.setProperty('--swarm-x',`${(x*100).toFixed(2)}%`);
-      glyph.style.setProperty('--swarm-y',`${(y*100).toFixed(2)}%`);
-      glyph.style.setProperty('--swarm-rotate',`${rotate.toFixed(1)}deg`);
-      layer.appendChild(glyph);
-    }
-    return layer;
-  };
-
-  const bind=()=>{
-    const scene=document.querySelector('.void-scene-audition'),monolith=scene?.querySelector('.void-monolith-audition');
-    if(!scene||!monolith||scene.dataset.swarmBound)return;
-    scene.dataset.swarmBound='1';
-    const back=makeLayer('back',0,500),front=makeLayer('front',500,COUNT);
-    scene.insertBefore(back,monolith);scene.appendChild(front);
-
-    const ghost=document.createElement('div');ghost.className='void-swarm-afterimage';ghost.setAttribute('aria-hidden','true');
-    const ghostBack=back.cloneNode(true),ghostFront=front.cloneNode(true);ghostBack.className='void-glyph-swarm void-glyph-swarm-back';ghostFront.className='void-glyph-swarm void-glyph-swarm-front';ghost.append(ghostBack,ghostFront);document.body.appendChild(ghost);
-    let timer=0,wasHit=false;
-    const tick=()=>{const hit=scene.classList.contains('hit');if(hit){wasHit=true;ghost.classList.remove('show');window.clearTimeout(timer)}else if(wasHit){wasHit=false;ghost.classList.add('show');window.clearTimeout(timer);timer=window.setTimeout(()=>ghost.classList.remove('show'),PERSIST_MS)}requestAnimationFrame(tick)};
-    requestAnimationFrame(tick);
-  };
+  const GLYPHS=`π${PI}`,COUNT=1000,PERSIST_MS=110;
+  const makeLayer=(name,start,end)=>{const layer=document.createElement('div');layer.className=`void-glyph-swarm void-glyph-swarm-${name}`;layer.setAttribute('aria-hidden','true');for(let i=start;i<end;i++){const glyph=document.createElement('span');glyph.className='void-swarm-glyph';glyph.textContent=GLYPHS[i%GLYPHS.length];const t=(i-start)/Math.max(1,end-start-1),angle=t*Math.PI*17+hash(i+11)*1.15,y=.045+t*.91+(hash(i+21)-.5)*.075,waist=Math.sin(Math.PI*t),radius=.10+.26*waist+hash(i+31)*.10,x=.56+Math.cos(angle)*radius,rotate=(hash(i+61)*2-1)*34;glyph.style.setProperty('--swarm-x',`${(x*100).toFixed(2)}%`);glyph.style.setProperty('--swarm-y',`${(y*100).toFixed(2)}%`);glyph.style.setProperty('--swarm-rotate',`${rotate.toFixed(1)}deg`);layer.appendChild(glyph)}return layer};
+  const bind=()=>{const scene=document.querySelector('.void-scene-audition'),monolith=scene?.querySelector('.void-monolith-audition');if(!scene||!monolith||scene.dataset.swarmBound)return;scene.dataset.swarmBound='1';const back=makeLayer('back',0,500),front=makeLayer('front',500,COUNT);scene.insertBefore(back,monolith);scene.appendChild(front);
+    const ghost=document.createElement('div');ghost.className='void-swarm-afterimage';ghost.setAttribute('aria-hidden','true');const ghostBack=back.cloneNode(true),ghostFront=front.cloneNode(true);ghostBack.className='void-glyph-swarm void-glyph-swarm-back';ghostFront.className='void-glyph-swarm void-glyph-swarm-front';ghost.append(ghostBack,ghostFront);document.body.appendChild(ghost);
+    let timer=0,wasHit=false;const tick=()=>{const hit=scene.classList.contains('hit');if(hit){wasHit=true;ghost.classList.remove('show');clearTimeout(timer)}else if(wasHit){wasHit=false;ghost.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>ghost.classList.remove('show'),PERSIST_MS)}requestAnimationFrame(tick)};requestAnimationFrame(tick)};
   window.HouseVoidSwarm={bind};
 })();
