@@ -20,7 +20,12 @@
     const ready=document.fonts?.ready||Promise.resolve();ready.then(fitVoid);window.addEventListener('resize',fitVoid,{passive:true});
     let flashTimer=0,bassRAF=0,nextHit=0,bassMode=false;
     const hitFlash=()=>{window.clearTimeout(flashTimer);flash.style.display='block';flash.classList.add('hit');flashWord.classList.add('hit');void flash.offsetWidth;flashTimer=window.setTimeout(()=>{flashWord.classList.remove('hit');flash.classList.remove('hit');flash.style.display='none'},90)};
-    const watchBass=()=>{if(!bassMode)return;const t=audio.currentTime;while(nextHit<BASS_HITS.length&&t>=BASS_HITS[nextHit]-.018){hitFlash();nextHit++}if(nextHit<BASS_HITS.length&&t<BASS_HITS[BASS_HITS.length-1]+.2)bassRAF=requestAnimationFrame(watchBass);else bassMode=false};
+    const watchBass=()=>{
+      if(!bassMode)return;
+      const t=audio.currentTime;
+      while(nextHit<BASS_HITS.length&&t>=BASS_HITS[nextHit]){hitFlash();nextHit++}
+      if(nextHit<BASS_HITS.length){bassRAF=requestAnimationFrame(watchBass)}else{bassMode=false}
+    };
     button.addEventListener('click',event=>{
       event.preventDefault();event.stopPropagation();if(root.classList.contains('is-awake'))return;fitVoid();audio.pause();
       try{audio.currentTime=.055}catch{}
@@ -29,8 +34,12 @@
       if(play?.catch)play.catch(error=>{console.error('[THE GOOD BOOK] VOID AUDIO FAIL',error);root.classList.remove('is-awake');flashWord.classList.remove('hit');flash.classList.remove('hit');flash.style.display='none'});
     });
     const goFurther=event=>{
-      if(bassMode)return;event.preventDefault();event.stopPropagation();fitVoid();cancelAnimationFrame(bassRAF);bassMode=true;nextHit=0;audio.pause();try{audio.currentTime=BASS_IN}catch{};const play=audio.play();bassRAF=requestAnimationFrame(watchBass);further.style.display='none';
-      if(play?.catch)play.catch(error=>{bassMode=false;further.style.display='block';console.error('[THE GOOD BOOK] VOID BASS SEEK FAIL',error)});
+      if(bassMode)return;event.preventDefault();event.stopPropagation();fitVoid();cancelAnimationFrame(bassRAF);bassMode=true;nextHit=0;audio.pause();
+      try{audio.currentTime=BASS_IN}catch{}
+      const play=audio.play();
+      const startClockWatch=()=>{cancelAnimationFrame(bassRAF);bassRAF=requestAnimationFrame(watchBass)};
+      if(play?.then)play.then(startClockWatch).catch(error=>{bassMode=false;further.style.display='block';console.error('[THE GOOD BOOK] VOID BASS SEEK FAIL',error)});else startClockWatch();
+      further.style.display='none';
     };
     further.addEventListener('pointerup',goFurther,{passive:false});
     further.addEventListener('click',event=>{if(event.detail===0)goFurther(event)});
