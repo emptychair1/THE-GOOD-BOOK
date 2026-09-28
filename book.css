@@ -30,7 +30,7 @@ body{height:100dvh;touch-action:none}
 .photosensitivity-warning{margin:.15rem auto 0;max-width:31rem;font:600 clamp(.5rem,1.85vw,.62rem)/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.07em;text-transform:uppercase;color:rgba(21,17,13,.48)}
 .photosensitivity-warning strong{font-weight:800;color:rgba(21,17,13,.62)}
 .void{background:#000}
-.void-ring{position:absolute;left:50%;top:50%;width:2.6rem;height:2.6rem;border:1px solid rgba(255,255,255,.28);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 1.2rem rgba(255,255,255,.08)}
+.void-ring{display:none!important}
 #glyph-overlay{position:fixed;z-index:700;pointer-events:none;display:block;opacity:0;animation:glyphFadeIn 1.8s ease 1s forwards}
 @keyframes glyphFadeIn{from{opacity:0}to{opacity:1}}
 .tap-left,.tap-right{position:fixed;top:0;bottom:0;width:36vw;z-index:999;background:transparent;border:0;padding:0;-webkit-tap-highlight-color:transparent}
