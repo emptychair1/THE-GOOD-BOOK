@@ -1,11 +1,11 @@
-const CACHE = 'the-good-book-shell-v51';
+const CACHE = 'the-good-book-shell-v52';
 const SHELL = [
   './',
   './index.html',
-  './book.css?v=51',
+  './book.css?v=52',
   './vendor/page-flip.browser.js',
-  './src/main.js?v=51',
-  './void-choreography.js?v=51',
+  './src/main.js?v=52',
+  './void-choreography.js?v=52',
   './content/foreword.html',
   './house-mechanics.js',
   './house-mechanics-runners.js',
@@ -14,6 +14,8 @@ const SHELL = [
   './assets/0E1202D0-79FD-42D7-BD12-13417A3042B9.png',
   './assets/474C63C0-32CC-407D-9FCA-1BECE724CB3E.png',
   './assets/IMG_3301.png',
+  './assets/1F549874-9253-4EB2-A67F-36C15BC3BFF5.png',
+  './assets/34019DCD-5305-44CD-AF5E-7A82DB4A0E9B.png',
   './assets/the_weight_of_infinite_stone.mp3'
 ];
 
