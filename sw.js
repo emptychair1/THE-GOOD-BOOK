@@ -1,14 +1,16 @@
-const CACHE = 'the-good-book-shell-v2';
+const CACHE = 'the-good-book-shell-v49';
 const SHELL = [
   './',
   './index.html',
-  './book.css',
+  './book.css?v=49',
   './vendor/page-flip.browser.js',
-  './src/main.js',
+  './src/main.js?v=49',
+  './void-choreography.js?v=49',
   './content/foreword.html',
   './house-mechanics.js',
+  './house-mechanics-runners.js',
+  './foreword-choreography.js',
   './book.js',
-  './choreography/foreword.js',
   './assets/0E1202D0-79FD-42D7-BD12-13417A3042B9.png',
   './assets/474C63C0-32CC-407D-9FCA-1BECE724CB3E.png',
   './assets/IMG_3301.png',
