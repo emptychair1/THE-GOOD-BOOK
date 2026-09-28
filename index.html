@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="./book.css">
 </head>
 <body>
-<div class="version-badge">THE GOOD BOOK · STATIC RUNTIME</div>
+<div class="version-badge">THE GOOD BOOK · V2 · TARGET CHOREOGRAPHY</div>
 <div class="stage"><div id="book" class="book"></div></div>
 <canvas id="glyph-overlay" aria-hidden="true"></canvas><button class="tap-left" aria-label="Previous page"></button><button class="tap-right" aria-label="Next page"></button><div id="status" class="status">1 / …</div>
 <script>
@@ -22,12 +22,12 @@ window.__pageFlipProbe = 'REQUESTED';
 function pageFlipLoaded() {
   window.__pageFlipProbe = window.St?.PageFlip ? 'LOADED · ST.PAGEFLIP PRESENT' : 'LOADED · ST.PAGEFLIP MISSING';
   const badge = document.querySelector('.version-badge');
-  if (badge) badge.textContent = `PAGEFLIP FILE ${window.__pageFlipProbe}`;
+  if (badge) badge.textContent = `V2 · PAGEFLIP FILE ${window.__pageFlipProbe}`;
 }
 function pageFlipFailed() {
   window.__pageFlipProbe = 'FAILED';
   const badge = document.querySelector('.version-badge');
-  if (badge) badge.textContent = 'PAGEFLIP FILE FAILED';
+  if (badge) badge.textContent = 'V2 · PAGEFLIP FILE FAILED';
 }
 </script>
 <script src="./vendor/page-flip.browser.js" onload="pageFlipLoaded()" onerror="pageFlipFailed()"></script>
