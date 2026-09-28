@@ -4,7 +4,7 @@
   const BASS_IN=26.39;
   const FLASH_LEAD=.15;
   const BASS_HITS=[26.586,27.086,27.586,28.086,28.586,29.086,29.586,30.086,30.586,31.086,31.586,32.086,32.586,33.086,33.586,34.086,34.586,35.086,35.586,36.086];
-  const APPROACH_MS=10000;
+  const APPROACH_MS=4000;
   const bind=()=>{
     const root=document.querySelector('.void-sound'),page=root?.closest('.void'),button=root?.querySelector('.sound-want'),question=root?.querySelector('.sound-question'),audio=document.querySelector('.void-audio'),word=page?.querySelector('.void-word');
     if(!root||!page||!button||!question||!audio||!word||button.dataset.voidBound)return;
