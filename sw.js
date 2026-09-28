@@ -1,11 +1,11 @@
-const CACHE = 'the-good-book-shell-v50';
+const CACHE = 'the-good-book-shell-v51';
 const SHELL = [
   './',
   './index.html',
-  './book.css?v=50',
+  './book.css?v=51',
   './vendor/page-flip.browser.js',
-  './src/main.js?v=50',
-  './void-choreography.js?v=50',
+  './src/main.js?v=51',
+  './void-choreography.js?v=51',
   './content/foreword.html',
   './house-mechanics.js',
   './house-mechanics-runners.js',
