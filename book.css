@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist+Pixel&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Pixel&family=Monoton&display=swap');
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000;color:#fff;font-family:Baskerville,"Iowan Old Style",Georgia,serif}
 body{height:100dvh;touch-action:none}
@@ -32,7 +32,7 @@ body{height:100dvh;touch-action:none}
 .photosensitivity-warning strong{font-weight:800;color:rgba(21,17,13,.62)}
 .void{background:#000}
 .void-ring{display:none!important}
-.void-title{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#fff;font-family:"Silkscreen",sans-serif;font-size:min(31vw,25vh);font-weight:700;line-height:.78;letter-spacing:-.08em;white-space:nowrap;opacity:0;pointer-events:none}
+.void-title{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#000;font-family:"Monoton",sans-serif;font-size:clamp(16rem,72vw,60rem);font-weight:400;line-height:.62;letter-spacing:-.12em;white-space:nowrap;opacity:1;pointer-events:none;transform:scale(1.28,2.15);transform-origin:center}
 .void-sound{position:absolute;z-index:2;left:50%;bottom:max(calc(env(safe-area-inset-bottom) + .25rem),.7rem);width:11rem;height:11rem;transform:translateX(-50%);display:grid;place-items:center}
 .sound-want,.sound-question{font-family:"Geist Pixel",monospace}
 .sound-want{position:relative;z-index:2;border:0;background:transparent;color:#fff;padding:.9rem;font-size:.78rem;font-weight:400;line-height:1.15;letter-spacing:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -41,13 +41,15 @@ body{height:100dvh;touch-action:none}
 .void-organisms{position:absolute;inset:0;pointer-events:none;animation:voidOrganismOrbit 18s linear infinite}
 .void-organism{--angle:0deg;--radius:4rem;--size:.7rem;--alpha:.8;--scatter-x:0rem;--scatter-y:0rem;--delay:0s;position:absolute;left:50%;top:50%;color:#fff;font:500 var(--size)/1 ui-monospace,SFMono-Regular,Menlo,monospace;opacity:var(--alpha);transform:translate(-50%,-50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle)));transition:transform .82s cubic-bezier(.15,.75,.15,1) var(--delay),opacity .62s ease var(--delay)}
 @keyframes voidOrganismOrbit{to{transform:rotate(360deg)}}
-.void.is-void-revealed .void-title{opacity:1}
 .void-sound.is-awake .sound-want{opacity:0;pointer-events:none;transition:opacity .18s linear}
 .void-sound.is-awake .sound-question{opacity:1;transform:translateY(0)}
 .void-sound.is-awake .void-organisms{animation-play-state:paused}
 .void-sound.is-awake .void-organism{opacity:0;transform:translate(-50%,-50%) translate(var(--scatter-x),var(--scatter-y)) scale(.62)}
-.void-flash-screen{display:none;position:fixed!important;left:0!important;top:0!important;right:0!important;bottom:0!important;width:100%!important;height:100%!important;z-index:2147483647!important;background:#fff!important;opacity:0;pointer-events:none;transform:none!important;filter:none!important;mix-blend-mode:normal!important}
+.void-flash-screen{display:none;position:fixed!important;left:0!important;top:0!important;right:0!important;bottom:0!important;width:100%!important;height:100%!important;z-index:2147483646!important;background:#fff!important;opacity:0;pointer-events:none;transform:none!important;filter:none!important;mix-blend-mode:normal!important}
 .void-flash-screen.hit{display:block!important;opacity:1!important}
+.void-flash-word{display:none;position:fixed!important;inset:0!important;z-index:2147483647!important;align-items:center;justify-content:center;overflow:hidden;color:#000!important;font-family:"Monoton",sans-serif;font-size:clamp(16rem,72vw,60rem);font-weight:400;line-height:.62;letter-spacing:-.12em;white-space:nowrap;pointer-events:none;transform:none!important}
+.void-flash-word.hit{display:flex!important}
+.void-flash-word span{display:block;transform:scale(1.28,2.15);transform-origin:center}
 #glyph-overlay{position:fixed;z-index:700;pointer-events:none;display:block;opacity:0;animation:glyphFadeIn 1.8s ease 1s forwards}
 @keyframes glyphFadeIn{from{opacity:0}to{opacity:1}}
 .tap-left,.tap-right{position:fixed;top:0;bottom:0;width:36vw;z-index:999;background:transparent;border:0;padding:0;-webkit-tap-highlight-color:transparent}
