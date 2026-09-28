@@ -32,11 +32,8 @@
     await import('../book.js');
     if (!window.HouseBook?.pf) throw new Error('HouseBook/PageFlip not initialized');
 
-    mark('CONTROLLERS');
-    await import('../pages/page-01.js');
-    await import('../pages/page-02.js');
-    await import('../pages/page-03.js');
-    await import('../pages/page-04.js');
+    mark('CHOREOGRAPHY');
+    await import('../choreography/foreword.js');
 
     mark('READY');
   } catch (error) {
