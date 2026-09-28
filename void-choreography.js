@@ -16,11 +16,14 @@
       audio.pause();
       const AUDIO_IN=0.055;
       try{audio.currentTime=AUDIO_IN}catch{}
+      flash.style.display='block';
       flash.classList.add('hit');
+      // Force paint before the blackout returns. A timed hold survives iOS/WebKit frame coalescing.
+      void flash.offsetWidth;
       root.classList.add('is-awake');
       const play=audio.play();
-      requestAnimationFrame(()=>requestAnimationFrame(()=>flash.classList.remove('hit')));
-      if(play?.catch)play.catch(error=>{console.error('[THE GOOD BOOK] VOID AUDIO FAIL',error);root.classList.remove('is-awake');flash.classList.remove('hit')});
+      window.setTimeout(()=>{flash.classList.remove('hit');flash.style.display='none'},90);
+      if(play?.catch)play.catch(error=>{console.error('[THE GOOD BOOK] VOID AUDIO FAIL',error);root.classList.remove('is-awake');flash.classList.remove('hit');flash.style.display='none'});
     });
   };
   window.HouseVoid={bind};
