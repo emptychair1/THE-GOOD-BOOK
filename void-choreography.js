@@ -13,11 +13,10 @@
     let flashWord=document.querySelector('.void-flash-word');
     if(!flashWord){flashWord=document.createElement('div');flashWord.className='void-flash-word';flashWord.setAttribute('aria-hidden','true');flashWord.innerHTML='<span>VOID</span>';document.body.appendChild(flashWord)}
     const fitVoid=()=>{
-      title.style.setProperty('--void-fit-x','1');title.style.setProperty('--void-fit-y','1');
+      page.style.setProperty('--void-fit','1');flashWord.style.setProperty('--void-fit','1');
       const box=title.getBoundingClientRect();
-      const sx=window.innerWidth/Math.max(box.width,1),sy=window.innerHeight/Math.max(box.height,1);
-      page.style.setProperty('--void-fit-x',sx);page.style.setProperty('--void-fit-y',sy);
-      flashWord.style.setProperty('--void-fit-x',sx);flashWord.style.setProperty('--void-fit-y',sy);
+      const scale=Math.min(window.innerWidth/Math.max(box.width,1),window.innerHeight/Math.max(box.height,1));
+      page.style.setProperty('--void-fit',scale);flashWord.style.setProperty('--void-fit',scale);
     };
     const ready=document.fonts?.ready||Promise.resolve();ready.then(fitVoid);window.addEventListener('resize',fitVoid,{passive:true});
     button.addEventListener('click',event=>{
