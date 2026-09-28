@@ -1,0 +1,6 @@
+/* V59 GLYPH SWARM GEOMETRY ONLY. V58 scene remains untouched. */
+.void-glyph-swarm{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.void-glyph-swarm-back{z-index:1;filter:blur(.35px)}
+.void-glyph-swarm-front{z-index:3}
+.void-swarm-glyph{position:absolute;left:var(--swarm-x);top:var(--swarm-y);font-family:"Geist Pixel",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--swarm-size);font-weight:500;line-height:1;color:#090909;opacity:var(--swarm-alpha);transform:translate(-50%,-50%) rotate(var(--swarm-rotate));text-shadow:0 0 .035rem rgba(255,255,255,.16);white-space:nowrap}
+.void-glyph-swarm-back .void-swarm-glyph{opacity:calc(var(--swarm-alpha)*.68);transform:translate(-50%,-50%) rotate(var(--swarm-rotate)) scale(.88)}
