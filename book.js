@@ -78,3 +78,31 @@
   window.HouseBook={book,pages,pf,getCurrent:()=>current};
   window.dispatchEvent(new CustomEvent('house:ready',{detail:window.HouseBook}));
 })();
+
+
+// Reading Clock v1: measurement only. It observes dwell time without controlling choreography.
+(() => {
+  const history=[];
+  const MAX_HISTORY=5;
+  const MIN_DWELL=1200;
+  const MAX_DWELL=120000;
+  let enteredAt=null;
+  let currentPage=null;
+  let estimatedReadingDurationMs=12000;
+  const median=values=>{const v=[...values].sort((a,b)=>a-b);return v.length?v[Math.floor(v.length/2)]:estimatedReadingDurationMs};
+  const enter=page=>{currentPage=Number(page);enteredAt=performance.now();window.dispatchEvent(new CustomEvent('house:reading-enter',{detail:{page:currentPage}}));};
+  const leave=page=>{
+    if(enteredAt===null)return null;
+    const duration=performance.now()-enteredAt; enteredAt=null;
+    const p=Number(page);
+    const valid=duration>=MIN_DWELL&&duration<=MAX_DWELL&&p===currentPage;
+    if(valid){history.push(duration);if(history.length>MAX_HISTORY)history.shift();estimatedReadingDurationMs=median(history);}
+    const detail={page:p,durationMs:duration,accepted:valid,history:[...history],estimatedReadingDurationMs};
+    window.dispatchEvent(new CustomEvent('house:reading-leave',{detail}));
+    return detail;
+  };
+  const clock={enter,leave,getEstimate:()=>estimatedReadingDurationMs,getHistory:()=>[...history],reset:()=>{history.length=0;enteredAt=null;currentPage=null;estimatedReadingDurationMs=12000;}};
+  window.HouseReadingClock=clock;
+  window.addEventListener('house:page',e=>{const page=e.detail?.current;if(page!==currentPage){if(enteredAt!==null)leave(currentPage);enter(page);}});
+  window.addEventListener('house:ready',e=>{if(e.detail?.getCurrent)enter(e.detail.getCurrent());});
+})();
