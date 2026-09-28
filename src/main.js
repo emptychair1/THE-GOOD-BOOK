@@ -1,10 +1,10 @@
 (async () => {
   const badge = document.querySelector('.version-badge');
-  const VERSION = 'V3 · MARGIN + FOLIOS';
-  const mark = label => { if (badge) badge.textContent = `${VERSION} · BOOT · ${label}`; };
+  const VERSION = document.querySelector('.version-badge')?.textContent?.trim() || 'VERSION UNKNOWN';
+  const mark = label => { if (badge) console.debug(`[THE GOOD BOOK] BOOT · ${label}`); };
   const fail = (stage, error) => {
     const message = error?.message || String(error);
-    if (badge) badge.textContent = `${VERSION} · FAIL · ${stage} · ${message}`;
+    console.error(`[THE GOOD BOOK] FAIL · ${stage} · ${message}`);
     console.error(`[THE GOOD BOOK] ${stage}`, error);
   };
 
@@ -36,7 +36,6 @@
     mark('CHOREOGRAPHY');
     await import('../choreography/foreword.js');
 
-    if (badge) badge.textContent = VERSION;
   } catch (error) {
     fail('BOOT', error);
   }
