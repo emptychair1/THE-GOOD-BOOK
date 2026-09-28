@@ -1,6 +1,6 @@
 (async () => {
   const badge = document.querySelector('.version-badge');
-  const VERSION = 'V2 · TARGET CHOREOGRAPHY';
+  const VERSION = 'V3 · MARGIN + FOLIOS';
   const mark = label => { if (badge) badge.textContent = `${VERSION} · BOOT · ${label}`; };
   const fail = (stage, error) => {
     const message = error?.message || String(error);
