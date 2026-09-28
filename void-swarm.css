@@ -1,7 +1,8 @@
-/* V69 SKY GRID: canonical creatures behind landscape/monolith and beneath VOID/questions. */
-.void-pi-grid{position:absolute;left:0;top:0;width:100%;height:46%;z-index:0;display:grid;grid-template-columns:repeat(34,1fr);grid-template-rows:repeat(31,1fr);overflow:hidden;pointer-events:none}
+/* V70 SKY GRID FIX: grid is inside scene, behind both full-frame landscape and monolith. Horizon mask reaches actual ridge. */
+.void-pi-grid{position:absolute;left:0;top:0;width:100%;height:61%;z-index:0;display:grid;grid-template-columns:repeat(34,1fr);grid-template-rows:repeat(40,1fr);overflow:hidden;pointer-events:none}
 .void-grid-glyph{display:flex;align-items:center;justify-content:center;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:clamp(6px,1.02vw,10.2px);font-weight:400;line-height:1;color:#000;opacity:.9;white-space:nowrap}
-.void-landscape-audition{z-index:1}.void-monolith-audition{z-index:2}
-.void-grid-afterimage{position:fixed;left:0;top:0;width:100%;height:46%;z-index:2147483638;pointer-events:none;overflow:hidden;opacity:0}.void-grid-afterimage.show{opacity:1}.void-grid-afterimage .void-pi-grid{height:100%;z-index:auto}.void-grid-afterimage .void-grid-glyph{color:#fff;opacity:.30}
-/* VOID/questions are intentionally sovereign over the grid ghost. */
-.void-flash-word,.void-existential-questions{z-index:2147483642!important}
+.void-scene-audition .void-landscape-audition{position:absolute;z-index:1}.void-scene-audition .void-monolith-audition{position:absolute;z-index:2}
+/* White retinal ghost: same sky footprint, but it must remain under the strobe language. */
+.void-grid-afterimage{position:fixed;left:0;top:0;width:100%;height:61%;z-index:2147483645;pointer-events:none;overflow:hidden;opacity:0}.void-grid-afterimage.show{opacity:1}.void-grid-afterimage .void-pi-grid{height:100%;z-index:auto;grid-template-rows:repeat(40,1fr)}.void-grid-afterimage .void-grid-glyph{color:#fff;opacity:.30}
+/* Preserve the established V58/V49 hierarchy exactly: flash surface, then VOID + questions. */
+.void-flash-screen{z-index:2147483646!important}.void-flash-word,.void-existential-questions{z-index:2147483647!important}
