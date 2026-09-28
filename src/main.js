@@ -1,9 +1,10 @@
 (async () => {
   const badge = document.querySelector('.version-badge');
-  const mark = label => { if (badge) badge.textContent = `BOOT · ${label}`; };
+  const VERSION = 'V2 · TARGET CHOREOGRAPHY';
+  const mark = label => { if (badge) badge.textContent = `${VERSION} · BOOT · ${label}`; };
   const fail = (stage, error) => {
     const message = error?.message || String(error);
-    if (badge) badge.textContent = `FAIL · ${stage} · ${message}`;
+    if (badge) badge.textContent = `${VERSION} · FAIL · ${stage} · ${message}`;
     console.error(`[THE GOOD BOOK] ${stage}`, error);
   };
 
@@ -35,7 +36,7 @@
     mark('CHOREOGRAPHY');
     await import('../choreography/foreword.js');
 
-    mark('READY');
+    if (badge) badge.textContent = VERSION;
   } catch (error) {
     fail('BOOT', error);
   }
