@@ -28,13 +28,20 @@
     return page&&w.HouseBook?w.HouseBook.pages.indexOf(page):-1;
   }
 
+  function normalizedText(node){return (node?.textContent||'').replace(/\s+/g,' ').trim();}
   function targetFraction(el){
     const page=el.closest('.page');
     const frame=page.querySelector('.foreword-inner')||page;
-    const fr=frame.getBoundingClientRect(),tr=el.getBoundingClientRect();
-    if(!fr.height)return .6;
-    const raw=((tr.top+tr.height/2)-fr.top)/fr.height;
-    return Math.max(.12,Math.min(.92,raw));
+    const full=normalizedText(frame);
+    if(!full)return .6;
+    const range=d.createRange();
+    range.selectNodeContents(frame);
+    range.setEndBefore(el);
+    const before=normalizedText(range.cloneContents());
+    const targetText=normalizedText(el);
+    const midpoint=before.length+(targetText.length/2);
+    const raw=midpoint/full.length;
+    return Math.max(.08,Math.min(.96,raw));
   }
 
   const style=d.createElement('style');
@@ -57,15 +64,15 @@
   function fmt(ms){return `${(ms/1000).toFixed(1)}s`;}
   function waitingHud(){
     const pace=w.HouseReadingClock?.getEstimate?.()??12000;
-    hud.textContent=`CONDUCTOR TEST · WAITING FOR FOLIO ${targetPage}\nREADING SPEED · ${fmt(pace)}/page`;
+    hud.textContent=`CONDUCTOR TEST · WAITING FOR FOLIO ${targetPage}\nREADING SPEED · ${fmt(pace)}/page\nTARGET MODE · TEXT`;
   }
   function cancel(){if(timer!==null){clearTimeout(timer);timer=null;}enteredAt=null;}
   function fire(predicted,fraction,scheduled){
     timer=null;
     const actual=enteredAt===null?scheduled:performance.now()-enteredAt;
     target.classList.remove('conductor-fire');void target.offsetWidth;target.classList.add('conductor-fire');
-    hud.textContent=`CONDUCTOR TEST · FIRED · FOLIO ${targetPage}\nPREDICTED · ${fmt(predicted)}\nTARGET · ${Math.round(fraction*100)}%\nSCHEDULED · ${fmt(scheduled)}\nACTUAL FIRE · ${fmt(actual)}`;
-    w.dispatchEvent(new CustomEvent('house:conductor-test-fire',{detail:{targetId:TARGET_ID,page:targetPage,predictedMs:predicted,targetFraction:fraction,scheduledMs:scheduled,actualMs:actual}}));
+    hud.textContent=`CONDUCTOR TEST · FIRED · FOLIO ${targetPage}\nPREDICTED · ${fmt(predicted)}\nTEXT TARGET · ${Math.round(fraction*100)}%\nSCHEDULED · ${fmt(scheduled)}\nACTUAL FIRE · ${fmt(actual)}`;
+    w.dispatchEvent(new CustomEvent('house:conductor-test-fire',{detail:{targetId:TARGET_ID,page:targetPage,predictedMs:predicted,targetFraction:fraction,targetMode:'text',scheduledMs:scheduled,actualMs:actual}}));
   }
   function arm(){
     cancel();
@@ -73,7 +80,7 @@
     const fraction=targetFraction(target);
     const scheduled=predicted*fraction;
     enteredAt=performance.now();
-    hud.textContent=`CONDUCTOR TEST · ARMED · FOLIO ${targetPage}\nPREDICTED · ${fmt(predicted)}\nTARGET · ${Math.round(fraction*100)}%\nSCHEDULED · ${fmt(scheduled)}\nACTUAL FIRE · --`;
+    hud.textContent=`CONDUCTOR TEST · ARMED · FOLIO ${targetPage}\nPREDICTED · ${fmt(predicted)}\nTEXT TARGET · ${Math.round(fraction*100)}%\nSCHEDULED · ${fmt(scheduled)}\nACTUAL FIRE · --`;
     timer=setTimeout(()=>fire(predicted,fraction,scheduled),scheduled);
   }
 
