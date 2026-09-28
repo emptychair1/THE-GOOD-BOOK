@@ -1,8 +1,8 @@
 (()=>{
   const PI='31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679';
   const hash=n=>{const x=Math.sin(n*12.9898)*43758.5453;return x-Math.floor(x)};
-  const BASS_IN=24.04;
-  const BASS_HITS=[24.087,24.587,25.087,25.586,26.086,26.586,27.086,27.586,28.086,28.586,29.086,29.586,30.086,30.586,31.086,31.586,32.086,32.586,33.086,33.586,34.086,34.586,35.086];
+  const BASS_IN=24.54;
+  const BASS_HITS=[24.587,25.087,25.586,26.086,26.586,27.086,27.586,28.086,28.586,29.086,29.586,30.086,30.586,31.086,31.586,32.086,32.586,33.086,33.586,34.086,34.586,35.086];
   const bind=()=>{
     const root=document.querySelector('.void-sound'),page=root?.closest('.void'),button=root?.querySelector('.sound-want'),question=root?.querySelector('.sound-question'),audio=document.querySelector('.void-audio'),word=page?.querySelector('.void-word');
     if(!root||!page||!button||!question||!audio||!word||button.dataset.voidBound)return;
