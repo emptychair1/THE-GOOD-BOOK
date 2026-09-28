@@ -3,7 +3,6 @@
   const hash=n=>{const x=Math.sin(n*12.9898)*43758.5453;return x-Math.floor(x)};
   const GLYPHS=`π${PI}`;
   const COUNT=1000;
-  const PERSIST_MS=110;
 
   const makeLayer=(name,start,end)=>{
     const layer=document.createElement('div');
@@ -42,19 +41,6 @@
     const front=makeLayer('front',500,COUNT);
     scene.insertBefore(back,monolith);
     scene.appendChild(front);
-
-    let persistenceTimer=0;
-    const syncPersistence=()=>{
-      if(scene.classList.contains('hit')){
-        window.clearTimeout(persistenceTimer);
-        scene.classList.add('swarm-persist');
-      }else if(scene.classList.contains('swarm-persist')){
-        window.clearTimeout(persistenceTimer);
-        persistenceTimer=window.setTimeout(()=>scene.classList.remove('swarm-persist'),PERSIST_MS);
-      }
-    };
-    const observer=new MutationObserver(syncPersistence);
-    observer.observe(scene,{attributes:true,attributeFilter:['class']});
   };
 
   window.HouseVoidSwarm={bind};
