@@ -1,6 +1,7 @@
-/* V63 CONTROL-SAFE SWARM. 1000 canonical-size creatures; V58 scene remains untouched. */
+/* V64: 1000 creatures at the book's canonical canvas size; isolated retinal afterimage. */
 .void-glyph-swarm{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .void-glyph-swarm-back{z-index:1;filter:blur(.35px)}
 .void-glyph-swarm-front{z-index:3}
-.void-swarm-glyph{position:absolute;left:var(--swarm-x);top:var(--swarm-y);font-family:"Geist Pixel",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--swarm-size);font-weight:500;line-height:1;color:#000;opacity:1;transform:translate(-50%,-50%) rotate(var(--swarm-rotate));text-shadow:none;white-space:nowrap}
-.void-glyph-swarm-back .void-swarm-glyph{opacity:.72;transform:translate(-50%,-50%) rotate(var(--swarm-rotate)) scale(.88)}
+.void-swarm-glyph{position:absolute;left:var(--swarm-x);top:var(--swarm-y);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:clamp(6px,1.02vw,10.2px);font-weight:400;line-height:1;color:#000;opacity:1;transform:translate(-50%,-50%) rotate(var(--swarm-rotate));text-shadow:none;white-space:nowrap}
+.void-glyph-swarm-back .void-swarm-glyph{opacity:.72}
+.void-swarm-afterimage{position:fixed;inset:0;z-index:2147483645;pointer-events:none;overflow:hidden;opacity:0}.void-swarm-afterimage.show{opacity:1}.void-swarm-afterimage .void-glyph-swarm{position:absolute;inset:0}.void-swarm-afterimage .void-swarm-glyph{color:#fff;opacity:.30;filter:blur(.25px)}.void-swarm-afterimage .void-glyph-swarm-back .void-swarm-glyph{opacity:.17}
