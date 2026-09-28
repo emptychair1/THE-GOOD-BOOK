@@ -10,19 +10,20 @@
     root.prepend(orbit);
     let flash=document.querySelector('.void-flash-screen');
     if(!flash){flash=document.createElement('div');flash.className='void-flash-screen';flash.setAttribute('aria-hidden','true');document.body.appendChild(flash)}
+    let flashWord=document.querySelector('.void-flash-word');
+    if(!flashWord){flashWord=document.createElement('div');flashWord.className='void-flash-word';flashWord.setAttribute('aria-hidden','true');flashWord.innerHTML='<span>VOID</span>';document.body.appendChild(flashWord)}
     button.addEventListener('click',event=>{
       event.preventDefault();event.stopPropagation();
       if(root.classList.contains('is-awake'))return;
       audio.pause();
       const AUDIO_IN=0.055;
       try{audio.currentTime=AUDIO_IN}catch{}
-      flash.style.display='block';
-      flash.classList.add('hit');
+      flash.style.display='block';flash.classList.add('hit');flashWord.classList.add('hit');
       void flash.offsetWidth;
       root.classList.add('is-awake');
       const play=audio.play();
-      window.setTimeout(()=>{flash.classList.remove('hit');flash.style.display='none';page.classList.add('is-void-revealed')},90);
-      if(play?.catch)play.catch(error=>{console.error('[THE GOOD BOOK] VOID AUDIO FAIL',error);root.classList.remove('is-awake');page.classList.remove('is-void-revealed');flash.classList.remove('hit');flash.style.display='none'});
+      window.setTimeout(()=>{flashWord.classList.remove('hit');flash.classList.remove('hit');flash.style.display='none'},90);
+      if(play?.catch)play.catch(error=>{console.error('[THE GOOD BOOK] VOID AUDIO FAIL',error);root.classList.remove('is-awake');flashWord.classList.remove('hit');flash.classList.remove('hit');flash.style.display='none'});
     });
   };
   window.HouseVoid={bind};
