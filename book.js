@@ -35,6 +35,9 @@
   paginateForeword();
   const pages=[...book.querySelectorAll('.page')];
   const last=pages.length-1;
+  const folio=document.createElement('div');folio.className='house-folio';document.body.appendChild(folio);
+  const folioStyle=document.createElement('style');folioStyle.id='house-folio-style';folioStyle.textContent='.house-folio{position:fixed;left:50%;bottom:max(1.15rem,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:9500;font:600 .56rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;color:rgba(23,21,19,.48);pointer-events:none;display:none}.house-folio.show{display:block}';document.head.appendChild(folioStyle);
+  function syncFolio(){if(current<=0||current>=last){folio.classList.remove('show');return}folio.textContent=`| ${String(current).padStart(2,'0')} |`;folio.classList.add('show')}
   status.textContent=`1 / ${pages.length}`;
   const pf=new St.PageFlip(book,{width:Math.max(1,Math.round(window.innerWidth)),height:Math.max(1,Math.round(window.innerHeight)),size:'stretch',minWidth:300,maxWidth:1000,minHeight:520,maxHeight:1600,autoSize:true,usePortrait:true,showCover:true,startPage:0,flippingTime:700,drawShadow:true,maxShadowOpacity:.32,mobileScrollSupport:false});
   pf.loadFromHTML(pages);
@@ -52,7 +55,7 @@
     const count=Math.max(220,Math.min(420,Math.round(w*h/1350)));
     for(let i=0;i<count;i++)stream.push({offset:hash(i+1),lane:hash(i+101),speed:.035+hash(i+201)*.05,size:.82+hash(i+301)*.72,alpha:.38+hash(i+401)*.5,digit:PI[i%PI.length]});
   }
-  function setPage(i){current=Math.max(0,Math.min(last,Number(i)||0));status.textContent=`${current+1} / ${pages.length}`;requestAnimationFrame(syncOverlay);window.dispatchEvent(new CustomEvent('house:page',{detail:{current,pages}}));}
+  function setPage(i){current=Math.max(0,Math.min(last,Number(i)||0));status.textContent=`${current+1} / ${pages.length}`;syncFolio();requestAnimationFrame(syncOverlay);window.dispatchEvent(new CustomEvent('house:page',{detail:{current,pages}}));}
   pf.on('flip',e=>setPage(e.data));
   document.querySelector('.tap-right').addEventListener('pointerup',e=>{e.preventDefault();if(current<last)pf.flipNext()});
   document.querySelector('.tap-left').addEventListener('pointerup',e=>{e.preventDefault();if(current>0)pf.flipPrev()});
@@ -71,7 +74,7 @@
     }
     requestAnimationFrame(draw);
   }
-  requestAnimationFrame(syncOverlay);setTimeout(syncOverlay,120);setTimeout(syncOverlay,450);addEventListener('resize',()=>requestAnimationFrame(syncOverlay),{passive:true});requestAnimationFrame(draw);
+  syncFolio();requestAnimationFrame(syncOverlay);setTimeout(syncOverlay,120);setTimeout(syncOverlay,450);addEventListener('resize',()=>requestAnimationFrame(syncOverlay),{passive:true});requestAnimationFrame(draw);
   window.HouseBook={book,pages,pf,getCurrent:()=>current};
   window.dispatchEvent(new CustomEvent('house:ready',{detail:window.HouseBook}));
 })();
