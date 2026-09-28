@@ -1,15 +1,1 @@
-(async () => {
-  const badge = document.querySelector('.version-badge');
-  const mark = label => { if (badge) console.debug(`[THE GOOD BOOK] BOOT · ${label}`); };
-  const fail = (stage, error) => { const message=error?.message||String(error);console.error(`[THE GOOD BOOK] FAIL · ${stage} · ${message}`,error); };
-  try {
-    mark('PAGEFLIP');
-    if (!window.St?.PageFlip) { mark('PAGEFLIP RECOVERY'); const r=await fetch('./vendor/page-flip.browser.js',{cache:'no-store'});if(!r.ok)throw Error(`PageFlip file ${r.status}`);const source=await r.text();if(!source.startsWith('!function'))throw Error('PageFlip invalid payload');Function(source).call(window); }
-    if(!window.St?.PageFlip)throw Error('St.PageFlip missing after recovery');
-    mark('CONTENT');const book=document.getElementById('book');const response=await fetch('./content/foreword.html',{cache:'no-store'});if(!response.ok)throw Error(`foreword ${response.status}`);book.innerHTML=await response.text();
-    mark('MECHANICS');await import(`../house-mechanics.js?v=10`);
-    mark('BOOK');await import(`../book.js?v=10`);if(!window.HouseBook?.pf)throw Error('HouseBook/PageFlip not initialized');
-    mark('FOREWORD CHOREOGRAPHY');await import(`../foreword-choreography.js?v=10`);
-    mark('READY');
-  } catch(error){fail('BOOT',error)}
-})();
+(async()=>{const badge=document.querySelector('.version-badge'),mark=label=>{if(badge)console.debug(`[THE GOOD BOOK] BOOT · ${label}`)},fail=(stage,error)=>{const message=error?.message||String(error);console.error(`[THE GOOD BOOK] FAIL · ${stage} · ${message}`,error)};try{mark('PAGEFLIP');if(!window.St?.PageFlip){mark('PAGEFLIP RECOVERY');const r=await fetch('./vendor/page-flip.browser.js',{cache:'no-store'});if(!r.ok)throw Error(`PageFlip file ${r.status}`);const source=await r.text();if(!source.startsWith('!function'))throw Error('PageFlip invalid payload');Function(source).call(window)}if(!window.St?.PageFlip)throw Error('St.PageFlip missing after recovery');mark('CONTENT');const book=document.getElementById('book'),response=await fetch('./content/foreword.html',{cache:'no-store'});if(!response.ok)throw Error(`foreword ${response.status}`);book.innerHTML=await response.text();mark('MECHANICS');await import('../house-mechanics.js?v=11');mark('BOOK + GLYPH ARC');await import('../book.js?v=11');if(!window.HouseBook?.pf)throw Error('HouseBook/PageFlip not initialized');mark('FOREWORD CHOREOGRAPHY');await import('../foreword-choreography.js?v=11');mark('READY')}catch(error){fail('BOOT',error)}})();
