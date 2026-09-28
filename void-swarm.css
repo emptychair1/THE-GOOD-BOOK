@@ -1,6 +1,10 @@
-/* V61 SWARM VISIBILITY ONLY. 1000 canonical-size creatures; V58 scene remains untouched. */
+/* V62 SWARM RETINAL PERSISTENCE. 1000 canonical-size creatures; V58 scene remains untouched. */
 .void-glyph-swarm{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .void-glyph-swarm-back{z-index:1;filter:blur(.35px)}
 .void-glyph-swarm-front{z-index:3}
 .void-swarm-glyph{position:absolute;left:var(--swarm-x);top:var(--swarm-y);font-family:"Geist Pixel",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--swarm-size);font-weight:500;line-height:1;color:#000;opacity:1;transform:translate(-50%,-50%) rotate(var(--swarm-rotate));text-shadow:none;white-space:nowrap}
 .void-glyph-swarm-back .void-swarm-glyph{opacity:.72;transform:translate(-50%,-50%) rotate(var(--swarm-rotate)) scale(.88)}
+.void-scene-audition.swarm-persist:not(.hit){opacity:1!important;background:transparent!important}
+.void-scene-audition.swarm-persist:not(.hit) .void-landscape-audition,.void-scene-audition.swarm-persist:not(.hit) .void-monolith-audition{opacity:0!important}
+.void-scene-audition.swarm-persist:not(.hit) .void-swarm-glyph{color:#fff;opacity:.32;filter:blur(.25px)}
+.void-scene-audition.swarm-persist:not(.hit) .void-glyph-swarm-back .void-swarm-glyph{opacity:.18}
