@@ -33,8 +33,7 @@
     await import('../book.js');
     if (!window.HouseBook?.pf) throw new Error('HouseBook/PageFlip not initialized');
 
-    mark('CONDUCTOR TEST');
-    await import('../choreography/conductor-test.js');
+    mark('CHOREOGRAPHY BLOCKED');
 
   } catch (error) {
     fail('BOOT', error);
