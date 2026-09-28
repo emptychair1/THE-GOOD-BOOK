@@ -32,9 +32,7 @@ body{height:100dvh;touch-action:none}
 .photosensitivity-warning strong{font-weight:800;color:rgba(21,17,13,.62)}
 .void{background:#000}
 .void-ring{display:none!important}
-.void-title{position:absolute;inset:0;z-index:1;overflow:hidden;color:#000;font-family:"Monoton",sans-serif;font-weight:400;pointer-events:none}
-.void-title,.void-flash-word span{font-size:100px;line-height:1;letter-spacing:0;white-space:nowrap;width:max-content;height:auto;transform-origin:center}
-.void-title{left:50%;top:50%;right:auto;bottom:auto;transform:translate(-50%,-50%) scale(var(--void-fit-x,1),var(--void-fit-y,1))}
+.void-title{position:absolute;z-index:1;left:50%;top:50%;color:#000;font-family:"Monoton",sans-serif;font-size:100px;font-weight:400;line-height:1;letter-spacing:0;white-space:nowrap;width:max-content;height:auto;pointer-events:none;transform:translate(-50%,-50%) scale(var(--void-fit,1));transform-origin:center}
 .void-sound{position:absolute;z-index:2;left:50%;bottom:max(calc(env(safe-area-inset-bottom) + .25rem),.7rem);width:11rem;height:11rem;transform:translateX(-50%);display:grid;place-items:center}
 .sound-want,.sound-question{font-family:"Geist Pixel",monospace}
 .sound-want{position:relative;z-index:2;border:0;background:transparent;color:#fff;padding:.9rem;font-size:.78rem;font-weight:400;line-height:1.15;letter-spacing:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -51,7 +49,7 @@ body{height:100dvh;touch-action:none}
 .void-flash-screen.hit{display:block!important;opacity:1!important}
 .void-flash-word{display:none;position:fixed!important;inset:0!important;z-index:2147483647!important;align-items:center;justify-content:center;overflow:hidden;color:#000!important;font-family:"Monoton",sans-serif;font-weight:400;pointer-events:none}
 .void-flash-word.hit{display:flex!important}
-.void-flash-word span{display:block;transform:scale(var(--void-fit-x,1),var(--void-fit-y,1))}
+.void-flash-word span{display:block;font-size:100px;line-height:1;letter-spacing:0;white-space:nowrap;width:max-content;height:auto;transform:scale(var(--void-fit,1));transform-origin:center}
 #glyph-overlay{position:fixed;z-index:700;pointer-events:none;display:block;opacity:0;animation:glyphFadeIn 1.8s ease 1s forwards}
 @keyframes glyphFadeIn{from{opacity:0}to{opacity:1}}
 .tap-left,.tap-right{position:fixed;top:0;bottom:0;width:36vw;z-index:999;background:transparent;border:0;padding:0;-webkit-tap-highlight-color:transparent}
