@@ -13,7 +13,7 @@ The book is built in small, reversible bites:
 1. Build/audition a mechanic or composition in `lab/`.
 2. Deploy and inspect it on the real target device.
 3. Josh explicitly approves or rejects it.
-4. Approved reusable behavior is promoted into `house-mechanics.js`.
+4. Approved reusable behavior is promoted into the House Mechanics runtime.
 5. Choreography calls the library rather than rebuilding the effect locally.
 
 **Commit ≠ approved. Deployment ≠ approved. Audition + explicit approval = approved.**
@@ -26,22 +26,23 @@ index.html
   ├─ vendor/page-flip.browser.js
   ├─ src/main.js
   ├─ content/
-  ├─ house-mechanics.js       # executable reusable canon
+  ├─ house-mechanics.js          # core + dark-room executable canon
+  ├─ house-mechanics-manic.js    # approved manic extension, same namespace
   ├─ house-mechanics-runners.js
   ├─ book.js
-  ├─ pages/ / choreography/   # page-specific what/where/when
+  ├─ pages/ / choreography/      # page-specific what/where/when
   ├─ manifest.webmanifest
   └─ sw.js
 
-lab/                        # audition/provenance artifacts
-assets/                     # canonical media
-HOUSE-MECHANICS.md          # mechanic semantics + approval record
+lab/                           # audition/provenance artifacts
+assets/                        # canonical media
+HOUSE-MECHANICS.md             # mechanic semantics + approval record
 ```
 
 ### Responsibility boundaries
 
 - `content/` owns authored manuscript markup.
-- `house-mechanics.js` owns reusable visual behavior: **how it looks and moves**.
+- House Mechanics owns reusable visual behavior: **how it looks and moves**.
 - choreography/page controllers own **what fires, where, and when**.
 - `book.js` owns pagination, PageFlip initialization, navigation, folio state, and the `HouseBook` runtime contract.
 - `book.css` owns shared reader/page presentation.
@@ -52,7 +53,9 @@ Do not privately reimplement an approved House Mechanic inside a page controller
 
 ## House Mechanics Library
 
-Current executable canon: **v1.2-approved-dark**.
+Current canon: **v1.3-approved-manic**.
+
+`house-mechanics.js` provides the base/core and dark-room vocabulary. `house-mechanics-manic.js` loads after it and extends the same frozen `window.HouseMechanics` namespace. This is one logical mechanics library with modular source sections, not page-local animation code.
 
 ### Core approved vocabulary
 
@@ -60,29 +63,29 @@ Current executable canon: **v1.2-approved-dark**.
 
 ### Dark-room vocabulary
 
-Approved 2026-09-28 after the dedicated dark-page audition series:
+Approved 2026-09-28:
 
-- `CAST` — moving light reveals nearly absent type.
-- `SHUTTER` — aperture opens and closes across type.
-- `PHOSPHOR` — exposure plus decaying silver afterimage.
-- `PALIMPSEST` — damaged earlier language remains beneath the present text.
-- `BEAM` — soft beam with the actual illuminated source text rendered hard white.
-- `REAGENT` — selected terms chemically develop and recede.
-- `ACCUMULATE` — repeated exposures build a registered record; choreography calls `expose()`.
-- `REFLECTION` — low-opacity mirrored text with smooth continuous water displacement.
-- `VERSO` — full registered page-under-page transmission; front remains present while the real underlying page bleeds through in cold silver.
+`CAST`, `SHUTTER`, `PHOSPHOR`, `PALIMPSEST`, `BEAM`, `REAGENT`, `ACCUMULATE`, `REFLECTION`, `VERSO`.
 
-`RELIEF` was explicitly rejected and is not part of the library.
+`RELIEF` was rejected.
 
-The full semantics, provenance, API examples, and implementation constraints live in `HOUSE-MECHANICS.md`.
+### Manic vocabulary
 
-## Dark-page design language
+Approved 2026-09-28:
 
-Dark chapters use black paper with cream/white and, where photographic/radiographic behavior requires it, cold bluish silver-white. Behavior should create the intensity, not decorative color.
+- `STRIKE` — textured white negative-marker redaction drawn once and left on black paper.
+- `CORRECTION` — successive rejected terms remain as revision archaeology before the final term resolves.
+- `PRESSURE` — repetition becomes heavier, tighter, and more compressed without jitter.
+- `INTRUSION` — a foreign thought enters existing syntax at equal typographic authority.
+- `OVERTYPE` — repeated failed-registration impressions accumulate into a typographic bruise.
+- `SCRAWL` — sequential hand gesture: underline, circle, arrow, second circle, scratch; every mark remains.
+- `CERTAINTY` — scholarly apparatus progressively overdetermines a simple assertion through qualifiers, superscripts, footnotes, definitions, equation, and citation while preserving readable manuscript context.
 
-The dark-room set deliberately avoids repeating DIAGNOSTIC's scan motif. Its vocabulary is light, aperture, exposure, chemistry, accumulation, reflection, and transmission.
+Rejected manic candidates: `MARGIN`, `RUNON`.
 
-Approved dark mechanics are frozen unless Josh explicitly reopens them. Subsequent labs should normally show only unapproved candidates so auditioning stays fast and legible.
+CERTAINTY does not require splitting whole paragraphs into words. Final choreography marks only the intended additions/anchors and places footnotes in the real bottom page field.
+
+Full semantics, provenance, API examples, and constraints live in `HOUSE-MECHANICS.md`.
 
 ## HouseBook runtime contract
 
@@ -115,15 +118,11 @@ Treat manuscript geometry as sensitive. Verify the installed PWA whenever a mech
 
 `THE GOOD BOOK · V14 · CANONICAL FOREWORD` is the accepted finished Foreword checkpoint from 2026-09-27. The Foreword is closed unless Josh explicitly reopens it.
 
-Page 05/chapter work continues after that checkpoint using the shared House Mechanics vocabulary and dedicated choreography.
-
 ## Current creative work
 
-The dark-room mechanic pass is complete. Nine dark mechanics are now approved and promoted to the executable library.
+The dark-room and manic mechanic passes are complete and promoted to canon.
 
-The next mechanics family under development is the **manic-page vocabulary**: authored interventions such as negative marker/redaction, overtyping, margin invasion, correction history, pressure, run-on behavior, intrusion, and certainty overload. These are candidates only until separately auditioned and approved. Do not add them to executable canon merely because they appear in a lab.
-
-A separate fourth-wall mechanic and post-glyph behavior are also planned for later audition.
+Next planned mechanics work: the **fourth-wall mechanic**, followed by the **post-glyph behavior** already identified for later audition. Those remain candidates until separately auditioned and approved.
 
 ## Assets and offline behavior
 
@@ -145,7 +144,7 @@ Production URL: `https://the-good-book.daniels-joshua100.workers.dev`
 
 - Preserve clean responsibility boundaries.
 - Prefer surgical changes over wrapper stacking.
-- Keep approved mechanics centralized in `house-mechanics.js`.
+- Keep approved mechanics centralized in the House Mechanics runtime.
 - Never silently redesign approved behavior while wiring it into a page.
 - Keep third-party browser dependencies pinned and local.
 - Preserve resting manuscript typography and pagination.
