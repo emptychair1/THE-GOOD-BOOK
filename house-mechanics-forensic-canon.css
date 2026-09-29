@@ -1,13 +1,14 @@
-/* House Mechanics · Forensic Canon v1.4
+/* House Mechanics · Forensic Canon v1.5
    Source of truth: lab/chapter-one-mechanics.html actual-size forensic lab.
    Approved rule: anything visibly affected by light inherits the lab's darker pre-light state and exact lab palette/timing.
    VERSO content remains contextual: the book supplies the actual live underlying leaf.
+   V113: CAST registration is repaired in canonical mechanics styling only. No chapter adapter or choreography patch.
 */
 :root{--hm-forensic-cream:#f6f0e6}
 
-/* CAST — literal forensic lab */
+/* CAST — literal forensic lab, with the pseudo-copy forced to inherit the live target's exact text metrics. */
 .hm-dark-cast{color:rgba(246,240,230,.055)!important}
-.hm-dark-cast::after{background:radial-gradient(circle at var(--hm-lx,-25%) 52%,#f6f0e6 0 9%,rgba(246,240,230,.76) 17%,rgba(246,240,230,.2) 31%,transparent 48%)!important}
+.hm-dark-cast::after{content:attr(data-hm-text)!important;position:absolute!important;inset:0!important;margin:0!important;padding:0!important;box-sizing:border-box!important;color:transparent!important;background:radial-gradient(circle at var(--hm-lx,-25%) 52%,#f6f0e6 0 9%,rgba(246,240,230,.76) 17%,rgba(246,240,230,.2) 31%,transparent 48%)!important;background-clip:text!important;-webkit-background-clip:text!important;font:inherit!important;font-family:inherit!important;font-size:inherit!important;font-weight:inherit!important;font-style:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;word-spacing:inherit!important;text-align:inherit!important;text-transform:inherit!important;white-space:pre-wrap!important;width:100%!important;height:100%!important;transform:none!important;transform-origin:0 0!important}
 
 /* SHUTTER — literal forensic lab */
 .hm-dark-shutter{color:rgba(246,240,230,.06)!important}
