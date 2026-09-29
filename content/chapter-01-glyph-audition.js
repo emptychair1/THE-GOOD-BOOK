@@ -1,6 +1,6 @@
-/* THE GOOD BOOK · V141 · Chapter One glyph swarm audition
-   Deliberately maximal first pass: bring the full inherited PI-glyph population onto the first Chapter One leaf,
-   let them wander, and assign approved luminous/radiant capabilities. We pare down only after seeing it at size.
+/* THE GOOD BOOK · V142 · Chapter One glyph swarm audition
+   Same deliberately maximal 520-glyph population and same approved glow distribution as V141.
+   Only change: glyph size now uses the established inherited swarm formula from book.js.
 */
 (()=>{
   const book=window.HouseBook,HG=window.HouseGlyphs;
@@ -17,10 +17,14 @@
   page.style.isolation='isolate';
 
   const glyphs=[];
+  const pageWidth=Math.max(1,page.getBoundingClientRect().width||innerWidth);
   for(let i=0;i<COUNT;i++){
     const g=document.createElement('span');
     g.className='ch1-wander-glyph';g.textContent=PI[i%PI.length];
-    const x=hash(i+701)*100,y=hash(i+801)*100,size=5.5+hash(i+301)*7.5,alpha=.10+hash(i+401)*.42;
+    const x=hash(i+701)*100,y=hash(i+801)*100;
+    const inheritedSize=.72+hash(i+301)*.72;
+    const size=Math.max(6,pageWidth*.0102*inheritedSize);
+    const alpha=.10+hash(i+401)*.42;
     Object.assign(g.style,{position:'absolute',left:`${x}%`,top:`${y}%`,font:`${size}px ui-monospace,SFMono-Regular,Menlo,monospace`,lineHeight:'1',color:`rgba(246,240,230,${alpha})`,willChange:'transform',transform:'translate3d(-50%,-50%,0)'});
     field.appendChild(g);glyphs.push(g);
     const dx=(hash(i+901)-.5)*52,dy=(hash(i+1001)-.5)*44,rot=(hash(i+1101)-.5)*34,duration=9000+hash(i+1201)*17000,delay=-hash(i+1301)*duration;
@@ -33,12 +37,12 @@
   }
   page.prepend(field);
 
-  // Approved glow vocabulary only. Intentionally generous for the audition so the difference survives phone-scale attention.
+  // Same approved glow vocabulary and distribution as V141. Density judgment comes after correct physical size.
   glyphs.forEach((g,i)=>{
     const r=hash(i+1401);
     if(r<.18)HG.radiant(g);
     else if(r<.48)HG.luminous(g);
   });
 
-  window.HouseChapterOneGlyphAudition={version:'141-full-swarm',page,field,glyphs};
+  window.HouseChapterOneGlyphAudition={version:'142-established-size',page,field,glyphs};
 })();
