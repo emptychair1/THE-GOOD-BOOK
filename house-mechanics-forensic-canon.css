@@ -1,0 +1,39 @@
+/* House Mechanics · Forensic Canon v1.4
+   Source of truth: lab/chapter-one-mechanics.html actual-size forensic lab.
+   Approved rule: anything visibly affected by light inherits the lab's darker pre-light state and exact lab palette/timing.
+   VERSO content remains contextual: the book supplies the actual live underlying leaf.
+*/
+:root{--hm-forensic-cream:#f6f0e6}
+
+/* CAST — literal forensic lab */
+.hm-dark-cast{color:rgba(246,240,230,.055)!important}
+.hm-dark-cast::after{background:radial-gradient(circle at var(--hm-lx,-25%) 52%,#f6f0e6 0 9%,rgba(246,240,230,.76) 17%,rgba(246,240,230,.2) 31%,transparent 48%)!important}
+
+/* SHUTTER — literal forensic lab */
+.hm-dark-shutter{color:rgba(246,240,230,.06)!important}
+.hm-dark-shutter::after{color:#f6f0e6!important}
+
+/* PHOSPHOR — forensic lab is cream, not blue-white. Target itself is recessed until light develops it. */
+.hm-dark-phosphor{color:rgba(246,240,230,.055)!important}
+.hm-dark-phosphor-flash,.hm-dark-phosphor-ghost{color:#f6f0e6!important}
+.hm-dark-phosphor.live .hm-dark-phosphor-flash{color:#f6f0e6!important}
+.hm-dark-phosphor.live .hm-dark-phosphor-ghost{color:#f6f0e6!important}
+@keyframes hmDarkPFlash{0%,9%{opacity:0}10%{opacity:1;text-shadow:0 0 6px #fff,0 0 20px rgba(246,240,230,.55)}12%,100%{opacity:0}}
+
+/* PALIMPSEST — literal forensic lab neutral cream inheritance, no blue-white archival tint. */
+.hm-dark-palimpsest-old{color:#f6f0e6!important}
+
+/* BEAM — literal forensic lab cone, with recessed base text. */
+.hm-dark-beam{color:rgba(246,240,230,.055)!important}
+.hm-dark-beam-light{left:-20%!important;right:auto!important;top:-18%!important;width:105%!important;height:125%!important;transform:none!important;transform-origin:initial!important;clip-path:polygon(0 3%,12% 0,100% 80%,100% 100%)!important;background:linear-gradient(120deg,rgba(246,240,230,.13),rgba(246,240,230,.035) 50%,transparent 78%)!important;filter:blur(7px)!important}
+.hm-dark-beam-white{color:#fff!important;clip-path:polygon(-20% -14%,-7.4% -18%,85% 82%,85% 107%)!important}
+.hm-dark-beam.live .hm-dark-beam-light,.hm-dark-beam.live .hm-dark-beam-white{animation:hmDarkBeam 5.8s ease both!important}
+
+/* REAGENT — literal forensic lab values. The reacting text starts recessed because light develops it. */
+.hm-dark-reagent-react{color:rgba(246,240,230,.24)!important}
+@keyframes hmDarkReagent{0%,15%{color:rgba(246,240,230,.24);text-shadow:none}17%{color:#fff;text-shadow:0 0 5px #fff,0 0 20px rgba(246,240,230,.72)}25%{color:#f6f0e6;text-shadow:0 0 14px rgba(246,240,230,.28)}45%,72%{color:rgba(246,240,230,.88)}100%{color:rgba(246,240,230,.27);text-shadow:none}}
+
+/* STRIKE — forensic lab deliberately neutralized the marker to book cream. */
+.hm-manic-strike .hm-marker{background:#f6f0e6!important}
+
+/* ACCUMULATE, REFLECTION, CORRECTION, PRESSURE, INTRUSION, OVERTYPE, SCRAWL and CERTAINTY are already auditioned through canonical HM implementations and intentionally receive no override here. */
