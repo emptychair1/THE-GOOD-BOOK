@@ -1,4 +1,4 @@
-/* House Mechanics · Forensic Canon v2.1
+/* House Mechanics · Forensic Canon v2.2
    Source of truth: lab/chapter-one-mechanics.html actual-size forensic lab.
    Approved rule: anything visibly affected by light inherits the lab's darker pre-light state and exact lab palette/timing.
    VERSO content remains contextual: the book supplies the actual live underlying leaf.
@@ -6,9 +6,8 @@
    V114: SHUTTER registration repaired canonically.
    V115 rejected: PHOSPHOR absolute layers collapsed the source box.
    V116: PHOSPHOR flash remains in flow as the invisible source/sizing glyph box; ghost is pinned exactly over it.
-   V117 rejected: BEAM destination was generic rather than target-bound.
-   V118 rejected: BEAM cone collapsed visually; receiver blinked without a readable shaft.
-   V119: BEAM is target-anchored, extends back toward the upper-left source, lights only its target glyphs, and retracts along the same path.
+   V117-V120 Beam experiments rejected.
+   V121: restore the most recently approved actual-size forensic Beam unchanged in look/timing; only constrain source to upper-left and terminate the receiver at the actual target box.
 */
 :root{--hm-forensic-cream:#f6f0e6}
 
@@ -28,14 +27,11 @@
 
 .hm-dark-palimpsest-old{color:#f6f0e6!important}
 
-/* BEAM — target itself is the destination. The shaft is attached to that destination and reaches diagonally back toward the stage's upper-left. Its transform origin is the source end, so entrance and exit traverse the same path. */
+/* BEAM — approved forensic specimen, not redesigned. Same cone, palette, blur and 5.8s beamOn behavior. The target box is the stop: cone is clipped at the receiver edge and the hard-white copy is exactly the target glyph box. Source direction is always upper-left. */
 .hm-dark-beam{position:relative!important;display:inline-block!important;isolation:isolate!important;color:rgba(246,240,230,.055)!important;overflow:visible!important}
-.hm-dark-beam-light{position:absolute!important;z-index:1!important;right:50%!important;bottom:50%!important;left:auto!important;top:auto!important;width:100vw!important;height:100vh!important;pointer-events:none!important;opacity:0!important;transform-origin:0 0!important;clip-path:polygon(0 0,2.2% 0,100% 97.2%,100% 100%)!important;background:linear-gradient(135deg,rgba(246,240,230,.18) 0,rgba(246,240,230,.085) 54%,rgba(246,240,230,.025) 88%,transparent 100%)!important;filter:blur(5px)!important}
-.hm-dark-beam-white{position:absolute!important;z-index:2!important;inset:0!important;margin:0!important;padding:0!important;box-sizing:border-box!important;display:block!important;color:#fff!important;background:none!important;font:inherit!important;font-family:inherit!important;font-size:inherit!important;font-weight:inherit!important;font-style:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;word-spacing:inherit!important;text-align:inherit!important;text-transform:inherit!important;white-space:inherit!important;width:100%!important;height:100%!important;overflow:hidden!important;clip-path:none!important;text-shadow:0 0 5px #fff,0 0 17px rgba(246,240,230,.72),0 0 34px rgba(246,240,230,.3)!important;pointer-events:none!important;opacity:0!important}
-.hm-dark-beam.live .hm-dark-beam-light{animation:hmForensicBeamTravel 5.8s cubic-bezier(.3,.02,.22,1) both!important}
-.hm-dark-beam.live .hm-dark-beam-white{animation:hmForensicBeamReceiver 5.8s cubic-bezier(.3,.02,.22,1) both!important}
-@keyframes hmForensicBeamTravel{0%{opacity:0;clip-path:polygon(0 0,2.2% 0,2.2% 0,0 0)}10%{opacity:.3;clip-path:polygon(0 0,2.2% 0,24% 23%,21.8% 25%)}30%{opacity:.88;clip-path:polygon(0 0,2.2% 0,100% 97.2%,100% 100%)}64%{opacity:.88;clip-path:polygon(0 0,2.2% 0,100% 97.2%,100% 100%)}82%{opacity:.42;clip-path:polygon(0 0,2.2% 0,34% 32%,31.8% 34%)}100%{opacity:0;clip-path:polygon(0 0,2.2% 0,2.2% 0,0 0)}}
-@keyframes hmForensicBeamReceiver{0%,25%{opacity:0}34%{opacity:1}64%{opacity:1}75%{opacity:.65}86%,100%{opacity:0}}
+.hm-dark-beam-light{position:absolute!important;z-index:1!important;left:-20%!important;right:auto!important;top:-18%!important;bottom:auto!important;width:120%!important;height:118%!important;transform:none!important;transform-origin:0 0!important;clip-path:polygon(0 3%,12% 0,100% 80%,100% 100%)!important;background:linear-gradient(120deg,rgba(246,240,230,.13),rgba(246,240,230,.035) 50%,transparent 78%)!important;filter:blur(7px)!important;overflow:hidden!important;pointer-events:none!important;opacity:0!important}
+.hm-dark-beam-white{position:absolute!important;z-index:2!important;inset:0!important;margin:0!important;padding:0!important;box-sizing:border-box!important;display:block!important;width:100%!important;height:100%!important;color:#fff!important;background:none!important;font:inherit!important;font-family:inherit!important;font-size:inherit!important;font-weight:inherit!important;font-style:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;word-spacing:inherit!important;text-align:inherit!important;text-transform:inherit!important;white-space:inherit!important;clip-path:none!important;overflow:hidden!important;text-shadow:0 0 2px rgba(255,255,255,.28)!important;pointer-events:none!important;opacity:0!important}
+.hm-dark-beam.live .hm-dark-beam-light,.hm-dark-beam.live .hm-dark-beam-white{animation:hmDarkBeam 5.8s ease both!important}
 
 .hm-dark-reagent-react{color:rgba(246,240,230,.24)!important}
 @keyframes hmDarkReagent{0%,15%{color:rgba(246,240,230,.24);text-shadow:none}17%{color:#fff;text-shadow:0 0 5px #fff,0 0 20px rgba(246,240,230,.72)}25%{color:#f6f0e6;text-shadow:0 0 14px rgba(246,240,230,.28)}45%,72%{color:rgba(246,240,230,.88)}100%{color:rgba(246,240,230,.27);text-shadow:none}}
