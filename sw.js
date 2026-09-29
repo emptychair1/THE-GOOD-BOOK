@@ -1,12 +1,17 @@
-const CACHE = 'the-good-book-shell-v52';
+const CACHE = 'the-good-book-shell-v87';
 const SHELL = [
   './',
   './index.html',
-  './book.css?v=52',
+  './book.css?v=74',
+  './void-cleanup.css?v=86',
+  './content/chapter-01.css?v=87',
   './vendor/page-flip.browser.js',
-  './src/main.js?v=52',
-  './void-choreography.js?v=52',
+  './src/main.js?v=87',
+  './void-choreography.js?v=74',
+  './void-interaction-guard.js?v=86',
   './content/foreword.html',
+  './content/chapter-01.html',
+  './content/chapter-01.js?v=87',
   './house-mechanics.js',
   './house-mechanics-runners.js',
   './foreword-choreography.js',
@@ -18,31 +23,6 @@ const SHELL = [
   './assets/34019DCD-5305-44CD-AF5E-7A82DB4A0E9B.png',
   './assets/the_weight_of_infinite_stone.mp3'
 ];
-
-self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
-});
-
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys()
-      .then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key))))
-      .then(() => self.clients.claim())
-  );
-});
-
-self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
-
-  event.respondWith(
-    fetch(event.request)
-      .then(response => {
-        if (response && response.ok) {
-          const copy = response.clone();
-          caches.open(CACHE).then(cache => cache.put(event.request, copy));
-        }
-        return response;
-      })
-      .catch(() => caches.match(event.request).then(cached => cached || caches.match('./index.html')))
-  );
-});
+self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;event.respondWith(fetch(event.request).then(response=>{if(response&&response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy))}return response}).catch(()=>caches.match(event.request).then(cached=>cached||caches.match('./index.html'))))});
