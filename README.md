@@ -4,14 +4,28 @@
 
 Static installable PWA. Production: `https://the-good-book.daniels-joshua100.workers.dev`
 
+## CURRENT SAVE POINT — DO NOT DRIFT
+
+**V150 · 55 pages · APPROVED THROUGH THE END OF CHAPTER ONE**
+
+Protected working chain:
+
+`Cover → Foreword → global status/folio → Void → Act One title → Act One/Chapter One transition → Chapter One`
+
+All of that is working and explicitly approved. New book construction starts **after Chapter One**. Do not rebuild, transplant, clean up, modernize, or otherwise touch the protected chain unless Josh explicitly reopens a specific part.
+
+The Act One title currently reads `THE VOID / STARES BACK`; **STARES only** uses the approved `SHUTTER` mechanic.
+
 ## Working method
-1. Audition in `lab/`.
-2. Inspect on target device.
-3. Josh explicitly approves/rejects.
+1. Audition genuinely new reusable visual behavior in `lab/` when an audition is needed.
+2. Inspect on the target device.
+3. Josh explicitly approves or rejects.
 4. Promote approved reusable behavior into shared runtime.
-5. Choreography calls capability rather than rebuilding it.
+5. Choreography calls the shared capability rather than rebuilding it.
 
 **Commit ≠ approved. Deployment ≠ approved. Audition + explicit approval = approved.**
+
+For mechanics that are already approved, do **not** make a new lab. Use the existing shared mechanic exactly, then audition its placement/context in the book.
 
 ## Architecture
 ```text
@@ -22,52 +36,61 @@ index.html
   ├─ content/
   ├─ house-mechanics.js
   ├─ house-mechanics-manic.js
-  ├─ house-mechanics-glyphs.js   # approved dynamic glyph light/reveal capability
+  ├─ house-mechanics-glyphs.js
   ├─ house-mechanics-runners.js
   ├─ book.js
   ├─ choreography/
   ├─ manifest.webmanifest
   └─ sw.js
-lab/                            # audition/provenance only after promotion
-HOUSE-MECHANICS.md              # canonical approval/semantics record
+lab/                            # audition/provenance; not live authority after promotion
+HOUSE-MECHANICS.md              # approved mechanics semantics + integration notes
 ```
 
-Choreography owns **what, where, when**. Shared mechanics own **how it looks and moves**. Never privately reimplement an approved mechanic in page code.
+Choreography owns **what, where, when**. Shared mechanics own **how it looks and moves**.
 
-## Current approved mechanics
+## Current mechanics vocabulary
 Core: `DIAGNOSTIC`, `DISTANCE`, `FALL`, `ORGANIC`, `CHANGE`, `LOVE`, `CROSS_OUT`, `GLINT`, `M4_DIGITIZE`, `RETURN`, `HAND`, `COMPILE`, `AGENCY`, `ABSENCE`.
 
-Dark room: `CAST`, `SHUTTER`, `PHOSPHOR`, `PALIMPSEST`, `BEAM`, `REAGENT`, `ACCUMULATE`, `REFLECTION`, `VERSO`. `RELIEF` rejected.
+Dark room: `CAST`, `SHUTTER`, `PHOSPHOR`, `PALIMPSEST`, `BEAM`, `REAGENT`, `ACCUMULATE`, `REFLECTION`, `VERSO`.
 
-Manic: `STRIKE`, `CORRECTION`, `PRESSURE`, `INTRUSION`, `OVERTYPE`, `SCRAWL`, `CERTAINTY`. `MARGIN` and `RUNON` rejected.
+Manic: `STRIKE`, `CORRECTION`, `PRESSURE`, `INTRUSION`, `OVERTYPE`, `SCRAWL`, `CERTAINTY`.
 
-Glyph light, approved 2026-09-29: `LUMINOUS`, `RADIANT`, random/dynamic assignment, and moving-light `REVEAL`. `WHISPER` rejected. Lab symbols were placeholders; the runtime capability applies to the book's actual glyph set. API lives at `window.HouseGlyphs` in `house-mechanics-glyphs.js`.
+Glyph light: `LUMINOUS`, `RADIANT`, dynamic assignment, movement behavior, and moving-light `REVEAL`. API: `window.HouseGlyphs` in `house-mechanics-glyphs.js`.
 
-Fourth-wall smoke: Whisper Audition 6 is creatively approved at 3.5% opacity as a persistent Josh-page candidate. It is **not yet production-proven inside the live PageFlip reader**.
+Full semantics live in `HOUSE-MECHANICS.md`.
 
-Full semantics and provenance: `HOUSE-MECHANICS.md`.
+## V150 production facts
+- Total reader length: **55 pages**.
+- Chapter One is fully approved.
+- Chapter One uses **13 wandering glyphs per page**, with established size and approved LUMINOUS/RADIANT behavior. Density is approved; do not reopen it casually.
+- The page-to-page glyph seed varies so the same constellation is not repeated.
+- The global `current / total` status counter is the only page-number system.
+- Counter polarity is adaptive: dark on cream/white pages, cream on black pages.
+- Chapter One local folios are gone.
+- Void sequence works.
+- Act One title works.
+- Transition from Act One into Chapter One works.
+- Foreword and Chapter One choreography work.
 
 ## Runtime / safety
 `window.HouseBook` publishes the PageFlip runtime and dispatches `house:ready` / `house:page`. Resolve targets against the current live page rather than retaining stale PageFlip DOM references.
 
 PageFlip remains pinned locally at `vendor/page-flip.browser.js` (`page-flip@2.0.7`). No CDN runtime dependency.
 
-Manuscript geometry is sensitive in the installed PWA. Mechanics must not casually alter wrapping/pagination. Preserve resting typography.
+Manuscript geometry is sensitive in the installed PWA. Mechanics must not casually alter wrapping or pagination. Preserve resting typography.
 
-## Foreword checkpoint
-`THE GOOD BOOK · V14 · CANONICAL FOREWORD` remains closed unless Josh explicitly reopens it.
-
-## Current production baseline
-Production reader currently identifies itself as **V85 · PAGE TURN GUARD FIX**. Do not confuse mechanics-library promotion with live integration. The new glyph capability is reusable runtime code but is not wired into chapter choreography merely by existing in the repository.
-
-## Assets / offline
-When a new runtime file becomes part of the live boot path, add it to the service-worker shell and bump the cache name/version deliberately. Do not change the live boot path simply to document or preserve an approved capability.
+Light effects generally reveal material **from darkness**. Do not make targets begin white by default unless that is part of the approved mechanic/context.
 
 ## Change discipline
-- Same `main` unless Josh explicitly asks otherwise.
+- Work on `main`. Do not create branches unless Josh explicitly asks.
 - Small reversible bites.
+- Give every live change a visible version label.
 - Approved behavior is centralized.
-- Labs become provenance after promotion.
-- Commit/deploy does not equal approval.
-- Verify live integration separately from isolated approval.
-- Git history is the recovery path; do not wrapper-stack speculative fixes.
+- Labs are provenance after promotion, not live authority.
+- Verify the live integration, not merely the commit.
+- Git history is the recovery path.
+- Do not wrapper-stack speculative fixes.
+- Do not infer that an old README/version note outranks the current approved V150 save point.
+
+## Next construction boundary
+The next content work begins **after Chapter One**. Preserve V150 as the known-good 55-page checkpoint while building forward.
