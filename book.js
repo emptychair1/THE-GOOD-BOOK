@@ -7,7 +7,8 @@
   function paginateForeword(){const firstOpening=foreword.querySelector('.opening'),items=[...firstOpening.children];firstOpening.innerHTML='';let page=foreword,opening=firstOpening;for(const item of items){opening.appendChild(item);if(!pageFits(page)){opening.removeChild(item);const next=makeContinuation();page=next.section;opening=next.opening;opening.appendChild(item)}}}
   paginateForeword();
   const pages=[...book.querySelectorAll('.page')],last=pages.length-1,sealIndex=pages.indexOf(sealPage),forewordPages=pages.map((p,i)=>({p,i})).filter(x=>x.p.classList.contains('foreword'));
-  status.textContent=`1 / ${pages.length}`;
+  function syncStatusPolarity(){const page=pages[current];if(!page)return;const light=page.classList.contains('foreword')||page.classList.contains('foreword-seal');status.style.color=light?'rgba(23,21,19,.58)':'rgba(246,240,230,.68)'}
+  status.textContent=`1 / ${pages.length}`;syncStatusPolarity();
   const pf=new St.PageFlip(book,{width:Math.max(1,Math.round(innerWidth)),height:Math.max(1,Math.round(innerHeight)),size:'stretch',minWidth:300,maxWidth:1000,minHeight:520,maxHeight:1600,autoSize:true,usePortrait:true,showCover:true,startPage:0,flippingTime:700,drawShadow:true,maxShadowOpacity:.32,mobileScrollSupport:false});pf.loadFromHTML(pages);
   const lockNavigation=()=>{navigationLocked=true;book.style.pointerEvents='none';document.querySelector('.tap-left').style.pointerEvents='none';document.querySelector('.tap-right').style.pointerEvents='none'};
   const unlockNavigation=()=>{navigationLocked=false;book.style.pointerEvents='';document.querySelector('.tap-left').style.pointerEvents='';document.querySelector('.tap-right').style.pointerEvents=''};
@@ -19,7 +20,7 @@
   function glyphState(){const p=forewordProgress(),migration=smooth(clamp((p-.08)/.92)),late=Math.pow(p,2.25);return{p,pop:.22+.78*Math.pow(p,.82),velocity:.10+.30*migration+1.45*late,direction:.04+.96*Math.pow(migration,1.7)}}
   function syncOverlay(){const visible=current>=1&&current<=sealIndex;if(!visible){canvas.style.display='none';return}canvas.style.display='block';const r=pages[current].getBoundingClientRect();if(!r.width||!r.height)return;canvas.style.left=r.left+'px';canvas.style.top=r.top+'px';canvas.style.width=r.width+'px';canvas.style.height=r.height+'px';w=r.width;h=r.height;dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.max(1,Math.round(w*dpr));canvas.height=Math.max(1,Math.round(h*dpr));ctx.setTransform(dpr,0,0,dpr,0,0)}
   function beginVacuum(){if(vacuumStarted)return;vacuumStarted=performance.now();vacuum=.001}
-  function setPage(i){current=Math.max(0,Math.min(last,Number(i)||0));if(current!==sealIndex){vacuum=0;vacuumStarted=0}else beginVacuum();status.textContent=`${current+1} / ${pages.length}`;requestAnimationFrame(syncOverlay);dispatchEvent(new CustomEvent('house:page',{detail:{current,pages,forewordProgress:forewordProgress()}}))}
+  function setPage(i){current=Math.max(0,Math.min(last,Number(i)||0));if(current!==sealIndex){vacuum=0;vacuumStarted=0}else beginVacuum();status.textContent=`${current+1} / ${pages.length}`;syncStatusPolarity();requestAnimationFrame(syncOverlay);dispatchEvent(new CustomEvent('house:page',{detail:{current,pages,forewordProgress:forewordProgress()}}))}
   pf.on('flip',e=>setPage(e.data));
   const next=()=>{if(navigationLocked)return;if(current<last){if(current===sealIndex-1)beginVacuum();pf.flipNext()}},prev=()=>{if(navigationLocked)return;if(current>0)pf.flipPrev()};
   const interactiveAt=(x,y)=>{const el=document.elementFromPoint(x,y),control=el?.closest('button,a,input,select,textarea,[role="button"],[data-house-interactive]');return !!control&&!control.classList.contains('tap-left')&&!control.classList.contains('tap-right')};
