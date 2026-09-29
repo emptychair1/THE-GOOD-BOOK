@@ -1,4 +1,4 @@
-/* V86 cleanup audition: continuity only. Existing Void choreography remains authoritative. */
+/* V92: continuity cleanup + real Act One leaf. */
 :root{--book-cream:#f6f0e6}
 .void-organisms{display:none!important}
 .sound-want,.sound-question,.void-further-button{font-family:Baskerville,"Iowan Old Style",Georgia,serif!important;color:var(--book-cream)!important;font-weight:400!important;letter-spacing:.02em!important}
@@ -10,3 +10,6 @@
 .void-existential-questions.ghost{color:var(--book-cream)!important;text-shadow:none!important}
 .void-flash-screen.hit::before{background-color:rgb(246 240 230)!important;background-blend-mode:screen}
 .void-act-title,.void-act-name,.void-migration-glyph{color:var(--book-cream)!important}
+.void-act-page{position:relative;background:#000!important;color:var(--book-cream)!important;overflow:hidden}
+.void-act-page .void-act-title{position:absolute!important;inset:0!important;left:0!important;right:0!important;top:0!important;height:100%!important;z-index:4!important;padding:10vh 7vw 42vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;opacity:0;transform:translateY(.35rem);transition:opacity 1.8s ease,transform 1.8s ease}
+.void-act-page .void-act-title.show{opacity:1;transform:translateY(0)}
