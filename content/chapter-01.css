@@ -6,5 +6,5 @@
 .chapter-one-portrait.is-whooshing .chapter-one-settled-glyph{animation:chapterOneGlyphWhoosh var(--whoosh-duration) cubic-bezier(.32,.01,.72,.22) var(--whoosh-delay) 1 forwards}
 @keyframes chapterOneGlyphDrift{from{transform:translate(calc(-50% - var(--dx)),calc(-50% - var(--dy)))}to{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy)))}}
 @keyframes chapterOneGlyphWhoosh{0%{transform:translate(-50%,-50%);opacity:var(--alpha)}18%{transform:translate(calc(-50% - 1.5vw),calc(-50% + var(--lift)));opacity:var(--alpha)}100%{transform:translate(calc(-50% + 118vw),calc(-50% + var(--lift)));opacity:0}}
-.chapter-one-canvas{background:#000!important;padding:0!important}
+.chapter-one-canvas{background:#000!important;padding:0!important;display:grid;place-items:center}.chapter-one-test{color:#fff;font:500 1rem/1 ui-monospace,SFMono-Regular,Menlo,monospace}
 @media (prefers-reduced-motion:reduce){.chapter-one-settled-glyph{animation:none}.chapter-one-portrait-image{transition-duration:.35s}}
