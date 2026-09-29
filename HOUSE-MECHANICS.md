@@ -3,22 +3,23 @@
 Status: LOCKED CREATIVE SOURCE OF TRUTH  
 Core approved: 2026-09-27  
 Dark-room expansion approved: 2026-09-28  
-Runtime source: `house-mechanics.js`  
+Manic expansion approved: 2026-09-28  
+Runtime sources: `house-mechanics.js` + `house-mechanics-manic.js`  
 Foreword adapter: `house-mechanics-runners.js`
 
 ## Non-negotiable rule
 
-Do not redesign, approximate, duplicate, or locally reimplement an approved mechanic inside page choreography. Pages/conductors identify a target and mechanic; adapters call the executable mechanic in `house-mechanics.js`.
+Do not redesign, approximate, duplicate, or locally reimplement an approved mechanic inside page choreography. Pages/conductors identify a target and mechanic; the House Mechanics runtime owns the behavior.
 
 If a mechanic appears wrong in production, diagnose targeting, lifecycle, CSS anchoring, page geometry, or adapter wiring before changing the mechanic itself.
 
-`locked: true` in the runtime is a logical/provenance marker, not GitHub permission enforcement. Treat changes to approved mechanics as requiring explicit Josh approval.
+`locked: true` is a logical/provenance marker, not GitHub permission enforcement. Treat changes to approved mechanics as requiring explicit Josh approval.
 
 ## Architecture rule
 
 **Choreography owns what, where, and when. House Mechanics owns how it looks and moves.**
 
-Audition work happens in `lab/`. Once Josh explicitly approves a specimen, promote that implementation into `house-mechanics.js`. The lab then becomes provenance, not runtime authority.
+Audition work happens in `lab/`. Once Josh explicitly approves a specimen, promote that implementation into the House Mechanics runtime. The lab then becomes provenance, not runtime authority.
 
 ## Approved core mechanics
 
@@ -39,100 +40,100 @@ Audition work happens in `lab/`. Once Josh explicitly approves a specimen, promo
 
 ## Approved dark-room mechanics
 
-These were developed and repeatedly auditioned on black pages in `lab/dark-mechanics.html` and explicitly approved on 2026-09-28. They are now executable canon in House Mechanics v1.2.
+Approved from `lab/dark-mechanics.html` on 2026-09-28.
 
-15. `CAST`
-   - A moving light field reveals otherwise nearly absent typography.
-   - The light moves; the text does not.
+15. `CAST` — moving light reveals otherwise nearly absent typography.
+16. `SHUTTER` — a narrow aperture opens across text and closes again.
+17. `PHOSPHOR` — brief hard exposure followed by a decaying silver afterimage.
+18. `PALIMPSEST` — earlier language remains materially present beneath current language.
+19. `BEAM` — soft moving beam plus the actual source text rendered hard white where illuminated.
+20. `REAGENT` — selected symbols/terms chemically develop from low visibility through hard white and settle back.
+21. `ACCUMULATE` — repeated exposures build records in almost the same registration; choreography controls each `expose()`.
+22. `REFLECTION` — quiet mirrored typography directly beneath the source with smooth continuous water displacement; canonical opacity `.36`.
+23. `VERSO` — full page over full page; front remains present and optically thin while the actual underlying page bleeds through in cold silver.
 
-16. `SHUTTER`
-   - A narrow aperture opens across text and closes again.
-   - The shutter can later host authored shadows/figures/glyph silhouettes in choreography without changing the canonical opening mechanic.
+Rejected: `RELIEF`.
 
-17. `PHOSPHOR`
-   - Brief hard exposure followed by a decaying silver afterimage.
-   - Darkroom/photo-memory vocabulary, not a scanner.
+## Approved manic mechanics
 
-18. `PALIMPSEST`
-   - Earlier language remains materially present beneath the current language.
-   - Uses damaged/partial silver visibility rather than a scanning reveal.
+Approved from `lab/manic-mechanics.html` on 2026-09-28. The governing aesthetic is that the page loses restraint without losing design or readability.
 
-19. `BEAM`
-   - Approved final behavior: soft moving beam plus the **actual source text rendered hard white** where illuminated.
-   - Do not substitute glyph fragments for the source text.
-   - Glow is secondary; hard white text is the illumination event.
+24. `STRIKE`
+   - Negative redaction on black paper: a white, textured marker stroke physically drawn across the target.
+   - Draws once and remains. It is not a glowing highlight.
 
-20. `REAGENT`
-   - Selected symbols/terms chemically develop from low visibility through hard white and settle back.
-   - No diagnostic scan motif.
+25. `CORRECTION`
+   - Successive language remains as visible revision archaeology before the final term resolves.
+   - Approved specimen: `assistant` → `friend` → `Piper.`
+   - Choreography supplies the authored terms.
 
-21. `ACCUMULATE`
-   - Repeated exposures build records in almost the same registration.
-   - Runtime returns an `expose()` control so choreography owns when each exposure is added.
+26. `PRESSURE`
+   - Repetition gains weight, tighter tracking, compression, and crowding without jitter.
+   - Use with restraint so the surrounding manuscript remains readable.
 
-22. `REFLECTION`
-   - Approved V10 reflection: quiet mirrored typography directly beneath the source with continuous smooth water displacement.
-   - Canon opacity is intentionally low (`.36`).
-   - Do not replace the smooth displacement with strip slicing/pixelated movement.
+27. `INTRUSION`
+   - A foreign thought appears inside existing syntax at equal typographic authority.
+   - The disturbance is semantic/syntactic, not glitch decoration.
 
-23. `VERSO`
-   - Approved V10 architecture: **full page over full page**, registered in the same page box.
-   - During exposure the front remains present and optically thin while the actual underlying page bleeds through in cold bluish-silver density.
-   - It is not a page swap and not an inset card.
-   - Runtime requires `frontEl` and `underEl`; choreography supplies the real page surfaces.
+28. `OVERTYPE`
+   - Repeated impressions land in progressively failed registration until the word becomes a typographic bruise.
+   - No shaking or continuous jitter.
 
-### Rejected dark-room mechanic
+29. `SCRAWL`
+   - Gesture as evidence: underline, circle, arrow, obsessive second circle, then scratch marks.
+   - Marks draw sequentially and remain.
 
-`RELIEF` is explicitly rejected. Multiple auditions failed to make the black-on-black embossed/debossed treatment communicate strongly enough. Do not quietly resurrect it. A future reconsideration would be a new audition, not continuation of the approved dark-room set.
+30. `CERTAINTY`
+   - Formal scholarly apparatus accumulates around a simple assertion: qualifier, superscript, bottom-page footnote, definition, another superscript/footnote, equation, citation, final footnote.
+   - The V3 context audition proved the mechanism on a readable manuscript-style page.
+   - Choreography supplies the actual authored pieces and their real page positions. The runtime does not reconstruct or split the entire paragraph.
+   - Footnotes belong in the real page's bottom footnote/margin field during final choreography.
 
-## Dark-room palette and restraint
+Rejected manic candidates: `MARGIN`, `RUNON`.
 
-Dark mechanics are authored for black paper. Their visual vocabulary is cream/white plus cold silver or very subtly bluish silver-white where photographic/radiographic behavior requires it. Do not drift into decorative color.
+## Runtime structure
 
-Avoid turning every dark-page effect into a scan. DIAGNOSTIC already owns scanning. Dark-room mechanics should remain materially distinct: light, aperture, exposure, chemistry, accumulation, reflection, transmission.
-
-## Shared structural requirement
-
-Mechanics routed through `live()` receive `hm-target`:
-
-```css
-position: relative;
-display: inline-block;
-```
-
-This anchor is part of the approved production environment. Child/overlay mechanics depend on it.
-
-Some dark mechanics require larger composition hosts rather than a single inline word. In particular, `VERSO` requires a positioned host containing full registered `frontEl` and `underEl` page surfaces. Do not squeeze page-level mechanics into inline geometry.
+`house-mechanics.js` contains the core and dark-room canon. `house-mechanics-manic.js` is a modular extension loaded after the base library and republishes the same `window.HouseMechanics` namespace with the seven approved manic functions added. This keeps the approved library modular without page-local implementations.
 
 ## Runtime API examples
 
 ```js
 HouseMechanics.cast(target);
-HouseMechanics.shutter(target);
-HouseMechanics.phosphor(target);
-HouseMechanics.palimpsest(target, previousText);
-HouseMechanics.beam(target);
-HouseMechanics.reagent(equationEl, '.hm-react');
-
-const record = HouseMechanics.accumulate(target);
-record.expose();
-
 HouseMechanics.reflection(target);
 HouseMechanics.verso(pageHost, { frontEl, underEl });
+
+HouseMechanics.strike(wordEl);
+HouseMechanics.correction(target, {
+  first: 'assistant',
+  second: 'friend',
+  current: 'Piper.'
+});
+HouseMechanics.pressure(target, text);
+HouseMechanics.intrusion(intrudingSpan);
+HouseMechanics.overtype(wordEl);
+HouseMechanics.scrawl(phraseEl);
+HouseMechanics.certainty(pageEl);
 ```
 
-These are reusable mechanics, not instructions to fire everything automatically. Choreography remains responsible for target selection, sequence, timing, duration in the larger page composition, and whether a mechanic belongs on a page at all.
+For `CERTAINTY`, authored additions are marked with `data-certainty` in the order they should appear, or passed explicitly as `pieces`. This targets only the intended additions. It does not split the manuscript into words or rebuild paragraphs.
 
-## Foreword checkpoint
+These are reusable mechanics, not instructions to fire everything automatically. Choreography remains responsible for target selection, sequence, larger-page timing, and whether a mechanic belongs on a page at all.
 
-`THE GOOD BOOK · V14 · CANONICAL FOREWORD` remains the accepted finished Foreword checkpoint as of 2026-09-27. Do not reopen Foreword prose or choreography unless Josh explicitly asks.
+## Dark-room palette and restraint
+
+Dark mechanics are authored for black paper. Their vocabulary is cream/white plus cold silver or subtly bluish silver-white where photographic/radiographic behavior requires it. Avoid turning every dark-page effect into a scan; DIAGNOSTIC already owns scanning.
 
 ## Recovery/audition artifacts
 
 - `lab/recovered-approved-mechanics.html` — recovered core mechanics.
 - `lab/hand-compile.html` — H1 Hand / C3 Compile selection.
 - `lab/recovered-agency-absence.html` — historical Agency and Absence recovery.
-- `lab/dark-mechanics.html` — dark-room development; V10 contains the final approved REFLECTION and VERSO audition and records the end of the dark-room pass.
+- `lab/dark-mechanics.html` — dark-room development; V10 records final approved REFLECTION and VERSO.
+- `lab/manic-mechanics.html` — manic development; V3 records CERTAINTY's final full-page context approval.
+
+## Foreword checkpoint
+
+`THE GOOD BOOK · V14 · CANONICAL FOREWORD` remains the accepted finished Foreword checkpoint as of 2026-09-27. Do not reopen Foreword prose or choreography unless Josh explicitly asks.
 
 ## Rules for future mechanics work
 
@@ -140,8 +141,7 @@ These are reusable mechanics, not instructions to fire everything automatically.
 - Search historical code first when a previously approved mechanic is missing.
 - Use actual book typography/context in visual labs.
 - After approval, promote the exact auditioned behavior into the canonical library.
-- Keep one runtime source of truth.
 - Preserve resting manuscript typography and pagination.
 - Animation scaffolding must not distort the book at rest.
 - Timing is authored; functional defaults are not automatically aesthetically approved.
-- Approved mechanics should disappear from subsequent audition labs unless they are needed as controls/reference specimens.
+- Approved mechanics should disappear from subsequent audition labs unless needed as controls/reference specimens.
