@@ -10,7 +10,7 @@
   paginate();
 
   const bindAtmosphere=()=>{
-    const book=window.HouseBook,pages=book?.pages||[],chapterPages=pages.filter(p=>p.classList.contains('chapter-one-page'));if(!book||!chapterPages.length)return;
+    const book=window.HouseBook,pages=book?.pages||[],chapterPages=pages.filter(p=>p.classList.contains('chapter-one-page'));if(!book||!chapterPages.length||document.querySelector('.chapter-one-audio'))return;
     const firstIndex=pages.indexOf(chapterPages[0]),lastIndex=pages.indexOf(chapterPages[chapterPages.length-1]);
     const smoke=document.createElement('div');smoke.className='chapter-one-smoke';smoke.setAttribute('aria-hidden','true');smoke.innerHTML='<video autoplay muted loop playsinline preload="auto" src="https://cdn.pixabay.com/video/2026/03/03/337943_large.mp4"></video>';document.body.appendChild(smoke);const smokeVideo=smoke.querySelector('video');smokeVideo.play().catch(()=>{});
     const grace=document.createElement('audio');grace.className='chapter-one-audio';grace.src='./assets/the_weight_of_grace.mp3';grace.preload='auto';grace.volume=0;document.body.appendChild(grace);
@@ -21,5 +21,5 @@
     addEventListener('house:page',event=>{const i=event.detail?.current;if(i>=firstIndex&&i<=lastIndex)enter();else leave()});
     if(book.getCurrent()>=firstIndex&&book.getCurrent()<=lastIndex)enter();
   };
-  addEventListener('house:ready',bindAtmosphere,{once:true});
+  window.HouseChapterOne=Object.assign(window.HouseChapterOne||{},{bindAtmosphere});
 })();
