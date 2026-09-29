@@ -1,5 +1,5 @@
-/* THE GOOD BOOK · V144 · Chapter One glyph field audition
-   Density-only change from V143: 26 glyphs, exactly half of the 52-glyph field.
+/* THE GOOD BOOK · V145 · Chapter One glyph field audition
+   Density-only change from V144: 13 glyphs, exactly half of the 26-glyph field.
    Established inherited size, wandering behavior, and approved luminous/radiant distribution remain unchanged.
 */
 (()=>{
@@ -9,7 +9,7 @@
   if(!page||page.querySelector('.ch1-glyph-audition'))return;
 
   const PI='31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679';
-  const COUNT=26;
+  const COUNT=13;
   const hash=n=>{const x=Math.sin(n*12.9898)*43758.5453;return x-Math.floor(x)};
   const field=document.createElement('div');
   field.className='ch1-glyph-audition';field.setAttribute('aria-hidden','true');
@@ -43,5 +43,5 @@
     else if(r<.48)HG.luminous(g);
   });
 
-  window.HouseChapterOneGlyphAudition={version:'144-half-field',page,field,glyphs};
+  window.HouseChapterOneGlyphAudition={version:'145-thirteen-field',page,field,glyphs};
 })();
