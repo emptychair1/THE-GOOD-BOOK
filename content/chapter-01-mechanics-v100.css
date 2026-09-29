@@ -9,8 +9,9 @@
 .chapter-one-page .hm-dark-reagent:before{content:none!important;display:none!important}
 .chapter-one-page .hm-dark-reagent-react{color:rgba(246,240,230,.24)!important}
 
-.house-diag-readout{color:rgba(246,240,230,.82)!important;text-shadow:0 0 8px rgba(246,240,230,.16)!important}
-.house-diag-scan i{background:rgba(246,240,230,.86)!important;box-shadow:0 0 .3rem rgba(246,240,230,.5)!important}
+/* DIAGNOSTIC polarity intentionally does not live in this chapter integration sheet.
+   The former unscoped cream rules leaked onto light Foreword pages and overrode
+   canonical DIAGNOSTIC's dark-on-cream presentation. */
 
 .chapter-one-page .ch1-verso-under{position:absolute!important;z-index:1;left:8vw!important;right:8vw!important;top:var(--manuscript-top)!important;bottom:var(--manuscript-bottom)!important;width:auto!important;height:auto!important;max-width:34rem!important;margin:0 auto!important;padding:0!important;transform:none!important;rotate:none!important;scale:none!important;filter:none!important;background:#000!important;overflow:hidden!important}
 .chapter-one-page.ch1-verso-live .ch1-verso-under{animation:ch1UnderExact 5s steps(1,end) both!important}
