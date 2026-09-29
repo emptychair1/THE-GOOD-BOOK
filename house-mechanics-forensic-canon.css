@@ -1,9 +1,10 @@
-/* House Mechanics · Forensic Canon v1.6
+/* House Mechanics · Forensic Canon v1.7
    Source of truth: lab/chapter-one-mechanics.html actual-size forensic lab.
    Approved rule: anything visibly affected by light inherits the lab's darker pre-light state and exact lab palette/timing.
    VERSO content remains contextual: the book supplies the actual live underlying leaf.
    V113: CAST registration repaired canonically.
-   V114: SHUTTER registration repaired canonically. No chapter adapter or choreography patch.
+   V114: SHUTTER registration repaired canonically.
+   V115: PHOSPHOR flash/ghost registration repaired canonically. No chapter adapter or choreography patch.
 */
 :root{--hm-forensic-cream:#f6f0e6}
 
@@ -15,9 +16,9 @@
 .hm-dark-shutter{color:rgba(246,240,230,.06)!important}
 .hm-dark-shutter::after{content:attr(data-hm-text)!important;position:absolute!important;inset:0!important;margin:0!important;padding:0!important;box-sizing:border-box!important;color:#f6f0e6!important;font:inherit!important;font-family:inherit!important;font-size:inherit!important;font-weight:inherit!important;font-style:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;word-spacing:inherit!important;text-align:inherit!important;text-transform:inherit!important;white-space:pre-wrap!important;width:100%!important;height:100%!important;transform:none!important;transform-origin:0 0!important}
 
-/* PHOSPHOR — forensic lab is cream, not blue-white. Target itself is recessed until light develops it. */
+/* PHOSPHOR — literal forensic lab palette/timing. Flash and ghost inherit the live target's exact text metrics so the afterimage is born on the source glyphs. */
 .hm-dark-phosphor{color:rgba(246,240,230,.055)!important}
-.hm-dark-phosphor-flash,.hm-dark-phosphor-ghost{color:#f6f0e6!important}
+.hm-dark-phosphor-flash,.hm-dark-phosphor-ghost{position:absolute!important;inset:0!important;margin:0!important;padding:0!important;box-sizing:border-box!important;color:#f6f0e6!important;font:inherit!important;font-family:inherit!important;font-size:inherit!important;font-weight:inherit!important;font-style:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;word-spacing:inherit!important;text-align:inherit!important;text-transform:inherit!important;white-space:pre-wrap!important;width:100%!important;height:100%!important;transform:none!important;transform-origin:0 0!important}
 .hm-dark-phosphor.live .hm-dark-phosphor-flash{color:#f6f0e6!important}
 .hm-dark-phosphor.live .hm-dark-phosphor-ghost{color:#f6f0e6!important}
 @keyframes hmDarkPFlash{0%,9%{opacity:0}10%{opacity:1;text-shadow:0 0 6px #fff,0 0 20px rgba(246,240,230,.55)}12%,100%{opacity:0}}
