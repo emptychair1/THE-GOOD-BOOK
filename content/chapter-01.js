@@ -4,9 +4,8 @@
   const paginate=()=>{
     const source=document.getElementById('chapter-one-source'),book=document.getElementById('book');if(!source||!book||source.dataset.paginated)return;
     source.dataset.paginated='1';const blocks=[...source.children].map(n=>n.cloneNode(true));let current=makePage(true);book.insertBefore(current.page,source);let pageCount=1;
-    for(const block of blocks){current.inner.appendChild(block);if(current.inner.scrollHeight>current.page.clientHeight-current.pagePadding){current.inner.removeChild(block);current=makePage(false);book.insertBefore(current.page,source);current.inner.appendChild(block);pageCount++}}
+    for(const block of blocks){current.inner.appendChild(block);if(current.inner.scrollHeight>current.page.clientHeight){current.inner.removeChild(block);current=makePage(false);book.insertBefore(current.page,source);current.inner.appendChild(block);pageCount++}}
     source.remove();document.documentElement.style.setProperty('--chapter-one-pages',pageCount);window.HouseChapterOne={pageCount};
   };
-  Object.defineProperty(Object.prototype,'pagePadding',{configurable:true,get(){return 0}});
-  try{paginate()}finally{delete Object.prototype.pagePadding}
+  paginate();
 })();
