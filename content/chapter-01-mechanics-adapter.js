@@ -7,27 +7,25 @@ function ensureCSS(){if(document.getElementById('ch1-mechanics-registration'))re
 .ch1-lab-cast{position:relative!important;color:rgba(246,240,230,.055)!important}.ch1-lab-cast:after{content:attr(data-text);position:absolute;inset:0;color:transparent;background:radial-gradient(circle at var(--lx,-25%) 52%,#f6f0e6 0 9%,rgba(246,240,230,.76) 17%,rgba(246,240,230,.2) 31%,transparent 48%);background-clip:text;-webkit-background-clip:text}.ch1-lab-cast.run:after{animation:ch1LabCast 5.2s cubic-bezier(.3,.02,.22,1) both}@property --lx{syntax:'<percentage>';inherits:false;initial-value:-25%}@keyframes ch1LabCast{0%{--lx:-30%;opacity:0}10%{opacity:1}45%{--lx:46%}72%{--lx:112%;opacity:.9}100%{--lx:135%;opacity:0}}
 .ch1-lab-shutter{position:relative!important;color:rgba(246,240,230,.06)!important}.ch1-lab-shutter:after{content:attr(data-text);position:absolute;inset:0;color:#f6f0e6;clip-path:inset(0 50%)}.ch1-lab-shutter.run:after{animation:ch1LabShutter 4.8s cubic-bezier(.7,0,.2,1) both}@keyframes ch1LabShutter{0%,8%{clip-path:inset(0 50%)}34%,68%{clip-path:inset(0)}94%,100%{clip-path:inset(0 50%)}}
 .ch1-lab-phosphor-host{position:relative!important;color:transparent!important}.ch1-lab-phosphor-flash,.ch1-lab-phosphor-ghost{position:absolute!important;inset:0!important;width:100%!important;text-align:inherit!important;font:inherit!important;letter-spacing:inherit!important;line-height:inherit!important;color:#f6f0e6!important;opacity:0!important;pointer-events:none!important}.ch1-lab-phosphor-host.run .ch1-lab-phosphor-flash{animation:ch1LabPflash 5.8s both!important}.ch1-lab-phosphor-host.run .ch1-lab-phosphor-ghost{animation:ch1LabPghost 5.8s ease-out both!important}@keyframes ch1LabPflash{0%,9%{opacity:0}10%{opacity:1;text-shadow:0 0 6px #fff,0 0 20px rgba(246,240,230,.55)}12%,100%{opacity:0}}@keyframes ch1LabPghost{0%,10%{opacity:0}13%{opacity:.72}30%{opacity:.39;filter:blur(.7px)}58%{opacity:.16;filter:blur(1.5px)}100%{opacity:0;filter:blur(3px)}}
-/* REAGENT: literal forensic-lab field + react development. */
-.ch1-lab-reagent-host{position:relative!important}.ch1-lab-reagent-react{display:inline-block!important;color:rgba(246,240,230,.24)!important}.ch1-lab-reagent-field{position:absolute!important;inset:14% 2%!important;background:radial-gradient(ellipse,rgba(246,240,230,.12),transparent 68%)!important;opacity:0!important;pointer-events:none!important}.ch1-lab-reagent-host.run .ch1-lab-reagent-field{animation:ch1LabRfield 5.8s both!important}.ch1-lab-reagent-host.run .ch1-lab-reagent-react{animation:ch1LabRdevelop 5.8s ease both!important}@keyframes ch1LabRfield{0%,14%{opacity:0}16%{opacity:1}20%,100%{opacity:0}}@keyframes ch1LabRdevelop{0%,15%{color:rgba(246,240,230,.24);text-shadow:none}17%{color:#fff;text-shadow:0 0 5px #fff,0 0 20px rgba(246,240,230,.72)}25%{color:#f6f0e6;text-shadow:0 0 14px rgba(246,240,230,.28)}45%,72%{color:rgba(246,240,230,.88)}100%{color:rgba(246,240,230,.27);text-shadow:none}}
+/* REAGENT: the host sentence remains context; only .hm-react chemically develops. */
+.ch1-lab-reagent-host{position:relative!important}.ch1-lab-reagent-react{display:inline!important;color:rgba(246,240,230,.24)!important}.ch1-lab-reagent-field{position:absolute!important;inset:14% 2%!important;background:radial-gradient(ellipse,rgba(246,240,230,.12),transparent 68%)!important;opacity:0!important;pointer-events:none!important}.ch1-lab-reagent-host.run .ch1-lab-reagent-field{animation:ch1LabRfield 5.8s both!important}.ch1-lab-reagent-host.run .ch1-lab-reagent-react{animation:ch1LabRdevelop 5.8s ease both!important}@keyframes ch1LabRfield{0%,14%{opacity:0}16%{opacity:1}20%,100%{opacity:0}}@keyframes ch1LabRdevelop{0%,15%{color:rgba(246,240,230,.24);text-shadow:none}17%{color:#fff;text-shadow:0 0 5px #fff,0 0 20px rgba(246,240,230,.72)}25%{color:#f6f0e6;text-shadow:0 0 14px rgba(246,240,230,.28)}45%,72%{color:rgba(246,240,230,.88)}100%{color:rgba(246,240,230,.27);text-shadow:none}}
 `;document.head.appendChild(s)}
 function literal(el,cls,duration){ensureCSS();const prior={color:el.style.color,position:el.style.position};el.dataset.text=el.textContent;el.classList.add(cls);el.classList.remove('run');void el.offsetWidth;el.classList.add('run');setTimeout(()=>{if(!el.isConnected)return;el.classList.remove('run',cls);delete el.dataset.text;el.style.color=prior.color;el.style.position=prior.position},duration);return el}
 function cast(el){return literal(el,'ch1-lab-cast',5420)}
 function shutter(el){return literal(el,'ch1-lab-shutter',5020)}
 function phosphor(el){ensureCSS();const text=el.textContent,prior={color:el.style.color,position:el.style.position};el.classList.add('ch1-lab-phosphor-host');const flash=document.createElement('span'),ghost=document.createElement('span');flash.className='ch1-lab-phosphor-flash';ghost.className='ch1-lab-phosphor-ghost';flash.textContent=ghost.textContent=text;el.append(flash,ghost);el.classList.remove('run');void el.offsetWidth;el.classList.add('run');setTimeout(()=>{if(!el.isConnected)return;flash.remove();ghost.remove();el.classList.remove('run','ch1-lab-phosphor-host');el.style.color=prior.color;el.style.position=prior.position},6020);return el}
 function reagent(host,selector='.hm-react'){
-  ensureCSS();
-  const react=host.matches?.(selector)?host:host.querySelector?.(selector);
-  if(!react)return originalReagent.call(HM,host,selector);
-  const priorHostPosition=host.style.position,priorColor=react.style.color;
-  host.classList.add('ch1-lab-reagent-host');react.classList.add('ch1-lab-reagent-react');
-  const field=document.createElement('div');field.className='ch1-lab-reagent-field';host.insertBefore(field,host.firstChild);
-  host.classList.remove('run');void host.offsetWidth;host.classList.add('run');
-  setTimeout(()=>{if(!host.isConnected)return;field.remove();host.classList.remove('run','ch1-lab-reagent-host');react.classList.remove('ch1-lab-reagent-react');host.style.position=priorHostPosition;react.style.color=priorColor},6020);
-  return host;
+ ensureCSS();const react=host.matches?.(selector)?host:host.querySelector?.(selector);if(!react)return originalReagent.call(HM,host,selector);
+ const priorHostPosition=host.style.position,priorColor=react.style.color;
+ /* Host is deliberately untouched visually. It is the sentence/context. */
+ host.classList.add('ch1-lab-reagent-host');react.classList.add('ch1-lab-reagent-react');
+ const field=document.createElement('span');field.className='ch1-lab-reagent-field';host.insertBefore(field,host.firstChild);
+ host.classList.remove('run');void host.offsetWidth;host.classList.add('run');
+ setTimeout(()=>{if(!host.isConnected)return;field.remove();host.classList.remove('run','ch1-lab-reagent-host');react.classList.remove('ch1-lab-reagent-react');host.style.position=priorHostPosition;react.style.color=priorColor},6020);return host;
 }
 HM.cast=function(el,...args){if(!el?.isConnected||!inChapter(el))return originalCast.call(HM,el,...args);return cast(el)};
 HM.shutter=function(el,...args){if(!el?.isConnected||!inChapter(el))return originalShutter.call(HM,el,...args);return shutter(el)};
 HM.phosphor=function(el,...args){if(!el?.isConnected||!inChapter(el))return originalPhosphor.call(HM,el,...args);return phosphor(el)};
 HM.reagent=function(el,...args){if(!el?.isConnected||!inChapter(el))return originalReagent.call(HM,el,...args);return reagent(el,...args)};
-window.HouseChapterOneCastAdapter={version:'2.3-v130-literal-lab-reagent'};
+window.HouseChapterOneCastAdapter={version:'2.4-v131-reagent-selective-context'};
 })();
