@@ -1,6 +1,6 @@
-/* THE GOOD BOOK · V142 · Chapter One glyph swarm audition
-   Same deliberately maximal 520-glyph population and same approved glow distribution as V141.
-   Only change: glyph size now uses the established inherited swarm formula from book.js.
+/* THE GOOD BOOK · V143 · Chapter One glyph field audition
+   Density-only change from V142: 52 glyphs, exactly 10% of the 520-glyph maximal field.
+   Established inherited size, wandering behavior, and approved luminous/radiant distribution remain unchanged.
 */
 (()=>{
   const book=window.HouseBook,HG=window.HouseGlyphs;
@@ -9,7 +9,7 @@
   if(!page||page.querySelector('.ch1-glyph-audition'))return;
 
   const PI='31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679';
-  const COUNT=520;
+  const COUNT=52;
   const hash=n=>{const x=Math.sin(n*12.9898)*43758.5453;return x-Math.floor(x)};
   const field=document.createElement('div');
   field.className='ch1-glyph-audition';field.setAttribute('aria-hidden','true');
@@ -37,12 +37,11 @@
   }
   page.prepend(field);
 
-  // Same approved glow vocabulary and distribution as V141. Density judgment comes after correct physical size.
   glyphs.forEach((g,i)=>{
     const r=hash(i+1401);
     if(r<.18)HG.radiant(g);
     else if(r<.48)HG.luminous(g);
   });
 
-  window.HouseChapterOneGlyphAudition={version:'142-established-size',page,field,glyphs};
+  window.HouseChapterOneGlyphAudition={version:'143-ten-percent-field',page,field,glyphs};
 })();
