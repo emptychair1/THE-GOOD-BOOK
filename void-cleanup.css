@@ -1,0 +1,12 @@
+/* V86 cleanup audition: continuity only. Existing Void choreography remains authoritative. */
+:root{--book-cream:#f6f0e6}
+.void-organisms{display:none!important}
+.sound-want,.sound-question,.void-further-button{font-family:Baskerville,"Iowan Old Style",Georgia,serif!important;color:var(--book-cream)!important;font-weight:400!important;letter-spacing:.02em!important}
+.sound-question{color:rgba(246,240,230,.56)!important}
+.void-flash-word,.void-existential-questions{font-family:Baskerville,"Iowan Old Style",Georgia,serif!important}
+.void-flash-word{color:#171513!important;text-shadow:none!important}
+.void-flash-word.invert,.void-flash-word.ghost{color:var(--book-cream)!important;text-shadow:none!important}
+.void-existential-questions{color:#171513!important;text-shadow:none!important}
+.void-existential-questions.ghost{color:var(--book-cream)!important;text-shadow:none!important}
+.void-flash-screen.hit::before{background-color:rgb(246 240 230)!important;background-blend-mode:screen}
+.void-act-title,.void-act-name,.void-migration-glyph{color:var(--book-cream)!important}
