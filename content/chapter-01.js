@@ -1,24 +1,12 @@
 (()=>{
-  const bind=()=>{
-    const page=document.querySelector('.chapter-one-portrait'),glyphs=[...document.querySelectorAll('.chapter-one-settled-glyph')],book=window.HouseBook;
-    if(!page||!glyphs.length||!book?.pf||page.dataset.thresholdBound)return;
-    page.dataset.thresholdBound='1';
-    const pages=book.pages,index=pages.indexOf(page),hash=n=>{const x=Math.sin(n*12.9898)*43758.5453;return x-Math.floor(x)};
-    glyphs.forEach((glyph,i)=>{glyph.style.setProperty('--whoosh-delay',`${(hash(i+811)*.34).toFixed(3)}s`);glyph.style.setProperty('--whoosh-duration',`${(.78+hash(i+911)*.42).toFixed(3)}s`);glyph.style.setProperty('--lift',`${((hash(i+1011)*2-1)*4.5).toFixed(2)}vh`)});
-    let running=false,finished=false,timers=[];
-    const later=(fn,ms)=>timers.push(setTimeout(fn,ms));
-    const clearTimers=()=>{timers.forEach(clearTimeout);timers=[]};
-    const reset=()=>{clearTimers();running=false;finished=false;page.classList.remove('is-departing','is-whooshing')};
-    const depart=()=>{
-      if(running||finished||book.getCurrent()!==index)return;
-      running=true;
-      later(()=>page.classList.add('is-departing'),3000);
-      later(()=>page.classList.add('is-whooshing'),5250);
-      later(()=>{running=false;finished=true},6900);
-    };
-    addEventListener('house:page',event=>{const current=event.detail?.current;if(current===index){depart();return}reset()});
-    if(book.getCurrent()===index)depart();
-    window.HouseChapterOne={depart};
+  const header=()=>`<div class="chapter-one-kicker">Chapter One</div><h1>The Wretched Machine</h1><div class="chapter-one-subtitle">Georgia</div><div class="chapter-one-epigraph"><blockquote>“Visita Interiora Terrae Rectificando Invenies Occultum Lapidem.”</blockquote><div class="chapter-one-source">V.I.T.R.I.O.L. · Azoth tradition</div></div>`;
+  const makePage=(first=false)=>{const page=document.createElement('section');page.className='page chapter-one-page'+(first?' chapter-one-first':'');if(first){page.id='chapter1';page.setAttribute('aria-label','Chapter One · The Wretched Machine')}else page.setAttribute('aria-label','Chapter One continued');const inner=document.createElement('div');inner.className='chapter-one-inner';if(first)inner.innerHTML=header();page.appendChild(inner);return {page,inner}};
+  const paginate=()=>{
+    const source=document.getElementById('chapter-one-source'),book=document.getElementById('book');if(!source||!book||source.dataset.paginated)return;
+    source.dataset.paginated='1';const blocks=[...source.children].map(n=>n.cloneNode(true));let current=makePage(true);book.insertBefore(current.page,source);let pageCount=1;
+    for(const block of blocks){current.inner.appendChild(block);if(current.inner.scrollHeight>current.page.clientHeight-current.pagePadding){current.inner.removeChild(block);current=makePage(false);book.insertBefore(current.page,source);current.inner.appendChild(block);pageCount++}}
+    source.remove();document.documentElement.style.setProperty('--chapter-one-pages',pageCount);window.HouseChapterOne={pageCount};
   };
-  window.HouseChapterOne={bind};
+  Object.defineProperty(Object.prototype,'pagePadding',{configurable:true,get(){return 0}});
+  try{paginate()}finally{delete Object.prototype.pagePadding}
 })();
