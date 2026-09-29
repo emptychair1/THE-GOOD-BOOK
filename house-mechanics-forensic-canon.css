@@ -1,4 +1,4 @@
-/* House Mechanics · Forensic Canon v2.2
+/* House Mechanics · Forensic Canon v2.3
    Source of truth: lab/chapter-one-mechanics.html actual-size forensic lab.
    Approved rule: anything visibly affected by light inherits the lab's darker pre-light state and exact lab palette/timing.
    VERSO content remains contextual: the book supplies the actual live underlying leaf.
@@ -8,6 +8,7 @@
    V116: PHOSPHOR flash remains in flow as the invisible source/sizing glyph box; ghost is pinned exactly over it.
    V117-V120 Beam experiments rejected.
    V121: restore the most recently approved actual-size forensic Beam unchanged in look/timing; only constrain source to upper-left and terminate the receiver at the actual target box.
+   V138: REAGENT promoted from approved V137 production proof: context remains visible, only .hm-dark-reagent-react develops, with the lab flashfield/timing.
 */
 :root{--hm-forensic-cream:#f6f0e6}
 
@@ -33,7 +34,13 @@
 .hm-dark-beam-white{position:absolute!important;z-index:2!important;inset:0!important;margin:0!important;padding:0!important;box-sizing:border-box!important;display:block!important;width:100%!important;height:100%!important;color:#fff!important;background:none!important;font:inherit!important;font-family:inherit!important;font-size:inherit!important;font-weight:inherit!important;font-style:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;word-spacing:inherit!important;text-align:inherit!important;text-transform:inherit!important;white-space:inherit!important;clip-path:none!important;overflow:hidden!important;text-shadow:0 0 2px rgba(255,255,255,.28)!important;pointer-events:none!important;opacity:0!important}
 .hm-dark-beam.live .hm-dark-beam-light,.hm-dark-beam.live .hm-dark-beam-white{animation:hmDarkBeam 5.8s ease both!important}
 
-.hm-dark-reagent-react{color:rgba(246,240,230,.24)!important}
+/* REAGENT — V137 approved production proof promoted to reusable mechanics canon. */
+.hm-dark-reagent{position:relative!important}
+.hm-dark-reagent::before{content:''!important;position:absolute!important;inset:14% 2%!important;background:radial-gradient(ellipse,rgba(246,240,230,.12),transparent 68%)!important;opacity:0!important;pointer-events:none!important}
+.hm-dark-reagent-react{display:inline-block!important;color:rgba(246,240,230,.24)!important}
+.hm-dark-reagent.live::before{animation:hmDarkReagentField 5.8s both!important}
+.hm-dark-reagent.live .hm-dark-reagent-react{animation:hmDarkReagent 5.8s ease both!important}
+@keyframes hmDarkReagentField{0%,14%{opacity:0}16%{opacity:1}20%,100%{opacity:0}}
 @keyframes hmDarkReagent{0%,15%{color:rgba(246,240,230,.24);text-shadow:none}17%{color:#fff;text-shadow:0 0 5px #fff,0 0 20px rgba(246,240,230,.72)}25%{color:#f6f0e6;text-shadow:0 0 14px rgba(246,240,230,.28)}45%,72%{color:rgba(246,240,230,.88)}100%{color:rgba(246,240,230,.27);text-shadow:none}}
 
 .hm-manic-strike .hm-marker{background:#f6f0e6!important}
