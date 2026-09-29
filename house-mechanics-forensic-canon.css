@@ -1,4 +1,4 @@
-/* House Mechanics · Forensic Canon v2.3
+/* House Mechanics · Forensic Canon v2.4
    Source of truth: lab/chapter-one-mechanics.html actual-size forensic lab.
    Approved rule: anything visibly affected by light inherits the lab's darker pre-light state and exact lab palette/timing.
    VERSO content remains contextual: the book supplies the actual live underlying leaf.
@@ -9,6 +9,7 @@
    V117-V120 Beam experiments rejected.
    V121: restore the most recently approved actual-size forensic Beam unchanged in look/timing; only constrain source to upper-left and terminate the receiver at the actual target box.
    V138: REAGENT promoted from approved V137 production proof: context remains visible, only .hm-dark-reagent-react develops, with the lab flashfield/timing.
+   V140: VERSO promoted from approved V139 production proof: exact lab exposure timing/look; underlying content is the dynamically supplied real next leaf.
 */
 :root{--hm-forensic-cream:#f6f0e6}
 
@@ -42,6 +43,20 @@
 .hm-dark-reagent.live .hm-dark-reagent-react{animation:hmDarkReagent 5.8s ease both!important}
 @keyframes hmDarkReagentField{0%,14%{opacity:0}16%{opacity:1}20%,100%{opacity:0}}
 @keyframes hmDarkReagent{0%,15%{color:rgba(246,240,230,.24);text-shadow:none}17%{color:#fff;text-shadow:0 0 5px #fff,0 0 20px rgba(246,240,230,.72)}25%{color:#f6f0e6;text-shadow:0 0 14px rgba(246,240,230,.28)}45%,72%{color:rgba(246,240,230,.88)}100%{color:rgba(246,240,230,.27);text-shadow:none}}
+
+/* VERSO — V139 approved production proof promoted. Visual contract is the lab specimen exactly: cyan-white underlying leaf, front leaf dims/grays, one exposure flash, 5s stepped reveal. The caller supplies the actual live next leaf dynamically. */
+.hm-dark-verso{position:relative!important;isolation:isolate!important}
+.hm-dark-verso-under{position:absolute!important;inset:0!important;z-index:1!important;opacity:0!important;color:#e8f6ff!important;background:#000!important;filter:contrast(1.25)!important;overflow:hidden!important}
+.hm-dark-verso-under h1,.hm-dark-verso-under h2,.hm-dark-verso-under .bigline,.hm-dark-verso-under .centerword,.hm-dark-verso-under .equation{color:#edf9ff!important;text-shadow:0 0 2px #fff,0 0 9px rgba(184,227,255,.48),0 0 30px rgba(111,186,235,.22)!important}
+.hm-dark-verso-under p{color:rgba(207,238,255,.52)!important}
+.hm-dark-verso-front{position:relative!important;z-index:4!important}
+.hm-dark-verso-exposure{position:absolute!important;z-index:6!important;inset:0!important;background:radial-gradient(ellipse at 48% 46%,rgba(237,250,255,.28),rgba(185,226,252,.08) 48%,transparent 78%)!important;opacity:0!important;pointer-events:none!important}
+.hm-dark-verso.live .hm-dark-verso-under{animation:hmDarkUnder 5s steps(1,end) both!important}
+.hm-dark-verso.live .hm-dark-verso-front{animation:hmDarkFront 5s steps(1,end) both!important}
+.hm-dark-verso.live .hm-dark-verso-exposure{animation:hmDarkExposure 5s steps(1,end) both!important}
+@keyframes hmDarkUnder{0%,20%{opacity:0}21%,53%{opacity:.68}54%,100%{opacity:0}}
+@keyframes hmDarkFront{0%,20%{opacity:1;filter:none}21%,53%{opacity:.42;filter:grayscale(1) contrast(.85)}54%,100%{opacity:1;filter:none}}
+@keyframes hmDarkExposure{0%,20%{opacity:0}21%{opacity:1}24%,100%{opacity:0}}
 
 .hm-manic-strike .hm-marker{background:#f6f0e6!important}
 
