@@ -1,14 +1,13 @@
-/* CH1 integration V124 */
+/* CH1 integration V125 */
 .chapter-one-page .hm-dark-beam{position:relative;display:inline-block;isolation:isolate;z-index:1;color:rgba(246,240,230,.055)!important}
 .chapter-one-page .hm-dark-beam-light{position:fixed!important;z-index:8998!important;left:0!important;right:auto!important;top:0!important;width:100vw!important;height:100vh!important;transform:none!important;transform-origin:0 0!important;clip-path:polygon(0 0,5% 0,62% 62%,48% 68%)!important;background:linear-gradient(132deg,rgba(246,240,230,.16),rgba(246,240,230,.045) 48%,transparent 72%)!important;filter:blur(7px)!important;pointer-events:none}
 .chapter-one-page .hm-dark-beam-white{position:absolute!important;inset:-.16em -.24em!important;display:block!important;clip-path:none!important;color:#f6f0e6!important;text-align:inherit!important;font:inherit!important;letter-spacing:inherit!important;line-height:inherit!important;text-shadow:0 0 5px rgba(255,255,255,.92),0 0 18px rgba(246,240,230,.58),0 0 42px rgba(246,240,230,.24)!important;pointer-events:none}
 .chapter-one-page .hm-dark-beam.live .hm-dark-beam-light,.chapter-one-page .hm-dark-beam.live .hm-dark-beam-white{animation:hmDarkBeam 5.8s ease both!important}
 
+/* REAGENT: dedicated flashfield is created by chapter-01-mechanics-adapter.js. No pseudo-field here. */
 .chapter-one-page .hm-dark-reagent{position:relative!important}
-.chapter-one-page .hm-dark-reagent:before{content:''!important;display:block!important;position:absolute!important;pointer-events:none!important;left:50%!important;top:50%!important;width:min(90vw,560px)!important;height:62svh!important;transform:translate(-50%,-50%)!important;background:radial-gradient(ellipse,rgba(246,240,230,.12),transparent 68%)!important;opacity:0!important}
-.chapter-one-page .hm-dark-reagent.live:before{animation:hmReagentField 5.8s both!important}
+.chapter-one-page .hm-dark-reagent:before{content:none!important;display:none!important}
 .chapter-one-page .hm-dark-reagent-react{color:rgba(246,240,230,.24)!important}
-@keyframes hmReagentField{0%,14%{opacity:0}16%{opacity:1}20%,100%{opacity:0}}
 
 .house-diag-readout{color:rgba(246,240,230,.82)!important;text-shadow:0 0 8px rgba(246,240,230,.16)!important}
 .house-diag-scan i{background:rgba(246,240,230,.86)!important;box-shadow:0 0 .3rem rgba(246,240,230,.5)!important}
