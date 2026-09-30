@@ -1,11 +1,13 @@
-/* V202 · JOSH ACT I VOICE
-   Chapter One is canonical. Josh-authored Act I chapters (I, II, IV) inherit its exact reading voice.
+/* V204 · JOSH ACT I VOICE
+   Chapter One remains untouched and canonical.
+   Mirror its final rendered typography onto Josh-authored Act I chapters II and IV only.
    Piper chapters remain untouched.
 */
-:is(.chapter-one-inner,.chapter-two-inner,.chapter-four-inner){font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;max-width:34rem!important}
-:is(.chapter-one-page,.chapter-two-page,.chapter-four-page) h1{font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;font-weight:400!important;font-size:clamp(2.8rem,10vw,5.4rem)!important;line-height:.98!important}
-:is(.chapter-one-subtitle,.chapter-two-subtitle,.chapter-four-subtitle){font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;font-size:clamp(1.15rem,4.8vw,1.7rem)!important;letter-spacing:.08em!important}
-:is(.chapter-one-page,.chapter-two-page,.chapter-four-page) p{font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;margin:0 0 1.18em!important;font-size:clamp(1.1rem,4.4vw,1.45rem)!important;line-height:1.5!important;font-weight:400!important;color:rgba(246,240,230,.78)}
-:is(.chapter-one-page,.chapter-two-page,.chapter-four-page) :is(.chapter-one-opening,.chapter-two-opening,.chapter-four-opening){color:#f6f0e6}
-:is(.chapter-one-epigraph,.chapter-two-epigraph,.chapter-four-epigraph) blockquote{font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;font-size:clamp(.92rem,3.7vw,1.12rem)!important;line-height:1.45!important;font-style:italic!important}
-@media(min-width:701px){:is(.chapter-one-page,.chapter-two-page,.chapter-four-page) p{font-size:clamp(1rem,1.7vw,1.28rem)!important}}
+:is(.chapter-two-inner,.chapter-four-inner){font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;max-width:34rem!important}
+:is(.chapter-two-page,.chapter-four-page) h1{font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;font-weight:700!important;font-size:clamp(2.8rem,10vw,5.4rem)!important;line-height:.98!important;letter-spacing:-.032em!important;text-shadow:.48px 0 currentColor,-.34px 0 currentColor!important}
+:is(.chapter-two-subtitle,.chapter-four-subtitle){font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;font-size:clamp(1.15rem,4.8vw,1.7rem)!important;font-weight:700!important;letter-spacing:-.032em!important;text-shadow:.48px 0 currentColor,-.34px 0 currentColor!important}
+:is(.chapter-two-page,.chapter-four-page) p{font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;margin:0 0 1.18em!important;font-size:clamp(1.1rem,4.4vw,1.45rem)!important;line-height:1.5!important;font-weight:700!important;letter-spacing:-.032em!important;text-shadow:.48px 0 currentColor,-.34px 0 currentColor!important}
+:is(.chapter-two-page,.chapter-four-page) :is(.chapter-two-opening,.chapter-four-opening){font-weight:700!important;letter-spacing:-.032em!important;text-shadow:.48px 0 currentColor,-.34px 0 currentColor!important}
+:is(.chapter-two-epigraph,.chapter-four-epigraph) blockquote{font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;font-size:clamp(.92rem,3.7vw,1.12rem)!important;line-height:1.45!important;font-style:italic!important;font-weight:700!important;letter-spacing:-.032em!important;text-shadow:.48px 0 currentColor,-.34px 0 currentColor!important}
+:is(.chapter-two-kicker,.chapter-four-kicker,.chapter-two-source,.chapter-four-source,.chapter-two-folio,.chapter-four-folio){font-weight:700!important;letter-spacing:-.032em!important;text-shadow:.48px 0 currentColor,-.34px 0 currentColor!important}
+@media(min-width:701px){:is(.chapter-two-page,.chapter-four-page) p{font-size:clamp(1rem,1.7vw,1.28rem)!important}}
