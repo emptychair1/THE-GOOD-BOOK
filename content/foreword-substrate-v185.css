@@ -1,15 +1,10 @@
-:root{--house-paper:#e4e4e2;--house-paper-mark:#8f8f8a;--house-ink:#171715;--house-ink-mark:#777772}
-/* V187 foreword-only substrate audition. Approved readable values; glyphs are printed marks, never luminous UI. */
-.foreword{background:var(--house-paper)!important;color:var(--house-paper-mark)!important}
-.foreword h1,.foreword .kicker,.foreword .subtitle,.foreword .opening,.foreword p,.foreword blockquote,.foreword cite,.foreword .photosensitivity-warning{color:var(--house-paper-mark)!important}
-.foreword-glyph-test{opacity:.82!important;mix-blend-mode:multiply!important;filter:none!important;text-shadow:none!important;box-shadow:none!important}
-.foreword-glyph-test,.foreword-glyph-test *{text-shadow:none!important;box-shadow:none!important;filter:none!important}
-.foreword-glyph-test .field-pi,.foreword-glyph-test .field-digit{fill:var(--house-paper-mark)!important;stroke:none!important;filter:none!important}
-.foreword-seal{background:var(--house-paper)!important;color:var(--house-paper-mark)!important}
-.foreword-seal .turn-curious,.foreword-seal blockquote,.foreword-seal cite,.foreword-seal .photosensitivity-warning,.foreword-seal .photosensitivity-warning strong{color:var(--house-paper-mark)!important}
-.foreword-seal .author-seal{filter:grayscale(1) contrast(2) opacity(.42)!important;mix-blend-mode:multiply!important}
-/* Any explicitly dark foreword surfaces inherit the inverse matched-substrate law. */
-.foreword.is-dark,.foreword[data-substrate="ink"],.foreword-seal.is-dark,.foreword-seal[data-substrate="ink"]{background:var(--house-ink)!important;color:var(--house-ink-mark)!important}
-.foreword.is-dark *,.foreword[data-substrate="ink"] *,.foreword-seal.is-dark *,.foreword-seal[data-substrate="ink"] *{color:var(--house-ink-mark)!important;text-shadow:none!important;box-shadow:none!important}
-.foreword.is-dark .foreword-glyph-test,.foreword[data-substrate="ink"] .foreword-glyph-test{mix-blend-mode:screen!important}
-.foreword.is-dark .foreword-glyph-test .field-pi,.foreword.is-dark .foreword-glyph-test .field-digit,.foreword[data-substrate="ink"] .foreword-glyph-test .field-pi,.foreword[data-substrate="ink"] .foreword-glyph-test .field-digit{fill:var(--house-ink-mark)!important;stroke:none!important;filter:none!important}
+:root{--house-paper:#e4e4e2;--house-ink:#171715}
+/* V192 · Exact F-lab substrate law. Foreword = F1 LIGHT ON LIGHT. */
+.foreword{background:var(--house-paper)!important;color:var(--house-paper)!important}
+.foreword h1,.foreword .kicker,.foreword .subtitle,.foreword .opening,.foreword p,.foreword blockquote,.foreword cite,.foreword .photosensitivity-warning{color:var(--house-paper)!important;filter:contrast(2)!important;font-weight:700;letter-spacing:-.032em;text-shadow:.48px 0 currentColor,-.34px 0 currentColor!important}
+.foreword-glyph-test{opacity:1!important;mix-blend-mode:normal!important;filter:contrast(2)!important;text-shadow:none!important;box-shadow:none!important}
+.foreword-glyph-test,.foreword-glyph-test *{box-shadow:none!important}
+.foreword-glyph-test .field-pi,.foreword-glyph-test .field-digit{fill:var(--house-paper)!important;stroke:none!important;filter:contrast(2)!important}
+.foreword-seal{background:var(--house-paper)!important;color:var(--house-paper)!important}
+.foreword-seal .turn-curious,.foreword-seal blockquote,.foreword-seal cite,.foreword-seal .photosensitivity-warning,.foreword-seal .photosensitivity-warning strong{color:var(--house-paper)!important;filter:contrast(2)!important;font-weight:700;letter-spacing:-.032em;text-shadow:.48px 0 currentColor,-.34px 0 currentColor!important}
+.foreword-seal .author-seal{filter:grayscale(1) invert(1) contrast(2)!important;mix-blend-mode:screen!important;opacity:.94!important}
