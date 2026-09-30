@@ -1,5 +1,5 @@
 :root{--house-paper:#e4e4e2;--house-paper-mark:#8f8f8a;--house-ink:#171715;--house-ink-mark:#777772}
-/* V193 · Foreword restored exactly to approved V185 readable substrate. */
+/* V196 · Foreword readable substrate + pre-pagination House Listening reserve. */
 .foreword{background:var(--house-paper)!important;color:var(--house-paper-mark)!important}
 .foreword h1,.foreword .kicker,.foreword .subtitle,.foreword .opening,.foreword p,.foreword blockquote,.foreword cite,.foreword .photosensitivity-warning{color:var(--house-paper-mark)!important}
 .foreword-glyph-test{opacity:.82!important;mix-blend-mode:multiply!important;filter:none!important;text-shadow:none!important;box-shadow:none!important}
@@ -8,6 +8,8 @@
 .foreword-seal{background:var(--house-paper)!important;color:var(--house-paper-mark)!important}
 .foreword-seal .turn-curious,.foreword-seal blockquote,.foreword-seal cite,.foreword-seal .photosensitivity-warning,.foreword-seal .photosensitivity-warning strong{color:var(--house-paper-mark)!important}
 .foreword-seal .author-seal{filter:grayscale(1) contrast(2) opacity(.42)!important;mix-blend-mode:multiply!important}
+/* Reserve the listening record while book.js is deciding page breaks. This must exist before pagination, not be injected when the mechanic fires. */
+.foreword:has([data-house-target="foreword-love-consciousness-hypothesis-01"]){padding-bottom:clamp(190px,23vh,230px)!important;box-sizing:border-box!important}
 /* Any explicitly dark foreword surfaces inherit the inverse matched-substrate law. */
 .foreword.is-dark,.foreword[data-substrate="ink"],.foreword-seal.is-dark,.foreword-seal[data-substrate="ink"]{background:var(--house-ink)!important;color:var(--house-ink-mark)!important}
 .foreword.is-dark *,.foreword[data-substrate="ink"] *,.foreword-seal.is-dark *,.foreword-seal[data-substrate="ink"] *{color:var(--house-ink-mark)!important;text-shadow:none!important;box-shadow:none!important}
