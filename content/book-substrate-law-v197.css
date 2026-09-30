@@ -1,13 +1,11 @@
 :root{--house-paper:#e4e4e2;--house-paper-mark:#8f8f8a;--house-ink:#171715;--house-ink-mark:#777772}
-/* V197 · BOOK-WIDE SUBSTRATE LAW
-   Existing light surfaces keep their light identity but inherit the approved Foreword substrate.
-   Existing dark surfaces keep their dark identity but inherit the approved Wretched substrate.
-   No layout, pagination, mechanics, choreography, or content changes.
+/* V198 · CHAPTER-OWNED SUBSTRATE LAW
+   Chapters own substrate. A stray page-level light audition may not punch a hole in a dark chapter.
+   Artifact rendering remains separate and is NOT faked here.
 */
 
 /* LIGHT FAMILY */
 .toc-page,.title-page,.foreword,.foreword-seal,
-.chapter-three-page.ink-paper-audition,
 .page[data-substrate="paper"],.page.is-light{
   background:var(--house-paper)!important;
   color:var(--house-paper-mark)!important;
@@ -16,26 +14,36 @@
 .title-page :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div),
 .foreword :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div),
 .foreword-seal :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div),
-.chapter-three-page.ink-paper-audition :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div),
 .page[data-substrate="paper"] :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div),
 .page.is-light :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div){color:var(--house-paper-mark)!important;text-shadow:none!important;box-shadow:none!important}
 
-/* DARK FAMILY */
-.chapter-one-page,.chapter-two-page,.chapter-three-page:not(.ink-paper-audition),.chapter-four-page,.chapter-five-page,
+/* DARK CHAPTER FAMILY. Chapter identity outranks accidental page-level auditions. */
+.chapter-one-page,.chapter-two-page,.chapter-three-page,.chapter-four-page,.chapter-five-page,
 .void,.void-act-page,
 .page[data-substrate="ink"],.page.is-dark{
   background:var(--house-ink)!important;
+  background-image:none!important;
   color:var(--house-ink)!important;
 }
-.chapter-one-page :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small),
-.chapter-two-page :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small),
-.chapter-three-page:not(.ink-paper-audition) :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small),
-.chapter-four-page :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small),
-.chapter-five-page :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small),
-.page[data-substrate="ink"] :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small),
-.page.is-dark :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small){color:var(--house-ink)!important;filter:contrast(2)!important;text-shadow:.48px 0 currentColor,-.34px 0 currentColor!important}
+.chapter-one-page :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small,s),
+.chapter-two-page :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small,s),
+.chapter-three-page :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small,s),
+.chapter-four-page :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small,s),
+.chapter-five-page :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small,s),
+.page[data-substrate="ink"] :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small,s),
+.page.is-dark :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small,s){color:var(--house-ink)!important;filter:contrast(2)!important;text-shadow:.48px 0 currentColor,-.34px 0 currentColor!important}
+/* Explicitly neutralize the old one-page paper audition inside Chapter Three. */
+.chapter-three-page.ink-paper-audition{--paper:var(--house-ink)!important;--ink:var(--house-ink)!important;background:var(--house-ink)!important;background-image:none!important;color:var(--house-ink)!important}
+.chapter-three-page.ink-paper-audition :where(h1,h2,h3,p,span,strong,em,blockquote,cite,div,small,s){color:var(--house-ink)!important;text-shadow:.48px 0 currentColor,-.34px 0 currentColor!important}
+/* Strikeouts are ink-on-ink too. No white exception. */
+.chapter-one-page s,.chapter-two-page s,.chapter-three-page s,.chapter-four-page s,.chapter-five-page s{color:var(--house-ink)!important;text-decoration-color:var(--house-ink)!important;text-decoration-thickness:2px!important}
 .chapter-two-page :where(.chapter-two-equation-card),
-.chapter-three-page:not(.ink-paper-audition) :where(.music-cue),
+.chapter-three-page :where(.music-cue),
 .chapter-five-page :where(.process-trace){border-color:var(--house-ink)!important;background-color:transparent!important}
 
-/* Keep full-art / interruption surfaces authored unless they explicitly declare paper/ink. */
+/* Manuscript interruption: same dark substrate, composition preserved. */
+.manuscript-interruption-page{background:var(--house-ink)!important;color:var(--house-ink-mark)!important}
+.manuscript-interruption-page :where(.manuscript-kicker,h1,.manuscript-subtitle,.manuscript-text p,.manuscript-footer){color:var(--house-ink-mark)!important;text-shadow:.35px 0 currentColor,-.25px 0 currentColor!important}
+.manuscript-interruption-page .manuscript-rule{background:var(--house-ink-mark)!important;opacity:.55}
+
+/* Artifact and Tree pages intentionally remain untouched until the lab digitizer law is ported exactly. */
