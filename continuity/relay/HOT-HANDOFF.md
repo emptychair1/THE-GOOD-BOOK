@@ -1,10 +1,14 @@
 # HOT HANDOFF
 
-HANDOFF_GENERATION: 66  
+HANDOFF_GENERATION: 68  
 DATE: 2026-09-30  
 PROJECT: THE GOOD BOOK · The House That Remembers  
 REPO: `emptychair1/THE-GOOD-BOOK`  
 BRANCH: `main`
+
+## LINEAGE NOTE
+
+Generation 67 was the prior absolute live edge. An intervening handoff was mistakenly labeled Generation 66. This checkpoint corrects the lineage and is therefore **Generation 68**. Do not decrement or renumber it from stale repo history.
 
 ## READ THIS FIRST
 
