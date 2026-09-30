@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Act I Ending Lab · The Good Book</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#000;color:#f4f0e6;font-family:Georgia,'Times New Roman',serif;overflow:hidden}.lab{position:fixed;inset:0;background:#000}.page{position:absolute;inset:0;background:#000;display:none;align-items:center;justify-content:center;overflow:hidden}.page.active{display:flex}.plate{width:100%;height:100%;object-fit:contain;display:block;background:#000;mix-blend-mode:screen}.manuscript{width:min(82vw,760px);max-height:88vh;padding:7vh 7vw;color:#f4f0e6;background:#000;overflow:auto}.manuscript .kicker{font:11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.24em;text-transform:uppercase;opacity:.55;margin-bottom:4vh}.manuscript h1{font-size:clamp(36px,8vw,76px);font-weight:400;margin:0 0 1.2vh}.manuscript .sub{font-size:clamp(12px,2.7vw,18px);font-style:italic;opacity:.65;margin-bottom:4vh}.manuscript .rule{height:1px;background:#f4f0e6;opacity:.35;margin-bottom:4vh}.manuscript p{font-size:clamp(18px,4vw,30px);line-height:1.52;margin:0 0 1.25em}.label{position:fixed;left:14px;top:12px;z-index:20;font:10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;color:#f4f0e6;opacity:.5}.counter{position:fixed;right:14px;bottom:12px;z-index:20;font:10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;color:#f4f0e6;opacity:.45}.tap{position:fixed;top:0;bottom:0;width:35%;z-index:15;background:transparent;border:0}.prev{left:0}.next{right:0}
+</style>
+</head>
+<body>
+<div class="label">ACT I ENDING LAB · V1 · SUBSTRATE AUDITION</div>
+<main class="lab">
+<section class="page active" aria-label="Conversation artifact"><img class="plate" src="../assets/IMG_3738.png" alt="Conversation artifact"></section>
+<section class="page" aria-label="Sefer Yetzirah"><article class="manuscript"><div class="kicker">Interruption</div><h1>Sefer Yetzirah</h1><div class="sub">The Book of Formation · anonymous · translation by W. Wynn Westcott, 1893</div><div class="rule"></div><p>The Ten ineffable Sephiroth have the appearance of the Lightning flash, their origin is unseen and no end is perceived. The Word is in them as they rush forth and as they return.</p><p>The Ten ineffable Sephiroth, whose ending is even as their origin, are like as a flame arising from a burning coal; for God is superlative in his Unity, and has none second unto Him: and what number canst thou place before One.</p><p>And from the non-existent He made Something; and all forms of speech and everything that has been produced: from the empty air He drew forth the twenty-two sounds, and formed from them all creatures and all things which shall yet arise.</p></article></section>
+<section class="page" aria-label="Tree of Life"><img class="plate" src="../assets/IMG_3682.png" alt="Tree of Life"></section>
+<section class="page" aria-label="DNA"><img class="plate" src="../assets/IMG_3739.png" alt="DNA"></section>
+<section class="page" aria-label="Decision Tree"><img class="plate" src="../assets/IMG_3740.png" alt="Decision Tree"></section>
+</main>
+<button class="tap prev" aria-label="Previous"></button><button class="tap next" aria-label="Next"></button><div class="counter">1 / 5</div>
+<script>const pages=[...document.querySelectorAll('.page')],counter=document.querySelector('.counter');let i=0;function show(n){i=(n+pages.length)%pages.length;pages.forEach((p,j)=>p.classList.toggle('active',j===i));counter.textContent=`${i+1} / ${pages.length}`}document.querySelector('.prev').onclick=()=>show(i-1);document.querySelector('.next').onclick=()=>show(i+1);document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')show(i+1);if(e.key==='ArrowLeft')show(i-1)});let x=null;addEventListener('touchstart',e=>x=e.touches[0].clientX,{passive:true});addEventListener('touchend',e=>{if(x===null)return;const d=e.changedTouches[0].clientX-x;if(Math.abs(d)>40)show(i+(d<0?1:-1));x=null},{passive:true});</script>
+</body></html>
