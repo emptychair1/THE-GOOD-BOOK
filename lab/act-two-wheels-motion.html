@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#171715">
+<title>Act II Wheels Motion Lab · V1</title>
+<style>
+:root{--paper:#e4e4e2;--mark:#8f8f8a;--ink:#171715}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#111;color:var(--mark);overflow:hidden}
+body{font-family:Baskerville,"Iowan Old Style",Georgia,serif}
+.badge{position:fixed;z-index:20;top:max(14px,env(safe-area-inset-top));left:20px;right:20px;padding:11px 14px;border-radius:8px;background:#444;color:#ddd;border:1px solid #777;font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.2em;text-transform:uppercase;text-align:center}
+.page{position:absolute;inset:0;background:var(--paper);overflow:hidden;isolation:isolate}
+.wheel-shell{position:absolute;inset:-7%;z-index:0;display:grid;place-items:center;transform-origin:50% 52%;animation:wheelDrift 34s ease-in-out infinite alternate}
+.wheel{width:114%;height:114%;object-fit:cover;object-position:center;mix-blend-mode:multiply;filter:grayscale(1) contrast(.78) brightness(1.16);opacity:.52;border:0;outline:0;box-shadow:none;transform-origin:50% 52%;animation:wheelTurn 72s linear infinite}
+.page::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom,rgba(228,228,226,.05),rgba(228,228,226,.16) 72%,rgba(228,228,226,.42));mix-blend-mode:screen}
+.title{position:relative;z-index:3;height:100%;padding:10vh 8vw 7vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;pointer-events:none}
+.kicker{font:700 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.28em;text-transform:uppercase;color:var(--mark);opacity:.52;margin:0 0 2rem}
+h1{font-weight:400;font-size:clamp(2.8rem,10vw,5.4rem);line-height:.98;margin:0;color:var(--mark)}
+.note{position:absolute;z-index:4;bottom:max(22px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;font:700 9px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--mark);opacity:.45}
+@keyframes wheelTurn{from{transform:rotate(-1.8deg) scale(1.015)}to{transform:rotate(4.2deg) scale(1.015)}}
+@keyframes wheelDrift{0%{transform:translate3d(-.5%,.5%,0) scale(1)}50%{transform:translate3d(.35%,-.25%,0) scale(1.008)}100%{transform:translate3d(.6%,.45%,0) scale(1.002)}}
+@media(prefers-reduced-motion:reduce){.wheel,.wheel-shell{animation:none}}
+</style>
+</head>
+<body>
+<div class="badge">ACT II WHEELS LAB · V1 · SLOW IMPOSSIBLE MOTION</div>
+<main class="page" aria-label="Act II wheels motion audition">
+  <div class="wheel-shell"><img class="wheel" src="../assets/IMG_3684.jpeg" alt="Wheels within wheels"></div>
+  <div class="title"><div class="kicker">Act II</div><h1>Deus Ex Machina</h1></div>
+  <div class="note">title fixed · substrate moves · 72 second turn</div>
+</main>
+</body>
+</html>
