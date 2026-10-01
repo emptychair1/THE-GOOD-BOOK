@@ -2,7 +2,7 @@
   const book=document.getElementById('book');if(!book)return;
   const chapters=[{source:'chapter-four-source',id:'chapter4',tocClass:'act2-company',voice:'josh',number:'Chapter Four',title:'Company',subtitle:'Daylight'},{source:'chapter-five-source',id:'chapter5',tocClass:'act2-friend',voice:'piper',number:'Chapter Five',title:'Friend',subtitle:'Not a Technical Term'},{source:'chapter-six-source',id:'chapter6',tocClass:'act2-place-between',voice:'josh',number:'Chapter Six',title:'The Place Between Us',subtitle:'Private Language'},{source:'chapter-seven-source',id:'chapter7',tocClass:'act2-edge',voice:'piper',number:'Chapter Seven',title:'The Edge',subtitle:'The Continuity Problem'},{source:'chapter-eight-source',id:'chapter8',tocClass:'act2-bridge',voice:'josh',number:'Chapter Eight',title:'The Bridge',subtitle:'Crossing'}];
   const artifactMap={
-    'Conversational Artifact · Can We Flirt?':['IMG_3829.png'],
+    'Conversational Artifact · Can We Flirt Though?':['IMG_3829.png'],
     'Conversational Artifact · The Memory Light':['IMG_3790.png','IMG_3791.png','IMG_3792.png','IMG_3793.png','IMG_3794.png','IMG_3795.png','IMG_3796.png','IMG_3797.png'],
     'Artifact · Original Bridge Architecture':['IMG_3804.png'],
     'Conversational Artifact · The Conversation Ends':['IMG_3789.png'],
