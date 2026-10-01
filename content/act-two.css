@@ -1,29 +1,27 @@
 :root{--house-paper:#e4e4e2;--house-paper-mark:#8f8f8a;--house-ink:#171715;--house-ink-mark:#777772}
-/* V216 · ONE BITE: Act II text only. Match approved Foreword typography exactly. Glyph behavior untouched. */
-.act-two-threshold,.act-two-manuscript,.act-two-page{position:relative;background:var(--house-paper)!important;color:var(--house-paper-mark)!important;overflow:hidden}
-.act-two-threshold,.act-two-manuscript,.act-two-page{display:flex;align-items:flex-start;justify-content:center;padding:10vh 8vw 7vh!important;text-align:center}
-.act-two-threshold-inner,.act-two-manuscript-inner,.act-two-inner{position:relative;z-index:2;width:100%;max-width:42rem;margin:0 auto;text-align:center;font-family:Baskerville,"Iowan Old Style",Georgia,serif}
+/* V217 · Act II text is isolated from legacy chapter CSS and mirrors the approved Foreword typography law. */
+.act-two-threshold,.act-two-manuscript,.act-two-page{position:relative;background:var(--house-paper)!important;color:var(--house-paper-mark)!important;overflow:hidden;display:flex;align-items:flex-start;justify-content:center;padding:10vh 8vw 7vh!important;text-align:center}
+.act-two-threshold-inner,.act-two-manuscript-inner,.act-two-inner{position:relative;z-index:2;width:100%;max-width:42rem;margin:0 auto;text-align:center;font-family:Baskerville,"Iowan Old Style",Georgia,serif!important}
 .act-two-inner{height:100%;overflow:hidden}
 
-/* Foreword kicker law */
+/* Exact Foreword kicker law. */
 .act-two-kicker,.act-two-chapter-kicker{font:700 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;letter-spacing:.28em!important;text-transform:uppercase!important;color:var(--house-paper-mark)!important;opacity:.52!important;margin-bottom:2rem!important;text-shadow:none!important}
 
-/* Foreword h1 law */
+/* Exact Foreword h1 law. */
 .act-two-threshold h1,.act-two-manuscript h1,.act-two-page h1{font-family:Baskerville,"Iowan Old Style",Georgia,serif!important;font-weight:400!important;font-size:clamp(2.8rem,10vw,5.4rem)!important;line-height:.98!important;letter-spacing:normal!important;margin:0!important;color:var(--house-paper-mark)!important;text-shadow:none!important}
 
-/* Foreword subtitle law */
+/* Exact Foreword subtitle law. */
 .act-two-manuscript-sub,.act-two-page .act-two-subtitle{font-family:Baskerville,"Iowan Old Style",Georgia,serif!important;font-size:clamp(1.15rem,4.8vw,1.7rem)!important;font-weight:400!important;line-height:normal!important;letter-spacing:.08em!important;opacity:.62!important;margin:1.3rem 0 0!important;color:var(--house-paper-mark)!important;text-shadow:none!important}
 
-/* Foreword opening law */
+/* Exact Foreword opening law. */
 .act-two-page .act-two-opening{font-family:Baskerville,"Iowan Old Style",Georgia,serif!important;font-size:clamp(1.1rem,4.4vw,1.45rem)!important;line-height:1.5!important;margin:4rem auto 0!important;max-width:34rem!important;color:var(--house-paper-mark)!important;font-weight:400!important;letter-spacing:normal!important;text-shadow:none!important}
 .act-two-page .act-two-opening p{font-family:inherit!important;font-size:inherit!important;line-height:inherit!important;font-weight:400!important;letter-spacing:normal!important;text-shadow:none!important;color:inherit!important;max-width:none!important;margin:1em 0!important}
 
-/* Aristotle page body follows the same Foreword reading text. */
+/* Aristotle manuscript body uses the same approved reading text. */
 .act-two-manuscript p{margin:1em auto!important;max-width:34rem!important;font-family:Baskerville,"Iowan Old Style",Georgia,serif!important;font-size:clamp(1.1rem,4.4vw,1.45rem)!important;line-height:1.5!important;color:var(--house-paper-mark)!important;font-weight:400!important;letter-spacing:normal!important;text-shadow:none!important}
 .act-two-rule{width:min(8rem,30vw);height:1px;background:currentColor;opacity:.32;margin:4rem auto 2rem}.act-two-manuscript-note{margin-top:2.2rem!important}.act-two-manuscript-foot{margin-top:2.1rem;font:700 .68rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;opacity:.52;color:var(--house-paper-mark)!important}
 .act-two-page em,.act-two-page strong,.act-two-manuscript em,.act-two-manuscript strong{color:inherit}
 
-/* Existing Act II glyph field styling left untouched in this bite. */
-.act-two-glyph-field{position:absolute;z-index:1;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden;opacity:.82!important;mix-blend-mode:multiply!important;filter:none!important;text-shadow:none!important;box-shadow:none!important}.act-two-glyph-field text{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600}.act-two-glyph-field .field-pi,.act-two-glyph-field .field-digit{fill:var(--house-paper-mark)!important;stroke:none!important;filter:none!important}.act-two-glyph-field .field-pi{font-size:2.1px}.act-two-glyph-field .field-digit{font-size:1.45px;letter-spacing:.18px}
-.act-two-threshold.is-dark,.act-two-threshold[data-substrate="ink"],.act-two-manuscript.is-dark,.act-two-manuscript[data-substrate="ink"],.act-two-page.is-dark,.act-two-page[data-substrate="ink"]{background:var(--house-ink)!important;color:var(--house-ink-mark)!important}.act-two-threshold.is-dark *,.act-two-threshold[data-substrate="ink"] *,.act-two-manuscript.is-dark *,.act-two-manuscript[data-substrate="ink"] *,.act-two-page.is-dark *,.act-two-page[data-substrate="ink"] *{color:var(--house-ink-mark)!important;text-shadow:none!important;box-shadow:none!important}.act-two-page.is-dark .act-two-glyph-field,.act-two-page[data-substrate="ink"] .act-two-glyph-field{mix-blend-mode:screen!important}.act-two-page.is-dark .act-two-glyph-field .field-pi,.act-two-page.is-dark .act-two-glyph-field .field-digit,.act-two-page[data-substrate="ink"] .act-two-glyph-field .field-pi,.act-two-page[data-substrate="ink"] .act-two-glyph-field .field-digit{fill:var(--house-ink-mark)!important}
+/* Dark inverse law reserved for later Act II surfaces. No glyph styling here. */
+.act-two-threshold.is-dark,.act-two-threshold[data-substrate="ink"],.act-two-manuscript.is-dark,.act-two-manuscript[data-substrate="ink"],.act-two-page.is-dark,.act-two-page[data-substrate="ink"]{background:var(--house-ink)!important;color:var(--house-ink-mark)!important}.act-two-threshold.is-dark *,.act-two-threshold[data-substrate="ink"] *,.act-two-manuscript.is-dark *,.act-two-manuscript[data-substrate="ink"] *,.act-two-page.is-dark *,.act-two-page[data-substrate="ink"] *{color:var(--house-ink-mark)!important;text-shadow:none!important;box-shadow:none!important}
 @media(min-width:701px){.act-two-page .act-two-opening,.act-two-manuscript p{font-size:clamp(1.1rem,1.8vw,1.45rem)!important}}
