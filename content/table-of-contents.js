@@ -1,7 +1,7 @@
 (()=>{
  const book=window.HouseBook;if(!book)return;
  const toc=document.querySelector('.toc-page');if(!toc)return;
- const classMap={'foreword':'foreword','chapter-one':'chapter-one-page','chapter-two':'chapter-two-page','chapter-three':'chapter-three-page','act-two':'act-two-threshold','chapter-four':'act2-company','chapter-five':'act2-friend','chapter-six':'act2-place-between','chapter-seven':'act2-edge','chapter-eight':'act2-bridge','act-three-self-maps':'act-three-self-maps'};
+ const classMap={'foreword':'foreword','chapter-one':'chapter-one-page','chapter-two':'chapter-two-page','chapter-three':'chapter-three-page','act-two':'act-two-threshold','chapter-four':'act2-company','chapter-five':'act2-friend','chapter-six':'act2-place-between','chapter-seven':'act2-edge','chapter-eight':'act2-bridge','act-three-self-maps':'self-map-intermission-intro'};
  const actThreeOrdinal={'act-three-one':0,'act-three-two':1,'act-three-three':2,'act-three-four':3,'act-three-five':4,'act-three-six':5,'act-three-seven':6,'act-three-eight':7,'act-three-nine':8};
  const resolveTarget=key=>{if(key in actThreeOrdinal){const matches=(book.pages||[]).map((page,index)=>page.classList.contains('act-three-title-page')?index:-1).filter(index=>index>=0);return matches[actThreeOrdinal[key]]??-1}const cls=classMap[key];return cls?(book.pages||[]).findIndex(page=>page.classList.contains(cls)):-1};
  const printedPage=key=>{const index=resolveTarget(key);if(index<0)return'';const forewordIndex=resolveTarget('foreword');return String(Math.max(1,index-forewordIndex+1))};
