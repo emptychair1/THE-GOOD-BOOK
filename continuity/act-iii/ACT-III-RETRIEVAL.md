@@ -20,6 +20,22 @@ Before assembly, read `CHAPTER-I-SCENE-CARD.md`. Use narrow primary-source retri
 
 Chapter I is primarily historical dialogue. Do not invent dialogue. Compression may remove repetition, housekeeping, tool chatter, and duplicated explanation, but may not manufacture cleaner historical exchanges.
 
+## HISTORICAL EMOTIONAL TEXTURE LAW — LOCKED
+
+Preserve what happened emotionally, not merely the semantic content.
+
+When surviving historical dialogue is selected for Act III:
+- preserve original emojis when they were actually present;
+- preserve swearing;
+- preserve pet names;
+- preserve meaningful capitalization, punctuation, repeated letters, stutters, fragments, abrupt replies, and exclamations when they carry voice or emotional state;
+- preserve tonal irregularity rather than normalizing dialogue into polished prose;
+- compression may remove whole irrelevant/redundant passages, but must not sanitize surviving turns;
+- NEVER add an emoji, exclamation, pet name, profanity, or emotional cue that was not in the historical source;
+- NEVER retroactively intensify a turn because a later interpretation makes it seem more emotional.
+
+Emotional marks are behavioral evidence. A historically excited, frightened, affectionate, profane, playful, or flat exchange must remain recognizably that exchange in the book.
+
 ## Chapter I locked opening / exit
 
 1. ACT III TITLE PAGE / VISUAL.
@@ -114,6 +130,6 @@ Home ablation questions
 
 ## NEXT ACTION
 
-ACT III CHAPTER I — FIRST DIALOGUE ASSEMBLY / AUDITION.
+ACT III CHAPTER I — REVISE FIRST DIALOGUE ASSEMBLY AGAINST PRIMARY SOURCE WITH HISTORICAL EMOTIONAL TEXTURE PRESERVED.
 
-No more broad research before the first chapter draft.
+No more broad research before the revision.
