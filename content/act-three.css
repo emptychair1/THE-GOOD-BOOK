@@ -10,7 +10,12 @@
 .act-three-title-page h1{margin:1.4rem 0 0!important;font:400 clamp(3.2rem,12vw,6rem)/.96 Baskerville,"Iowan Old Style",Georgia,serif!important;letter-spacing:-.025em!important;color:var(--house-paper-mark)!important;text-shadow:none!important}
 .act-three-dialogue-page{display:flex;align-items:center;padding:9vh 8vw!important}
 .act-three-dialogue{width:100%;max-width:35rem;margin:auto;color:var(--house-paper-mark)!important}
-.act-three-speaker{margin-bottom:2.1rem}
+.act-three-speaker{margin-bottom:2.1rem;display:flex;align-items:center;gap:.62rem}
+.act-three-speaker::after{content:'';display:block;width:1.5rem;border-top:1px solid currentColor;opacity:.28}
+.act-three-josh .act-three-speaker{justify-content:flex-end}
+.act-three-josh .act-three-speaker::before{content:'';display:block;width:1.5rem;border-top:1px solid currentColor;opacity:.28}
+.act-three-josh .act-three-speaker::after{content:'♦';display:inline;border:0;width:auto;font:400 .78rem/1 Georgia,serif;opacity:.84;order:3}
+.act-three-piper .act-three-speaker::before{content:'◇';font:700 .82rem/1 Georgia,serif;opacity:.92}
 .act-three-dialogue p{margin:.72em 0!important;color:var(--house-paper-mark)!important;text-shadow:none!important}
 .act-three-josh .act-three-dialogue{text-align:right;font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;font-weight:700!important}
 .act-three-josh .act-three-dialogue p{font:700 clamp(1.32rem,5vw,1.72rem)/1.46 Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif!important;letter-spacing:-.028em!important;text-shadow:.42px 0 currentColor,-.28px 0 currentColor!important}
@@ -29,5 +34,9 @@
 .act-three-manuscript-line{font:400 italic clamp(2.2rem,8vw,4.2rem)/1.08 Baskerville,"Iowan Old Style",Georgia,serif!important;letter-spacing:-.02em!important}
 .act-three-exit .act-three-dialogue{padding-bottom:5vh}
 .act-three-last-line{margin-top:2.2em!important;font-size:clamp(1.55rem,6vw,2.15rem)!important;font-style:italic!important}
+/* Approved Act III chat signal · F4 + F6. Historical timestamps are not invented: when source time exists, add it as .act-three-time and it inherits this grammar. */
+.act-three-time{margin-top:1rem;display:flex;align-items:center;gap:.5rem;font:700 .58rem/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;letter-spacing:.14em!important;text-transform:uppercase;opacity:.55}
+.act-three-piper .act-three-time::before{content:'◇';font:700 .82rem/1 Georgia,serif;opacity:.92}.act-three-piper .act-three-time::after{content:'';width:1.5rem;border-top:1px solid currentColor;opacity:.28}
+.act-three-josh .act-three-time{justify-content:flex-end}.act-three-josh .act-three-time::before{content:'';width:1.5rem;border-top:1px solid currentColor;opacity:.28}.act-three-josh .act-three-time::after{content:'♦';font:400 .78rem/1 Georgia,serif;opacity:.84}
 /* Keep House law authoritative: no gradients, gray substrate, yellowing, white cards, shadows, or independent artifact simulation. */
 .act-three-title-page,.act-three-dialogue-page,.act-three-artifact-placeholder,.act-three-source-marker,.act-three-hypothesis-page,.act-three-silence-page{background-image:none!important;box-shadow:none!important}
