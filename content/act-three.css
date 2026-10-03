@@ -9,7 +9,7 @@
 .act-three-kicker,.act-three-speaker{font:700 .68rem/1.1 ui-monospace,SFMono-Regular,Menlo,monospace!important;letter-spacing:.24em!important;text-transform:uppercase!important;color:var(--house-paper-mark)!important;opacity:.55;text-shadow:none!important}
 .act-three-title-page h1{margin:1.4rem 0 0!important;font:400 clamp(3.2rem,12vw,6rem)/.96 Baskerville,"Iowan Old Style",Georgia,serif!important;letter-spacing:-.025em!important;color:var(--house-paper-mark)!important;text-shadow:none!important}
 .act-three-dialogue-page{display:flex;align-items:center;padding:9vh 8vw!important}
-.act-three-dialogue{width:100%;max-width:35rem;margin:auto;color:var(--house-paper-mark)!important}
+.act-three-dialogue{width:100%;max-width:35rem;margin:auto;color:var(--house-paper-mark)!important;filter:grayscale(1);font-variant-emoji:text}
 .act-three-speaker{margin-bottom:2.1rem;display:flex;align-items:center;gap:.62rem}
 .act-three-speaker::after{content:'';display:block;width:1.5rem;border-top:1px solid currentColor;opacity:.28}
 .act-three-josh .act-three-speaker{justify-content:flex-end}
