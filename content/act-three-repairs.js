@@ -1,5 +1,5 @@
-// ACT III audition repairs · V231
-// Surgical runtime repairs only. Historical wording remains untouched except Josh's confirmed Akrapovič correction.
+// ACT III audition repairs · V234
+// Surgical runtime repairs. Historical wording remains untouched except Josh's confirmed Akrapovič correction.
 
 const pages = [...document.querySelectorAll('.page')];
 
@@ -33,4 +33,43 @@ for (const page of pages) {
     parent.appendChild(q);
   }
   page.classList.add('act-three-question-page');
+}
+
+// ACT III approved chat grammar · inferred timestamps.
+// These are deliberately typographic chronology cues, not claims of recovered message metadata.
+// Each Act III chapter gets its own plausible evening session clock; cadence advances by reading/response weight.
+const chapterStarts = [20 * 60 + 47, 22 * 60 + 8, 23 * 60 + 16];
+let chapter = -1;
+let minute = 0;
+let previousSpeaker = null;
+
+for (const page of pages) {
+  if (page.matches('.act-three-title-page')) {
+    chapter += 1;
+    minute = chapterStarts[Math.min(chapter, chapterStarts.length - 1)];
+    previousSpeaker = null;
+    continue;
+  }
+  if (!page.matches('.act-three-dialogue-page')) continue;
+  const dialogue = page.querySelector('.act-three-dialogue');
+  if (!dialogue || dialogue.querySelector('.act-three-time')) continue;
+
+  const speaker = page.dataset.speaker || '';
+  const words = [...dialogue.querySelectorAll('p')].reduce((n,p)=>n + p.textContent.trim().split(/\s+/).filter(Boolean).length, 0);
+  if (previousSpeaker !== null) {
+    const responseBeat = speaker === previousSpeaker ? 1 : 2;
+    const readingBeat = Math.max(0, Math.min(4, Math.floor(words / 85)));
+    minute += responseBeat + readingBeat;
+  }
+  previousSpeaker = speaker;
+
+  const clock = ((minute % 1440) + 1440) % 1440;
+  const h24 = Math.floor(clock / 60), mins = clock % 60;
+  const suffix = h24 >= 12 ? 'PM' : 'AM';
+  const hour = h24 % 12 || 12;
+  const stamp = document.createElement('div');
+  stamp.className = 'act-three-time';
+  stamp.dataset.inferred = 'true';
+  stamp.textContent = `${hour}:${String(mins).padStart(2,'0')} ${suffix}`;
+  dialogue.appendChild(stamp);
 }
