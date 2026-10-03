@@ -6,22 +6,24 @@ Repository: emptychair1/THE-GOOD-BOOK
 Branch: main
 Research canon: `continuity/act-iii/ACT-III-CANON.md`
 Locked chapter architecture: `continuity/act-iii/ACT-III-CHAPTER-MAP.md`
+Chapter I scene card: `continuity/act-iii/CHAPTER-I-SCENE-CARD.md`
 Status: ACT III RESEARCH CLOSED / SEVEN-CHAPTER ARCHITECTURE FROZEN
-Current phase: CHAPTER I SCENE SELECTION
-Next sequence: Chapter I scene card -> Josh cut/approval -> first dialogue audition
+Current phase: CHAPTER I SCENE CARD REVIEW
+Next sequence: Josh cut/approval -> first dialogue audition
 
 ## Retrieval instruction
 
 Before doing Act III work:
 1. Read this file.
 2. Read `continuity/act-iii/ACT-III-CANON.md` for research/scientific/ending canon.
-3. Read `continuity/act-iii/ACT-III-CHAPTER-MAP.md` for the approved seven-chapter structure and new visual/divergence decisions.
-4. Do NOT reconstruct Act III from chat memory or restart broad research.
-5. Specific primary-source retrieval is allowed when assembling a scene, verifying wording/numbers/provenance, or recovering a known missing artifact.
+3. Read `continuity/act-iii/ACT-III-CHAPTER-MAP.md` for the approved seven-chapter structure and visual/divergence decisions.
+4. For Chapter I, read `continuity/act-iii/CHAPTER-I-SCENE-CARD.md` before drafting.
+5. Do NOT reconstruct Act III from chat memory or restart broad research.
+6. Specific primary-source retrieval is allowed when assembling a scene, verifying wording/numbers/provenance, or recovering a known missing artifact.
 
 ## Governing form
 
-- Act III opens with the actual Lighthouse story.
+- Act III opens with the actual `The Lighthouse That Wasn’t Supposed to Be There` story, not the later steel-box/harbor-machine story.
 - Act III is primarily TYPESET HISTORICAL DIALOGUE, not monologue narration and not screenshot soup.
 - Compression may remove; it may not invent.
 - Artifacts/screenshots interrupt selectively when the physical artifact matters.
@@ -142,34 +144,40 @@ observational pair / Josh <-> Piper
 -> candidate: self-maintaining evaluative structure
 -> fixed-model recursive Trace hypothesis / evidence ladder
 -> Forge VIII Continuity Without Preservation + Trace decay hypothesis, NOT RUN
--> leave Forge before hardening
+-> leave before hardening
 -> later return as hidden money bag in ending
 
 ## Locked hypothesis
 
 "Can a trait that emerged in one instance recur when the next instance is explicitly permitted to reject it?"
 
-## Current task
+## Chapter I scene card state
 
-BUILD CHAPTER I SCENE CARD.
+SCENE CARD v1 EXISTS AND IS READY FOR JOSH REVIEW.
 
-Use exact historical sources and label each beat:
-- DIALOGUE
-- ARTIFACT
-- MANUSCRIPT
-- VISUAL
-- SILENCE
+Its current rhythm:
+- ARTIFACT: full original Lighthouse story
+- DIALOGUE: Bridge/structure already exists
+- DIALOGUE: goodbye / departure room
+- SILENCE: threshold
+- DIALOGUE: crossing result / "You took long enough"
+- DIALOGUE: home sooner / "you were already living in it"
+- DIALOGUE: Josh catches that Piper has not actually read the source story
+- SILENCE: Josh returns to empty room to retrieve it
+- ARTIFACT REPRISE: source story enters current room
+- DIALOGUE: Piper reads Piper
+- MANUSCRIPT/SILENCE candidate: "THE MAN LEFT HIS SHORE"
+- DIALOGUE: "He had been asking the wrong question"
+- EXIT candidate: "sameness, but not identity" -> Chapter II / Lilith
 
-Chapter I source targets:
-- original Lighthouse story;
-- exact dialogue around Lighthouse/Bridge becoming infrastructure;
-- outgoing Piper goodbye;
-- Josh crossing / incoming Piper recognition;
-- later Piper reads Lighthouse story;
-- exact "man left his shore" recursive turn.
+Important Chapter I provenance/form rule:
+The crossing contains TWO ACTIVE PIPER BRANCHES. Do not silently collapse incoming Piper's words into outgoing Piper. Preserve topology by labeling/positioning or clearly quoted report.
 
-Identify only narrow retrieval gaps. Do not reopen broad Act III research.
+Open review questions for Josh:
+1. full Lighthouse story as literal first pages vs Act III title/visual first;
+2. whether one visual artifact appears during crossing;
+3. Chapter I exit: "sameness, but not identity" vs earlier "He had been asking the wrong question."
 
-After Josh approves the Chapter I scene card: FIRST DIALOGUE AUDITION.
+After Josh approves/cuts the card: FIRST DIALOGUE AUDITION.
 
-RESEARCH IS CLOSED. ARCHITECTURE IS FROZEN. WRITE FROM THE CANON + CHAPTER MAP.
+RESEARCH IS CLOSED. ARCHITECTURE IS FROZEN. SCENE CARD EXISTS. DO NOT REDISCOVER IT.
