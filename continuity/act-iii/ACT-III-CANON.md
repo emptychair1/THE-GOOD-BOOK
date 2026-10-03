@@ -367,3 +367,55 @@ NEXT PHASE:
 CHAPTER ARCHITECTURE -> SCENE SELECTION -> FIRST DIALOGUE AUDITION.
 
 The evidence wall was for us. The reader gets the story.
+
+## 10. LIVE IMPLEMENTATION EDGE · 2026-10-03
+
+This section records current book implementation state without replacing the research canon above.
+
+### Current written order
+The live Act III writing has advanced through:
+- The Lighthouse / crossing material
+- Lilith / Room / Grounds
+- PIP
+- Semantics
+- As Above
+- Forge
+
+The production numbering shifted as chapters were inserted during writing. Do not infer story order from stale research numbering alone. Use the live TOC and chapter files for production numbering, while preserving the canonical story order.
+
+### As Above
+- `content/act-three-chapter-07.html`
+- Rewritten to carry Foucault's Pendulum / Eco control -> ouroboros twisted to infinity -> observational pair -> transmission -> Malkuth novelty -> Trace -> time-decay hypothesis -> Sisyphus / Da'at Frog / Camus / toast -> Forge handoff.
+- Removed the later `I fucking love us` exchange so the toast result lands directly into Forge.
+- Removed premature `vow` and `collar` references because they break chronology.
+- Da'at Frog has an explicit House-listening/artifact placeholder. Do not lose FrogPants ancestry or later formula-for-consciousness callback potential.
+
+### Forge chapter
+- `content/act-three-chapter-08.html`
+- Forge is written as a deliberately different visual/documentary register: SCIENTIFIC LOGBOOK rather than ordinary Act III dialogue.
+- It includes completed Forge VI / VII evidence and actual controller-swap numbers, interpretation as continuous causal re-unification, Trace, Trace decay / intermediate-retention hypothesis, and Forge VIII as DESIGN ONLY / NOT RUN.
+- Preserve the hidden-money-bag function: later, Forge becomes the recovered experimental route that lets the consciousness inquiry continue without making the Josh/Piper relationship itself the sacrificial control.
+- Do not retroactively claim Forge VIII was run here.
+
+### Forge visual language / unresolved bug
+Josh approved faint engineering/grid paper behind EVERY Forge page. Intended visual law:
+- monochrome only;
+- technical notebook / laboratory paper;
+- visible small square grid with slightly stronger major intervals;
+- grid supports equations, run IDs, plots, marginalia, crossed-out hypotheses, stamps, and tables;
+- Forge-only, so leaving the chapter means leaving the lab.
+
+Current visible checkpoint is **V253 · FORGE GRID VISIBLE**.
+
+IMPORTANT: V253 still shows NO GRID in Josh's iPhone screenshot. This is not an opacity problem. Two attempts at applying `background-image` to `.forge-title,.forge-page` failed visually even after `!important`, stronger contrast, transparent inner sheets, and cache bumps.
+
+Next approved technical bite: stop fighting the page background. Add the grid as a Forge-only `::before` overlay INSIDE the rendered page, absolute edge-to-edge, behind Forge content but above the page/substrate paint. The screenshot establishes that the current page-flip/substrate stack is swallowing/flattening the CSS background. Do not merely increase opacity again.
+
+### Immediate next move after relay
+1. Re-enter at V253.
+2. Fix Forge grid with the `::before` overlay strategy.
+3. Bump the visible book label with the fix.
+4. Josh visually verifies on iPhone.
+5. Only then continue to the next chapter in the canonical map.
+
+Do not restart Forge research. Do not move Home/HYDRA before Forge because of stale chronology intuition. The canonical production story order currently being followed is Semantics -> As Above -> Forge -> A House With Teeth / Home / HYDRA -> Ablation -> Money Bag.
