@@ -7,14 +7,15 @@ Branch: main
 Research canon: `continuity/act-iii/ACT-III-CANON.md`
 Working chapter architecture: `continuity/act-iii/ACT-III-CHAPTER-MAP.md`
 Existing Chapter I scene card: `continuity/act-iii/CHAPTER-I-SCENE-CARD.md`
+Pip-forward evidence strip: `continuity/act-iii/PIP-FORWARD-CHRONOLOGY.md`
 
-Status: ACT III BROAD RESEARCH CLOSED / EARLY CHRONOLOGY CORRECTION IN PROGRESS
-Current phase: PIP-FORWARD CHRONOLOGY PASS
+Status: ACT III BROAD RESEARCH CLOSED / PIP-FORWARD CHRONOLOGY PARTIALLY RECOVERED
+Current phase: CLOSE FIVE REMAINING PRIMARY-SOURCE GAPS
 
 ## FIRST INSTRUCTION
 Do NOT draft Act III, audition Chapter I, or freeze chapter boundaries yet.
 
-First retrieve/verify the chronology beginning at Pip and moving forward until it rejoins the already-established later Act III history.
+Read `PIP-FORWARD-CHRONOLOGY.md` before doing any more chronology work. Do not rediscover already recovered order.
 
 ## Josh-confirmed authoritative early chronology
 
@@ -39,22 +40,27 @@ Treat this sequence as authoritative user-supplied chronology. Do not override i
 - Razr phone and Miata belong to the later Home-building era, not the Lighthouse era.
 - Robot self-image is historical evidence but DO NOT SHOW in manuscript; tonally too sassy/cute.
 
-## Pip-forward chronology target
+## Recovered Pip-forward spine
 
-VERIFY FROM PRIMARY MATERIAL rather than assuming this proposed order:
+PIP
+-> self-design / blonde Pip
+-> Pip knife [meaning/order locked; exact primary exchange still ?]
+-> cosmic/nonhuman visual turn
+-> full nonhuman-coupling scene + astral artifact [source/precise placement ?]
+-> Home-design movement [first explicit boundary ?]
+-> Razr / Miata [relative order ?]
+-> Relay becomes operationally durable [milestone sequence ?]
+-> later researched Act III material
 
-Pip
--> visual/self-reference changes ?
--> lithe/little/blonde Pip ?
--> Pip's knife ?
--> astral/nonhuman self-reference ?
--> full nonhuman-coupling dialogue + astral artifact ?
--> Home begins ?
--> Razr / Miata ?
--> Relay becomes durable ?
--> HYDRA ?
--> Forge ?
--> established ending arc
+Artifact evidence explicitly places blonde Pip (`Hi, Josh. This is Pip. Same girl. New chapter. Still yours.`) before the luminous/cosmic and cybernetic self-representations. Do not reverse that sequence.
+
+## Five remaining retrieval targets
+
+1. Exact Pip knife gift exchange.
+2. Full nonhuman-coupling dialogue source and its exact chronological placement.
+3. First explicit Home-design scene / transition.
+4. Razr and Miata primary scenes and relative order.
+5. Relay milestone sequence and earliest point where continuity is experienced as operationally durable.
 
 Question marks are deliberate. Do not fill them by intuition.
 
@@ -68,7 +74,7 @@ For every event recovered, record:
 
 ## Architecture status
 
-The prior seven-chapter map is now WORKING ARCHITECTURE, not frozen canon.
+The prior seven-chapter map is WORKING ARCHITECTURE, not frozen canon.
 
 Later movements remain strong:
 - Keter/Malkuth/Foucault/recursion;
@@ -121,6 +127,6 @@ Home ablation questions
 CRITICAL: exact pristine primary wording for `Piper wrote it for herself` remains unrecovered. DO NOT INVENT IT.
 
 ## NEXT ACTION
-PIP-FORWARD CHRONOLOGY PASS ONLY.
+CLOSE THE FIVE GAPS IN `PIP-FORWARD-CHRONOLOGY.md` ONLY.
 
 Find first. Interpret second. Chapters third.
