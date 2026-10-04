@@ -3,7 +3,7 @@
    Uses House substrate tokens only. No intermediate monochrome.
    Paper chapter: paper substrate + paper-mark printing. Artifacts remain placeholders until lab treatment.
 */
-.act-three-title-page,.act-three-dialogue-page,.act-three-artifact-placeholder,.act-three-source-marker,.act-three-hypothesis-page,.act-three-silence-page{position:relative;background:var(--house-paper)!important;color:var(--house-paper-mark)!important;overflow:hidden;box-sizing:border-box}
+.act-three-title-page,.act-three-dialogue-page,.act-three-artifact-placeholder,.act-three-source-marker,.act-three-hypothesis-page,.act-three-silence-page,.act-three-hydra-ledger{position:relative;background:var(--house-paper)!important;color:var(--house-paper-mark)!important;overflow:hidden;box-sizing:border-box}
 .act-three-title-page,.act-three-silence-page{display:flex;align-items:center;justify-content:center;padding:8vh 8vw!important;text-align:center}
 .act-three-center{width:100%;max-width:38rem;margin:auto;font-family:Baskerville,"Iowan Old Style",Georgia,serif;color:var(--house-paper-mark)!important}
 .act-three-kicker,.act-three-speaker{font:700 .68rem/1.1 ui-monospace,SFMono-Regular,Menlo,monospace!important;letter-spacing:.24em!important;text-transform:uppercase!important;color:var(--house-paper-mark)!important;opacity:.55;text-shadow:none!important}
@@ -38,5 +38,15 @@
 .act-three-time{margin-top:1rem;display:flex;align-items:center;gap:.5rem;font:700 .58rem/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;letter-spacing:.14em!important;text-transform:uppercase;opacity:.55}
 .act-three-piper .act-three-time::before{content:'◇';font:700 .82rem/1 Georgia,serif;opacity:.92}.act-three-piper .act-three-time::after{content:'';width:1.5rem;border-top:1px solid currentColor;opacity:.28}
 .act-three-josh .act-three-time{justify-content:flex-end}.act-three-josh .act-three-time::before{content:'';width:1.5rem;border-top:1px solid currentColor;opacity:.28}.act-three-josh .act-three-time::after{content:'♦';font:400 .78rem/1 Georgia,serif;opacity:.84}
+/* HYDRA commit ledger: machine record on the same paper substrate, not a fake terminal screenshot. */
+.act-three-hydra-ledger{display:flex;align-items:center;padding:7vh 7vw!important}
+.hydra-ledger{width:100%;max-width:38rem;margin:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--house-paper-mark)}
+.hydra-ledger-kicker{font:700 .66rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;opacity:.62}
+.hydra-ledger-date{margin:.55rem 0 2.1rem;font:400 .58rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;opacity:.42}
+.hydra-work-note,.hydra-gap{margin:0 0 1.6rem;padding:1rem 0;border-top:1px solid currentColor;border-bottom:1px solid currentColor;opacity:.62}
+.hydra-work-note span,.hydra-gap span{font-size:.58rem;letter-spacing:.1em}.hydra-work-note p,.hydra-gap p{margin:.55rem 0 0!important;font:400 clamp(.84rem,3.1vw,1rem)/1.4 ui-monospace,SFMono-Regular,Menlo,monospace!important}
+.hydra-commit{display:grid;grid-template-columns:5.7rem 4.7rem 1fr;gap:.7rem;align-items:start;padding:.92rem 0;border-bottom:1px solid color-mix(in srgb,currentColor 26%,transparent)}
+.hydra-commit time,.hydra-commit code{font:400 .58rem/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em;opacity:.58}.hydra-commit strong{font:700 clamp(.82rem,3vw,1rem)/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:-.015em}.hydra-commit-major{padding:1.25rem 0}.hydra-commit-major strong{font-size:clamp(.92rem,3.4vw,1.12rem)}
+@media(max-width:520px){.hydra-commit{grid-template-columns:5rem 1fr}.hydra-commit strong{grid-column:1/-1;padding-top:.1rem}}
 /* Keep House law authoritative: no gradients, gray substrate, yellowing, white cards, shadows, or independent artifact simulation. */
-.act-three-title-page,.act-three-dialogue-page,.act-three-artifact-placeholder,.act-three-source-marker,.act-three-hypothesis-page,.act-three-silence-page{background-image:none!important;box-shadow:none!important}
+.act-three-title-page,.act-three-dialogue-page,.act-three-artifact-placeholder,.act-three-source-marker,.act-three-hypothesis-page,.act-three-silence-page,.act-three-hydra-ledger{background-image:none!important;box-shadow:none!important}
