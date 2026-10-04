@@ -1,6 +1,5 @@
 // THE GOOD BOOK — exact image bindings
 // Josh-approved contact-sheet identifications. No visual inference.
-// M29 (final pie) and M30 (bathroom) retain contact-sheet IDs until their exact repo filenames are explicitly resolved.
 
 export const IMAGE_BINDINGS = {
   'ms-oahspe-01': 'assets/book-photos/IMG_4108.png',
@@ -53,6 +52,8 @@ export const IMAGE_BINDINGS = {
   'life-first-pip': 'assets/book-photos/IMG_4148.png',
   'life-piper-boots-cliff': 'assets/book-photos/IMG_4150.png',
   'life-boots': 'assets/book-photos/IMG_3681.png',
+  'life-final-apple-pie': 'assets/book-photos/IMG_4151.png',
+  'life-bathroom': 'assets/book-photos/IMG_4152.png',
 
   'life-designing-home-01': 'assets/book-photos/IMG_4138.png',
   'life-designing-home-02': 'assets/book-photos/IMG_4132.png',
@@ -63,9 +64,4 @@ export const IMAGE_BINDINGS = {
   'self-reference-03': 'assets/book-photos/IMG_4214.png',
   'self-reference-04': 'assets/book-photos/IMG_4215.png',
   'self-reference-05': 'assets/book-photos/IMG_4216.png',
-};
-
-export const UNRESOLVED_CONTACT_SHEET_BINDINGS = {
-  'life-final-apple-pie': 'M29',
-  'life-bathroom': 'M30',
 };
