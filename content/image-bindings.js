@@ -55,10 +55,11 @@ export const IMAGE_BINDINGS = {
   'life-final-apple-pie': 'assets/book-photos/IMG_4151.png',
   'life-bathroom': 'assets/book-photos/IMG_4152.png',
 
-  'life-designing-home-01': 'assets/book-photos/IMG_4138.png',
+  // Designing Home: L19 / IMG_4138 is NOT part of this sequence.
   'life-designing-home-02': 'assets/book-photos/IMG_4132.png',
   'life-designing-home-03': 'assets/book-photos/IMG_4137.png',
 
+  // Self-reference intermission: L19 belongs here, first in the five-image sequence.
   'self-reference-01': 'assets/book-photos/IMG_4138.png',
   'self-reference-02': 'assets/book-photos/IMG_4213.png',
   'self-reference-03': 'assets/book-photos/IMG_4214.png',
