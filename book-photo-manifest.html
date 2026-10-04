@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Good Book — Photo Manifest</title>
+<style>
+:root{color-scheme:dark;background:#000;color:#f4efe4;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}*{box-sizing:border-box}body{margin:0;padding:28px 18px 80px;background:#000}main{max-width:1500px;margin:auto}h1{font:600 clamp(24px,4vw,48px)/1.05 Georgia,serif;margin:0 0 8px}p{color:#aaa;margin:0 0 32px;line-height:1.5}.section{margin-top:48px}.section h2{font:500 clamp(20px,3vw,32px)/1.1 Georgia,serif;border-bottom:1px solid #333;padding-bottom:12px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}.card{border:1px solid #292929;background:#090909;padding:10px}.frame{aspect-ratio:3/4;background:#111;display:flex;align-items:center;justify-content:center;overflow:hidden}.frame img{width:100%;height:100%;object-fit:contain}.meta{padding:10px 2px 2px}.num{font-size:18px;color:#fff}.file{font-size:12px;color:#999;overflow-wrap:anywhere;margin-top:4px}.tag{font-size:10px;letter-spacing:.16em;color:#777;margin-top:5px}footer{margin-top:50px;color:#666;font-size:12px}</style>
+</head><body><main>
+<h1>THE GOOD BOOK · PHOTO MANIFEST</h1>
+<p>Visual verification sheet. 58 source files: 29 life photographs + 29 manuscript plates. The ignored “Manuscript photos part one” commit is not represented here.</p>
+<div id="app"></div>
+<footer>Temporary lab page · source: assets/book-photos/</footer>
+<script>
+const life=['IMG_4111.png','IMG_4115.png','IMG_4116.png','IMG_4122.png','IMG_4123.png','IMG_4124.png','IMG_4125.png','IMG_4126.jpeg','IMG_4127.png','IMG_4128.png','IMG_4129.png','IMG_4130.png','IMG_4131.png','IMG_4132.png','IMG_4133.png','IMG_4134.png','IMG_4135.png','IMG_4137.png','IMG_4138.png','IMG_4140.png','IMG_4141.png','IMG_4142.png','IMG_4144.png','IMG_4146.png','IMG_4148.png','IMG_4149.png','IMG_4150.png','IMG_4151.png','IMG_4152.png'];
+const manuscript=['IMG_4083.png','IMG_4084.png','IMG_4085.png','IMG_4086.png','IMG_4087.png','IMG_4088.png','IMG_4089.png','IMG_4090.png','IMG_4091.png','IMG_4093.png','IMG_4094.png','IMG_4095.png','IMG_4096.png','IMG_4097.png','IMG_4098.png','IMG_4099.png','IMG_4100.png','IMG_4101.png','IMG_4102.png','IMG_4103.png','IMG_4104.png','IMG_4105.png','IMG_4106.png','IMG_4107.png','IMG_4108.png','IMG_4109.png','IMG_4110.png','IMG_4112.png','IMG_4114.png'];
+function section(title,files,prefix){const s=document.createElement('section');s.className='section';s.innerHTML=`<h2>${title} · ${files.length}</h2>`;const g=document.createElement('div');g.className='grid';files.forEach((f,i)=>{const c=document.createElement('article');c.className='card';const n=String(i+1).padStart(2,'0');c.innerHTML=`<div class="frame"><img loading="lazy" src="assets/book-photos/${f}" alt="${prefix} ${n}: ${f}"></div><div class="meta"><div class="num">${prefix}-${n}</div><div class="file">${f}</div><div class="tag">${title.toUpperCase()}</div></div>`;g.appendChild(c)});s.appendChild(g);return s}
+const app=document.getElementById('app');app.append(section('Life photographs',life,'L'));app.append(section('Manuscript plates',manuscript,'M'));
+</script>
+</main></body></html>
