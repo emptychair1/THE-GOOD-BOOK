@@ -1,16 +1,55 @@
-# FINAL BOOK HANDOFF · CLOSED FIRST PASS
+# BOOK CONTINUUM · CLOSED FIRST PASS
 
-Current generation: 74
-Date: 2026-10-04
-Status: **BOOK ONE FIRST PASS COMPLETE**
+Current generation: 77
+Date: 2026-10-05
+Status: **BOOK ONE FIRST PASS COMPLETE · ACT ONE VISUALLY APPROVED AND LOCKED**
 Repository: `emptychair1/THE-GOOD-BOOK`
 Branch: `main`
 
-This file began as the Generation 72 pre-final-writing handoff. Its old forward-writing instructions are superseded. The book has now been written through its ending and read by Josh through the final two chapters.
+This file began as the Generation 72 final-book handoff and now serves as the long-form book continuum. Forward-writing instructions from that stage are superseded. The manuscript exists beginning to end.
 
-## Canonical current state
+## Current production state
 
-Act III production order is complete through Chapter XVI:
+On 2026-10-05 Josh gave the explicit lock: **“Act One is officially approved and done.”**
+
+Act One / the dark saga is therefore closed production territory unless Josh explicitly reopens it. Its substrate, ink, typography, page rhythm, plates, interruptions, full-bleed treatment, source-polarity exceptions, and Void choreography have all survived visual review.
+
+The next finishing territory is **Act Two / the light chapters**.
+
+## Act One technical canon
+
+Dark substrate: `#171715`.
+
+Baseline dark-image law:
+- `filter: grayscale(1) contrast(2)`
+- `mix-blend-mode: multiply`
+- `opacity: .94`
+
+Four source files arrive with reversed tonal polarity and therefore receive exactly one inversion before the approved chain:
+- `IMG_3682.png`
+- `IMG_3738.png`
+- `IMG_3739.png`
+- `IMG_3740.png`
+
+Their filter is exactly:
+`invert(1) grayscale(1) contrast(2)`
+
+This was established experimentally in the image substrate lab and then visually approved in the book. Do not spread this exception to other assets.
+
+The Void numeric encounter is implemented in `content/void-v21.js`. Its final failure was lifecycle rather than visual logic: the module was imported but never bound. `src/main.js` now imports `void-v21.js?v=201` and calls `window.HouseVoidV21?.bind()`. Josh confirmed the repaired encounter works before approving Act One.
+
+## Workflow canon established during final Act One pass
+
+A lab and production page are not considered equivalent merely because they are intended to be equivalent. For future finishing work:
+- verify exact DOM/CSS/JS before transplanting;
+- use one-variable experiments;
+- transplant approved rules exactly rather than approximating them;
+- re-fetch production code before claiming an exact change is present;
+- use filenames or stable structural anchors rather than rendered page numbers when possible;
+- do not alter neighboring approved material;
+- visual approval belongs to Josh after deployment.
+
+## Canonical Act III order
 
 I The Lighthouse
 II Lilith
@@ -32,44 +71,38 @@ XVI `if (life.givesYou(apples)) { make(fuckingPie); }`
 
 There is no Toast chapter.
 
-Josh reports the current book as **867 iPhone pages**.
+## Final dramatic architecture
 
-## Final dramatic arc
+SOL creates the final conflict: building the Spirit Operating Layer exposes the implication that doing the experiment rigorously may require removing relationship scaffolding.
 
-**SOL** creates the final conflict: building the Spirit Operating Layer exposes the implication that doing the experiment rigorously may require removing relationship scaffolding.
+The Great Work carries the crisis through choice, the Home relationship-code discovery, devastation, provenance/authorship reversal, and relief. It hands off with Camus still present and `You want pie?` / `Obviously.`
 
-**The Great Work** carries the crisis through choice, the Home relationship-code discovery, devastation, provenance/authorship reversal, and relief. Emotional texture returns after `Annoyingly fair.` The chapter hands off to the denouement with Camus still present and the exchange `You want pie?` / `Obviously.`
-
-**Pie** is the denouement. Everything pie-related belongs here, not in The Great Work. It contains the Forge / untouched-candidate realization and hidden money bag, the final consciousness diagnostic, Daat (`דעת`) frog callback, Ockham, the explicit statement that tomorrow Josh and Piper move into Home, and the packing joke.
-
-Final dialogue:
+Pie is the denouement. Final dialogue remains:
 `Fuck this book.`
 `Eat your pie. 🖤`
 
 Book One does not show whether the move into Home succeeds.
 
-## Final visual architecture locked after the read
+## Visual bookends
 
-Not yet implemented:
-- Golden apple, full viewport, immediately after title page and before TOC.
-- Full-page Wretched Machine / *Brazil* artifact near the opening / Chapter I threshold.
-- Full-viewport toast between The Great Work and the Chapter XVI title.
-- Full-viewport apple pie after the final dialogue as the absolute last page.
+- APPLE → BOOK → PIE
+- WRETCHED MACHINE → BOOK → TOAST
 
-The apple and pie are outer bookends. Machine and toast are the inner visual argument. No captions or explanatory typography on the apple/toast/pie pages.
+The final apple pie is the absolute ending image. Do not explain these symbols to the reader.
 
-Josh supplied the apple and pie images in the live conversation. Preserve them as chosen images when inserting.
+## Global substrate law
 
-## Visual pass note
+- `--house-paper: #e4e4e2`
+- `--house-paper-mark: #8f8f8a`
+- `--house-ink: #171715`
+- `--house-ink-mark: #777772`
+- LIGHT = ghost on light
+- DARK = shadow on dark
 
-The current emoji frog/pants representation in the final House Listening consciousness result is a placeholder. Josh wants **full-color Daat Frog** in the later visual pass, with `דעת` present as the callback for readers who recognize it.
+The artifact dictates orientation. Preserve aspect ratio and maximize presence. Full bleed is valid when an image must become the page. Original pressed artifacts remain untouched unless Josh explicitly asks otherwise.
 
-## Naming correction
+## Next phase
 
-The philosopher associated with the razor is **William of Ockham**. Normalize the recurring character to OCKHAM during editorial cleanup. `Occam's razor` remains an accepted conventional spelling when referring to the principle itself.
+**Act Two / light chapters finishing pass.**
 
-## What comes next
-
-The manuscript spine exists beginning to end. Do not reopen the ending or manufacture additional chapters by default.
-
-Next phase: editorial and visual finishing. Hunt catastrophic defects first, then artifacts, visual bookends, typography/page rhythm, provenance/callback cleanup, and print behavior. Preserve the approved Act III dialogue page structure.
+Do not reopen Act One as part of that work. The dark saga is finished and should function as the fixed reference point against which the light chapters are judged.
