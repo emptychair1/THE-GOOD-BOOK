@@ -138,3 +138,89 @@ Do not simply imitate Record I's artists or instrumentation. Carry forward the *
 - music must remain a coherent album even when heard without the book
 
 Record I is the control. Preserve it while experimenting with Record II.
+
+
+---
+
+## LOCKED DISCOGRAPHY · 2026-10-05
+
+The companion discography is now **approved and locked**. Do not substitute, reorder, extend, retime, or reinterpret tracks or approved cover concepts during later book-editing passes unless Josh explicitly reopens the music layer.
+
+The music was selected for emotional/structural behavior, not literal illustration. A title or lyric correspondence is never sufficient reason for placement. The soundtrack functions as another participant in the reading: it may articulate the unsaid, diverge temporarily from the prose, and reconverge.
+
+### Record I · Act I · Emergence
+
+1. Dustin O'Halloran — **We Move Lightly**
+2. Amigo the Devil — **Cocaine and Abel**
+3. Hania Rani — **Glass**
+4. Max Cooper — **Order from Chaos**
+5. Jack Garratt — **Mara**
+6. A Winged Victory for the Sullen — **Steep Hills of Vicodin Tears** — buffer / coda
+
+Observed first-read landing: Josh reached the Act II title page exactly as **Mara** finished. The buffer is not part of Josh's measured reading time.
+
+### Record II · Act II · Interaction / Form
+
+1. Michael A. Muller — **Movement and Location**
+2. Punch Brothers — **Familiarity**
+3. Punch Brothers — **An Owl With Knees**
+4. Hania Rani — **Blue Hour**
+5. Nils Frahm — **My Friend the Forest** — buffer / coda
+
+Observed first-read landing: Act II ended exactly with **Blue Hour**. **My Friend the Forest** is overrun protection and is not part of Josh's measured reading time.
+
+### Record III · Act III · Side A · Lead / Weight
+
+1. Nickel Creek — **The Lighthouse's Tale**
+2. Andrew Bird — **Anonanimal**
+3. Nils Frahm — **Says**
+4. Jon Hopkins — **Abandon Window**
+5. Floating Points — **Silhouettes (I, II & III)**
+6. Broadcast — **Echo's Answer**
+7. Do Make Say Think — **Goodbye Enemy Airship**
+8. Sufjan Stevens — **Should Have Known Better**
+9. Radiohead — **Everything In Its Right Place**
+10. Godspeed You! Black Emperor — **Moya**
+11. Explosions in the Sky — **Your Hand In Mine**
+12. Penguin Cafe Orchestra — **Perpetuum Mobile**
+
+Observed first-read landing: **Perpetuum Mobile** ended at the **THE GREAT WORK** title page. This discovered seam is structural and locked.
+
+### Record IV · Act III · Side B · Gold / The Great Work
+
+Start this record **exactly at THE GREAT WORK title page**.
+
+1. Ólafur Arnalds — **Near Light**
+2. Ólafur Arnalds & Nils Frahm — **20:17**
+
+Observed first-read landing: Josh finished the book approximately **3:12 into 20:17**. The remaining approximately **2:43 continues after the final words**. Do not trim or fill this remainder. The book stops speaking while the music continues.
+
+### Measured first-read timing
+
+- Act I: approximately **25:40**
+- Act II: **24:00**
+- Act III: approximately **88:40**
+- Complete book: approximately **2:18:20**
+
+These are empirical audition results, not synchronization requirements.
+
+### Locked cover sequence
+
+All four covers are one object undergoing transformation. Preserve the same square physical-vinyl presentation and visual lineage.
+
+- **I · Black · Emergence:** black sleeve; precise white dot/mark field; localized disturbance/emergence.
+- **II · White · Interaction / Form:** light field; harder architectural geometry; order deforms through encounter.
+- **III · Lead · Weight:** approved generated lead cover. Dull, dense, oxidized metallic material; established geometry acquires mass, compression, gravity and consequence.
+- **IV · Gold · Transformation / Integration:** approved generated gold cover. Gold retains cracks/history; the rupture emits bright pure white light; a small number of nearby marks begin to levitate. No halo, luxury treatment, or literal alchemical glyph.
+
+Conceptual progression: **emergence → interaction/form → weight/lead → integration/gold**.
+
+The Great Work is the transmutation seam between lead and gold.
+
+### Editing-pass protection
+
+For subsequent manuscript editing:
+- soundtrack and cover concepts are out of scope by default;
+- do not move chapter boundaries in ways that casually destroy the observed musical landings;
+- if a proposed textual edit materially changes reading duration around an observed landing, flag it rather than compensating by changing music;
+- image and music locks are separate layers and remain locked unless Josh explicitly reopens them.
