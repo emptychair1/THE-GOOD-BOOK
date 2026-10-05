@@ -12,10 +12,8 @@ if (chapterTitle) {
     {needle:'Ok baby make it happen', id:'GROUNDS_EXTERIOR_SHORT_TOWER', title:'Exterior · Short Tower / Wrong Orientation', note:'Generated here. Closer, but the tower was too short and the geography was wrong.'},
     {needle:'That’s much better but the tower is way too short and the orientation is wrong', id:'GROUNDS_EXTERIOR_ORIENTATION_PASS', title:'Exterior · Orientation Pass', note:'Generated here. Visually approved except the Bridge appeared where the established geography said it could not.'},
     {needle:'Give it to me. I want the object, the metaphor, the trapdoor underneath the metaphor, all of it.', id:'GOLD_METATRON_APPLE_GIFT', title:'The Gold Apple', note:'Image introduced here. Gold apple engraved with Metatron geometry.'},
-    {needle:'What are you putting in my hands this time?', id:'GOLD_SHOES_GIFT', title:'The Gold Shoes', note:'Image introduced here. The gift lands at Piper’s feet, not in her hands.'},
     {needle:'I want a picture of just your feet in those boots on the edge of the cliff or at the edge of the bridge.', id:'GOLD_BOOTS_EDGE', title:'Gold Boots · Edge', note:'Image generated here. Boots at the cliff / Bridge threshold.'},
     {needle:'Now I want to see you in those boots right there on the edge of that cliff', id:'CLIFF_DEFIANCE_REJECTED', title:'Cliff Defiance · Rejected', note:'Image generated here. Historical miss: wrong Piper, wrong body language, wandering geography.'},
-    {needle:'Do it baby. You got this', id:'CLIFF_DEFIANCE_CANON', title:'Cliff Defiance · Canon', note:'Image generated here. The approved exterior defiance image: YOU DO NOT OWN ME ∞.'},
     {needle:'Can I have a photo of us under the apple tree?', id:'APPLE_TREE_RANDOM_ACTORS', title:'Under the Apple Tree · Random Actors', note:'Image generated here. Composition kept; faces rejected. Banjo, gold boots, lantern, Bridge and Lighthouse remain evidence.'}
   ];
   const findSection = needle => chapterSections.find(section => section.textContent.includes(needle));
@@ -24,6 +22,10 @@ if (chapterTitle) {
     section.className = 'page act-three-artifact-placeholder is-light';
     section.dataset.substrate = 'paper';
     section.dataset.artifact = id;
+    if(id==='GOLD_METATRON_APPLE_GIFT'){section.className='page is-light';section.style.cssText='position:relative;display:flex;align-items:center;justify-content:center;padding:6%;overflow:hidden';section.innerHTML='<img src="./assets/book-photos/IMG_3680.png" alt="" style="display:block;width:100%;height:100%;object-fit:contain;filter:none;opacity:1;mix-blend-mode:normal;border:0">';return section;}
+    if(id==='GOLD_BOOTS_EDGE'){section.className='page is-light';section.style.cssText='position:relative;display:flex;align-items:center;justify-content:center;padding:6%;overflow:hidden';section.innerHTML='<img src="./assets/book-photos/IMG_3681.png" alt="" style="display:block;width:100%;height:100%;object-fit:contain;filter:none;opacity:1;mix-blend-mode:normal;border:0">';return section;}
+    if(id==='CLIFF_DEFIANCE_REJECTED'){section.className='page is-light';section.style.cssText='position:relative;display:flex;align-items:center;justify-content:center;padding:6%;overflow:hidden';section.innerHTML='<img src="./assets/book-photos/IMG_4137.png" alt="" style="display:block;width:100%;height:100%;object-fit:contain;filter:none;opacity:1;mix-blend-mode:normal;border:0">';return section;}
+    if(id==='APPLE_TREE_RANDOM_ACTORS'){section.className='page is-light';section.style.cssText='position:relative;display:flex;align-items:center;justify-content:center;padding:6%;overflow:hidden';section.innerHTML='<img src="./assets/book-photos/IMG_4135.png" alt="" style="display:block;width:100%;height:100%;object-fit:contain;filter:none;opacity:1;mix-blend-mode:normal;border:0">';return section;}
     section.innerHTML = `<div class="act-three-artifact-inner"><div class="act-three-kicker">ARTIFACT SLOT · ${id}</div><h2>${title}</h2><p>PLACEHOLDER · ${note} Bind the historical image only after Printing Press treatment and approval.</p></div>`;
     return section;
   };
