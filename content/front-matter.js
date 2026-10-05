@@ -10,5 +10,9 @@
    const oahspe=[['oahspe-m25','IMG_4083.png'],['oahspe-m26','IMG_4084.png'],['oahspe-m27','IMG_4085.png'],['oahspe-m28','IMG_4086.png']];
    for(const [slot,file] of oahspe){const page=document.createElement('section');page.className='page image-plate image-plate-light image-frame-d oahspe-plate';page.dataset.imageSlot=slot;page.setAttribute('aria-label',`Oahspe manuscript ${slot.slice(-3).toUpperCase()}`);page.innerHTML=`<div class="image-frame-d-datum"></div><div class="image-plate-artifact oahspe-crop"><img src="./assets/book-photos/${file}" alt=""></div>`;book.insertBefore(page,foreword)}
  }
+ if(!book.querySelector('[data-image-slot="wretched-machine-l07"]')){
+   const chapterOneSource=book.querySelector('#chapter-one-source');
+   if(chapterOneSource){const page=document.createElement('section');page.className='page image-plate image-plate-dark image-frame-a';page.dataset.imageSlot='wretched-machine-l07';page.setAttribute('aria-label','The Wretched Machine artifact');page.innerHTML='<div class="image-frame-a-rail"></div><div class="image-frame-a-ground"></div><div class="image-plate-artifact"><img src="./assets/book-photos/IMG_4111.png" alt=""></div>';book.insertBefore(page,chapterOneSource)}
+ }
  window.HouseFrontMatter={ready:true};
 })();
