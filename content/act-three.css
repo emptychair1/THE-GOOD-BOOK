@@ -5,13 +5,3 @@
 /* Bite 1: numbered sockets. Bite 2 replaces their labels with images by array index. */
 .book-image-slot{display:flex!important;align-items:center!important;justify-content:center!important;padding:8vh 8vw!important;background:var(--house-paper)!important;color:var(--house-paper-mark)!important;box-sizing:border-box!important}.book-image-slot-label{width:100%;padding:2rem 1rem;border:1px dashed currentColor;text-align:center;font:700 clamp(.85rem,3vw,1.05rem)/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase}.book-image-slot>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
 .act-three-title-page,.act-three-dialogue-page,.act-three-artifact-placeholder,.act-three-source-marker,.act-three-hypothesis-page,.act-three-silence-page,.act-three-hydra-ledger{background-image:none!important;box-shadow:none!important}
-
-/* Chapter I · recovered Lighthouse manuscript. Scoped to the two historical artifact locations. */
-.act-three-lighthouse-manuscript{position:relative;display:flex;align-items:flex-start;background:var(--house-paper)!important;color:var(--house-paper-mark)!important;overflow:hidden;box-sizing:border-box;container-type:size;padding:5cqh 7cqw!important;background-image:none!important;box-shadow:none!important}
-.act-three-lighthouse-manuscript-inner{width:100%;max-width:86cqw;margin:auto;color:var(--house-paper-mark)!important;font-family:Baskerville,"Iowan Old Style",Georgia,serif;text-align:left}
-.act-three-lighthouse-manuscript-inner .act-three-kicker{margin-bottom:2.2cqh}
-.act-three-lighthouse-manuscript-inner h2{max-width:76cqw;margin:0 0 2.8cqh!important;font:400 clamp(1.7rem,6cqh,3.35rem)/1.01 Baskerville,"Iowan Old Style",Georgia,serif!important;letter-spacing:-.025em!important;color:var(--house-paper-mark)!important;text-shadow:none!important}
-.act-three-lighthouse-manuscript-inner p{max-width:82cqw;margin:.28em 0 0!important;font:400 clamp(.78rem,2.4cqh,1.02rem)/1.34 Baskerville,"Iowan Old Style",Georgia,serif!important;color:var(--house-paper-mark)!important;opacity:.9;text-shadow:none!important}
-.act-three-lighthouse-manuscript-inner p:first-of-type{margin-top:0!important}
-.act-three-lighthouse-return{align-items:center}
-.act-three-lighthouse-return .act-three-lighthouse-manuscript-inner{max-width:32rem}

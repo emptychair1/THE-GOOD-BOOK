@@ -22,6 +22,15 @@
     document.documentElement.style.setProperty('--chapter-one-pages',made.length);window.HouseChapterOne={pageCount:made.length};
   };
   paginate();
-  const bindAtmosphere=()=>{};
+  const bindAtmosphere=()=>{
+    const book=window.HouseBook,pages=book?.pages||[],chapterPages=pages.filter(p=>p.classList.contains('chapter-one-page'));if(!book||!chapterPages.length||document.querySelector('.chapter-one-audio'))return;
+    const firstIndex=pages.indexOf(chapterPages[0]),lastIndex=pages.indexOf(chapterPages[chapterPages.length-1]);
+    const grace=document.createElement('audio');grace.className='chapter-one-audio';grace.src='./assets/the_weight_of_grace.mp3';grace.preload='auto';grace.volume=0;document.body.appendChild(grace);
+    let raf=0,crossfaded=false;
+    const fade=(from,to,duration=2600)=>{cancelAnimationFrame(raf);const started=performance.now(),fromStart=from?from.volume:0,toStart=to.volume;if(to){to.volume=toStart;to.play().catch(error=>console.error('[THE GOOD BOOK] GRACE AUDIO FAIL',error))}const tick=now=>{const p=Math.min(1,(now-started)/duration),e=p*p*(3-2*p);if(from)from.volume=Math.max(0,fromStart*(1-e));to.volume=Math.min(.24,toStart+(.24-toStart)*e);if(p<1)raf=requestAnimationFrame(tick);else if(from)from.pause()};raf=requestAnimationFrame(tick)};
+    const enter=()=>{if(!crossfaded){crossfaded=true;const stone=document.querySelector('.void-bass-audio');fade(stone,grace)}};
+    addEventListener('house:page',event=>{const i=event.detail?.current;if(i>=firstIndex&&i<=lastIndex)enter()});
+    if(book.getCurrent()>=firstIndex&&book.getCurrent()<=lastIndex)enter();
+  };
   window.HouseChapterOne=Object.assign(window.HouseChapterOne||{},{bindAtmosphere});
 })();
