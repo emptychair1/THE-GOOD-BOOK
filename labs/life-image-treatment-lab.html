@@ -13,31 +13,31 @@ h1{font-size:17px;margin:0 0 5px}.note{opacity:.7;font-size:12px}
 .controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 16px 16px}
 label{display:grid;gap:4px;font-size:12px}input[type=range]{width:100%}
 button,select{font:inherit;padding:8px;background:#222;color:#fff;border:1px solid #555;border-radius:6px}
-.stage{width:min(100%,720px);margin:auto;background:var(--paper);min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}.edge-bg{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;filter:grayscale(100%) blur(28px) brightness(var(--ebb,.55)) contrast(var(--ebc,1.15));transform:scale(1.08);opacity:0;pointer-events:none}.stage.extend .edge-bg{opacity:1}.stage.extend #image{position:relative;z-index:1}
+.stage{width:min(100%,720px);margin:auto;background:var(--paper);min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
 .stage.landscape{width:100vw;max-width:none;min-height:auto;height:100vw;max-height:100svh;transform:none}
 img{display:block;max-width:none;filter:grayscale(100%) brightness(var(--b,1)) contrast(var(--c,1));}
-.stage.portrait img{width:100%;height:100svh;object-fit:contain}
-.stage.landscape img{width:100%;height:100%;object-fit:contain}
+.stage.portrait img{width:100%;height:100svh;object-fit:cover}
+.stage.landscape img{width:100%;height:100%;object-fit:cover}
 .readout{padding:12px 16px;font:12px ui-monospace,monospace;white-space:pre-wrap}
 @media(min-width:700px){.controls{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
 <body>
-<header><h1>Life Image Treatment Lab</h1><div class="note">Existing pressed asset only · no crop · maximize page · test tonal recovery at reader size.</div></header>
+<header><h1>Life Image Treatment Lab</h1><div class="note">Existing pressed asset only · full bleed · minimum necessary crop · test tonal recovery at reader size.</div></header>
 <div class="controls">
 <label>Image <select id="pick"></select></label><label>Load your image <input id="upload" type="file" accept="image/*"></label>
-<label>Orientation <select id="orientation"><option value="portrait">Vertical page</option><option value="landscape">Horizontal page</option></select></label><label>Ratio fill <select id="fill"><option value="bars">Black substrate</option><option value="extend">Blurred edge extension</option></select></label><label>Extension luminosity <input id="edgeBrightness" type="range" min="25" max="110" value="55"></label><label>Extension contrast <input id="edgeContrast" type="range" min="70" max="180" value="115"></label>
+<label>Orientation <select id="orientation"><option value="portrait">Vertical page</option><option value="landscape">Horizontal page</option></select></label>
 <label>Brightness <input id="brightness" type="range" min="60" max="180" value="100"></label>
 <label>Contrast <input id="contrast" type="range" min="60" max="220" value="100"></label>
 
 <label>Gamma / midtone <input id="gamma" type="range" min="50" max="180" value="100"></label>
 <button id="reset">Reset</button>
 </div>
-<div id="stage" class="stage portrait"><img id="edgeBg" class="edge-bg" alt="" aria-hidden="true"><img id="image" alt=""></div>
+<div id="stage" class="stage portrait"><img id="image" alt=""></div>
 <div id="readout" class="readout"></div>
 <script>
 const candidates=["IMG_3680.png","IMG_3681.png","IMG_4083.png","IMG_4084.png","IMG_4085.png","IMG_4086.png","IMG_4087.png","IMG_4088.png","IMG_4089.png","IMG_4090.png","IMG_4091.png","IMG_4092.png","IMG_4093.png","IMG_4094.png","IMG_4095.png","IMG_4096.png","IMG_4097.png","IMG_4098.png","IMG_4099.png","IMG_4100.png","IMG_4101.png","IMG_4102.png","IMG_4103.png","IMG_4104.png","IMG_4105.png","IMG_4106.png","IMG_4107.png","IMG_4108.png","IMG_4109.png","IMG_4110.png","IMG_4111.png","IMG_4112.png","IMG_4114.png","IMG_4115.png","IMG_4116.png","IMG_4122.png","IMG_4123.png","IMG_4124.png","IMG_4125.png","IMG_4126.jpeg","IMG_4127.png","IMG_4128.png","IMG_4129.png","IMG_4130.png","IMG_4131.png","IMG_4132.png","IMG_4133.png","IMG_4134.png","IMG_4135.png","IMG_4137.png","IMG_4138.png","IMG_4140.png","IMG_4141.png","IMG_4142.png","IMG_4144.png","IMG_4146.png","IMG_4148.png","IMG_4149.png","IMG_4150.png","IMG_4151.png","IMG_4152.png","IMG_4213.png","IMG_4214.png","IMG_4215.png","IMG_4216.png","IMG_4268.png"];
-const $=id=>document.getElementById(id), pick=$('pick'), img=$('image'), bg=$('edgeBg'), stage=$('stage');
+const $=id=>document.getElementById(id), pick=$('pick'), img=$('image'), stage=$('stage');
 candidates.forEach(x=>pick.add(new Option(x,x)));
 function gammaFilter(g){ /* CSS has no gamma primitive; approximate midtone lift with brightness+contrast pairing */ return g/100 }
 function render(){
@@ -46,14 +46,13 @@ function render(){
  img.style.setProperty('--b',(b*g).toFixed(3));
  img.style.setProperty('--c',(c*(2-g*.5)).toFixed(3));
  
- stage.className='stage '+$('orientation').value+' '+$('fill').value;
- bg.style.setProperty('--ebb',($('edgeBrightness').value/100).toFixed(2)); bg.style.setProperty('--ebc',($('edgeContrast').value/100).toFixed(2)); if(!img.dataset.local) bg.src=img.src;
- $('readout').textContent='asset: assets/'+pick.value+'\norientation: '+$('orientation').value+'\nbrightness: '+b.toFixed(2)+'  contrast: '+c.toFixed(2)+'  grayscale: 100%  midtone: '+g.toFixed(2)+'\nNO CROP · object-fit: contain';
+ stage.className='stage '+$('orientation').value;
+ $('readout').textContent='asset: assets/'+pick.value+'\norientation: '+$('orientation').value+'\nbrightness: '+b.toFixed(2)+'  contrast: '+c.toFixed(2)+'  grayscale: 100%  midtone: '+g.toFixed(2)+'\nMINIMUM NECESSARY CROP · object-fit: cover';
 }
 document.querySelectorAll('input:not([type=file]),select').forEach(x=>x.addEventListener('input',render));
-$('upload').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const u=URL.createObjectURL(f);img.src=u;bg.src=u;img.dataset.local='1';$('readout').textContent='LOCAL IMAGE: '+f.name+'\nNot uploaded anywhere · treatment is browser-only\nNO CROP · grayscale · adjust tone below';});
+$('upload').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const u=URL.createObjectURL(f);img.src=u;img.dataset.local='1';$('readout').textContent='LOCAL IMAGE: '+f.name+'\nNot uploaded anywhere · treatment is browser-only\nMINIMUM NECESSARY CROP · grayscale · adjust tone below';});
 pick.addEventListener('change',()=>{delete img.dataset.local;render();});
-$('reset').onclick=()=>{brightness.value=contrast.value=gamma.value=100;edgeBrightness.value=55;edgeContrast.value=115;render()};
+$('reset').onclick=()=>{brightness.value=contrast.value=gamma.value=100;render()};
 render();
 </script>
 </body></html>
