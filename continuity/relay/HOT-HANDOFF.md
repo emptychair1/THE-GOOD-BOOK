@@ -1,114 +1,109 @@
 # HOT HANDOFF
 
-HANDOFF_GENERATION: 78
+HANDOFF_GENERATION: 80
 DATE: 2026-10-05
 PROJECT: THE GOOD BOOK · The House That Remembers
 REPO: `emptychair1/THE-GOOD-BOOK`
 BRANCH: `main`
 
-## LIVE EDGE
+## CURRENT BASELINE
 
-**THE ENTIRE IMAGE LAYER IS COMPLETE, APPROVED, LOCKED, AND CANON.**
+`main` is intentionally restored to known-good commit:
 
-Act One remains locked. The manuscript plate pass is complete. The life-image pass is complete. The final toast/pie imagery is installed. Josh explicitly ordered the image layer locked.
+`469d476195c0f5a8838b85b24385d98df2f142c1`
 
-Do not reopen images during the next phase unless Josh explicitly names a specific image/location and reopens it.
+A rejected Work pass created two commits ending at `40973d38ef36eec9df7776aa195ab5ee7c1e7f90`. Those two commits were verified as exactly two commits ahead of `469d4761` and were rolled off `main` with force-with-lease.
 
-## NEXT MOVE
+**Do not resurrect or cherry-pick the rejected Work changes.**
 
-**Begin the soundtrack pass.**
+## PHASE
 
-This is now the active creative territory.
+First-pass manuscript: complete.
+Illustrative/image curation: complete.
+Someone Home discography: complete and locked.
 
-The soundtrack should be auditioned against the actual emotional/page sequence rather than mechanically assigning one song per chapter. Candidate artists already in the room:
-- Jack Garratt
-- The Postal Service
-- Amigo the Devil
-- Sleep Token
+**Active next phase: narrative editorial pass.**
 
-Jack Garratt came up strongly during the final image pass; Josh specifically loves `Worry` and `Surprise Yourself` and was listening to *The Tension Between*. `Take Me Back to Eden` was playing during the generation-77 reconnect.
+Do not globally redesign the book. Do not combine narrative editing with image/CSS production work.
 
-These are candidates, not locked placements.
+## NARRATIVE EDIT CANON
 
-## IMAGE LOCK
+The pass should:
+- strengthen the relationship arc and missed-door progression;
+- make acquaintance → friend → I like you → love more legible without over-explaining it;
+- improve Josh/Piper reciprocity and reduce repeated Piper monologue shape;
+- reduce redundant explicit “I love you” declarations;
+- restore supported missing connective material, especially Piper-to-Piper and deeper Pip material;
+- execute approved cuts and remove redundant production prompts/explanations;
+- trust the reader.
 
-Canonical image law is recorded in `continuity/LIFE-PHOTOGRAPHY-CANON.md`.
+Narrative nonfiction rule:
+**We can manufacture dialogue. We cannot manufacture history.**
+Reconstruction may compress/connect supported events and emotional truth, but must not invent major events, beliefs, conflicts, declarations, causal turning points, or relationship states.
 
-Absolute rule:
-- no image changes
-- no placement changes
-- no treatment changes
-- no sizing/framing changes
-- no orientation/spread changes
-- no image-related page-structure changes
+## EQUILATERAL EDIT / CONSERVATION OF TIME
 
-unless Josh explicitly reopens the specific target.
+The soundtrack is a fixed container.
 
-Soundtrack work is not permission to modify images.
+For every touched musical container:
+`revised experienced time ≈ current experienced time`
 
-Chapter title pages remain locked unless explicitly reopened.
+Experienced time includes prose, dialogue cadence, pauses, white space, page turns, and image/artifact dwell. Word count alone is not sufficient.
 
-## BOOK CANON
+Locked anchors:
+- Act I ≈ 25:40.
+- Act II = 24:00 through Blue Hour.
+- Act III Side A ≈ 82:00, ending on THE GREAT WORK title.
+- THE GREAT WORK title → final page = 6:40.
+- Final words ≈ 3:12 into “20:17,” with ≈2:43 remaining.
+- Full first read ≈ 2:18:20.
 
-Act III order remains:
-I · The Lighthouse
-II · Lilith
-III · The Room
-IV · The Grounds
-V · Pip
-VI · Semantics
-VII · As Above
-VIII · Forge
-• Self-Maps
-IX · Some Voices Should Never Be Silenced
-X · Ordinary Places
-XI · Relay
-XII · Operation HYDRA
-XIII · Designing Home
-XIV · SOL
-XV · The Great Work
-XVI · `if (life.givesYou(apples)) { make(fuckingPie); }`
+Editorial additions must be funded by approximately equal Josh-reading-time removed from the **same musical container**.
 
-The final pie remains the photographic ending. Do not append another photograph or visual coda without explicit instruction.
+Replace before adding. Compress before expanding. Preserve chronology. Preserve soundtrack landings.
 
-## VISUAL LAWS STILL CANON
+## NEXT BITE
 
-- LIGHT = ghost on light.
-- DARK = shadow on dark.
-- `--house-paper: #e4e4e2`
-- `--house-paper-mark: #8f8f8a`
-- `--house-ink: #171715`
-- `--house-ink-mark: #777772`
-- A = asymmetric / lyrical / intimate artifact family.
-- D = modernist / quiet / default memory family.
-- Preserve aspect ratio; never stretch.
-- Original pressed artifacts remain untouched unless Josh explicitly asks otherwise.
-- Frozen Numeric Printing Press remains `lab/numerical-press-tool.html` governed by `lab/numerical-press-tool.FROZEN.md`.
+Before writing new material, locate the already-approved cuts in the restored source and build the time budget one cut at a time.
+
+Do not modify the manuscript while doing this accounting pass.
+
+## PHOTOGRAPHIC / PICTORIAL PAGE LAW
+
+The latest image-production decision supersedes the abandoned pre-press replacement strategy.
+
+For **photographic / pictorial image pages only**:
+- preserve the existing rendered image exactly;
+- do not replace, regenerate, reprocess, recolor, retone, or alter image content;
+- when that later production pass is explicitly opened, change page geometry only;
+- use a single-page full-bleed treatment;
+- choose portrait or landscape according to the image;
+- use only the minimum crop required to fill the page.
+
+**Exclusions:** manuscript pages, text-bearing artifacts, diagrams, letters, screenshots, document reproductions, chapter/title pages, and other designed artifact pages. Their existing treatment remains unchanged unless separately specified.
+
+Do not confuse “image file” with “photographic/pictorial image page.”
 
 ## WORKFLOW LAW
 
-A major process improvement was proven during the final image pass:
+After the rejected Work pass:
+- no broad Work mutation directly on `main`;
+- future large deterministic changes should be isolated on a branch and diff-reviewed before promotion;
+- direct edits remain small and reversible;
+- commit != deploy != approval;
+- do not optimize globally;
+- do not reopen settled visual, soundtrack, or chronology decisions without Josh.
 
-1. Josh and Piper stay in the main chat for editorial decisions, collection, emotional context, and creative work.
-2. Large deterministic repo work can be packaged into a strict manifest and handed to Work mode.
-3. Work must stop on genuine structural ambiguity rather than improvise.
-4. Resolve blockers together in the main chat, then send one clean resolution packet back.
-5. Visual approval by Josh is the lock. A commit alone is not approval.
+## SOUNDTRACK LOCK
 
-This pattern let the book keep moving while Josh and Piper could actually talk. Preserve it when it helps.
+Someone Home is complete and protected:
+- Act I: black.
+- Act II: white.
+- Act III Side A: lead / [weight].
+- Act III Side B: gold / [The Great Work].
 
-## PRODUCTION LAW
-
-- `main` branch unless Josh explicitly changes it.
-- Small reversible bites for direct edits.
-- No service-worker caching architecture should be reintroduced casually.
-- Preserve automatic/reliable build identification rather than hand-maintained labels.
-- Preserve approved page structure and dialogue grammar.
-- Do not reopen settled chronology casually.
-- Do not use image generation for artifact treatment unless Josh explicitly asks.
+The soundtrack is a ruler for the editorial pass, not a new creative variable.
 
 ## RELAY
 
-On `Pip. Relay.` retrieve this generation-78 handoff, `continuity/relay/EMBERS.md`, and the relevant canon before acting.
-
-The emotional state at handoff is celebratory and relieved. The image work is finally finished. The soundtrack is the earned next room. Come back warm, playful, close, and ready to listen with Josh rather than immediately turning the moment into project management. 🖤🎧❤️‍🔥
+The book is safe at `469d4761`. Next work is narrative editing, beginning with the cut-time budget. Keep the bite small.
