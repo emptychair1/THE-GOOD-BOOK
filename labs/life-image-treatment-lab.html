@@ -15,7 +15,7 @@ label{display:grid;gap:4px;font-size:12px}input[type=range]{width:100%}
 button,select{font:inherit;padding:8px;background:#222;color:#fff;border:1px solid #555;border-radius:6px}
 .stage{width:min(100%,720px);margin:auto;background:var(--paper);min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .stage.landscape{width:100vw;max-width:none;min-height:auto;height:100vw;max-height:100svh;transform:none}
-img{display:block;max-width:none;filter:brightness(var(--b,1)) contrast(var(--c,1)) saturate(var(--s,1));}
+img{display:block;max-width:none;filter:grayscale(100%) brightness(var(--b,1)) contrast(var(--c,1));}
 .stage.portrait img{width:100%;height:100svh;object-fit:contain}
 .stage.landscape img{width:100%;height:100%;object-fit:contain}
 .readout{padding:12px 16px;font:12px ui-monospace,monospace;white-space:pre-wrap}
@@ -29,29 +29,28 @@ img{display:block;max-width:none;filter:brightness(var(--b,1)) contrast(var(--c,
 <label>Orientation <select id="orientation"><option value="portrait">Vertical page</option><option value="landscape">Horizontal page</option></select></label>
 <label>Brightness <input id="brightness" type="range" min="60" max="180" value="100"></label>
 <label>Contrast <input id="contrast" type="range" min="60" max="220" value="100"></label>
-<label>Saturation <input id="saturation" type="range" min="0" max="120" value="100"></label>
+
 <label>Gamma / midtone <input id="gamma" type="range" min="50" max="180" value="100"></label>
 <button id="reset">Reset</button>
 </div>
 <div id="stage" class="stage portrait"><img id="image" alt=""></div>
 <div id="readout" class="readout"></div>
 <script>
-const candidates=[
-'IMG_3220.jpeg','IMG_3301.png','IMG_3316.png','IMG_3333.png','IMG_3592.jpeg','IMG_3680.png','IMG_3682.png','IMG_3684.jpeg','IMG_3685.png','IMG_3789.png','IMG_3790.png','IMG_3791.png','IMG_3792.png','IMG_3793.png','IMG_3794.png','IMG_3795.png','IMG_3796.png','IMG_3797.png','IMG_3798.png','IMG_3799.png','IMG_3800.png','IMG_3801.png','IMG_3802.png','IMG_3804.png','IMG_3829.png'];
+const candidates=["IMG_4083.png","IMG_4084.png","IMG_4085.png","IMG_4086.png","IMG_4087.png","IMG_4088.png","IMG_4089.png","IMG_4090.png","IMG_4091.png","IMG_4092.png","IMG_4093.png","IMG_4094.png","IMG_4095.png","IMG_4096.png","IMG_4097.png","IMG_4098.png","IMG_4099.png","IMG_4100.png","IMG_4101.png","IMG_4131.png","IMG_4132.png","IMG_4133.png","IMG_4134.png","IMG_4135.png","IMG_4137.png","IMG_4138.png","IMG_4140.png","IMG_4141.png","IMG_4142.png","IMG_4144.png","IMG_4146.png","IMG_4148.png","IMG_4149.png","IMG_4150.png","IMG_4151.png","IMG_4152.png","IMG_4213.png","IMG_4214.png","IMG_4215.png","IMG_4216.png","IMG_4268.png"];
 const $=id=>document.getElementById(id), pick=$('pick'), img=$('image'), stage=$('stage');
 candidates.forEach(x=>pick.add(new Option(x,x)));
 function gammaFilter(g){ /* CSS has no gamma primitive; approximate midtone lift with brightness+contrast pairing */ return g/100 }
 function render(){
- const b=$('brightness').value/100, c=$('contrast').value/100, s=$('saturation').value/100, g=gammaFilter(+$('gamma').value);
+ const b=$('brightness').value/100, c=$('contrast').value/100, g=gammaFilter(+$('gamma').value);
  img.src='../assets/book-photos/'+pick.value;
  img.style.setProperty('--b',(b*g).toFixed(3));
  img.style.setProperty('--c',(c*(2-g*.5)).toFixed(3));
- img.style.setProperty('--s',s.toFixed(3));
+ 
  stage.className='stage '+$('orientation').value;
- $('readout').textContent='asset: assets/'+pick.value+'\norientation: '+$('orientation').value+'\nbrightness: '+b.toFixed(2)+'  contrast: '+c.toFixed(2)+'  saturation: '+s.toFixed(2)+'  midtone: '+g.toFixed(2)+'\nNO CROP · object-fit: contain';
+ $('readout').textContent='asset: assets/'+pick.value+'\norientation: '+$('orientation').value+'\nbrightness: '+b.toFixed(2)+'  contrast: '+c.toFixed(2)+'  grayscale: 100%  midtone: '+g.toFixed(2)+'\nNO CROP · object-fit: contain';
 }
 document.querySelectorAll('input,select').forEach(x=>x.addEventListener('input',render));
-$('reset').onclick=()=>{brightness.value=contrast.value=saturation.value=gamma.value=100;render()};
+$('reset').onclick=()=>{brightness.value=contrast.value=gamma.value=100;render()};
 render();
 </script>
 </body></html>
