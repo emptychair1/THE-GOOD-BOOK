@@ -21,10 +21,8 @@
   transform:none!important
 }
 .photo-page.photo-landscape>img{
-  inset:auto!important;
-  left:50%!important;
-  top:50%!important;
-  width:100cqh!important;
-  height:100cqw!important;
-  transform:translate(-50%,-50%) rotate(90deg)!important
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  transform:none!important
 }
