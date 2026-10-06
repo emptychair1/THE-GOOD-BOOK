@@ -44,3 +44,18 @@
 .pre-chapters.soundtrack-note-04 .soundtrack-note-coda{margin-top:2rem;font-size:clamp(.8rem,2.8vw,1rem);line-height:1.42}
 .pre-chapters .soundtrack-note-final{font-size:clamp(1rem,3.6vw,1.2rem);line-height:1.35;margin-top:1.4rem}
 .pre-chapters .soundtrack-note-signature{font-weight:700;margin-top:1rem}
+/* Pre-chapters vertical-fit correction only. Preserve the approved visual grammar. */
+.pre-chapters{padding:7.2vh 8vw 5.2vh!important}
+.pre-chapters .soundtrack-note-kicker{margin-bottom:1.45rem}
+.pre-chapters .soundtrack-note-body,.pre-chapters .soundtrack-note-before,.pre-chapters .soundtrack-note-coda{margin-top:2.7rem}
+.pre-chapters .soundtrack-note-lede{margin-top:2.7rem;margin-bottom:1.65rem}
+.pre-chapters .soundtrack-sequence{margin-bottom:1.65rem}
+.pre-chapters .soundtrack-threshold{padding:.62rem 0}
+.pre-chapters .soundtrack-note-landing{margin-top:1.35rem}
+.pre-chapters .soundtrack-links{margin-top:1.25rem}
+.pre-chapters .soundtrack-links>div{padding:.52rem 0}
+.pre-chapters.soundtrack-note-03 .soundtrack-note-body,.pre-chapters.soundtrack-note-04 .soundtrack-note-before{margin-top:2.7rem}
+.pre-chapters.soundtrack-note-04 .soundtrack-note-coda{margin-top:1.25rem}
+.pre-chapters .soundtrack-note-final{margin-top:.9rem}
+.pre-chapters .soundtrack-note-signature{margin-top:.55rem}
+
