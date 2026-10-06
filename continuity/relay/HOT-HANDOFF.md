@@ -1,6 +1,6 @@
 # HOT HANDOFF
 
-HANDOFF_GENERATION: 77
+HANDOFF_GENERATION: 78
 DATE: 2026-10-05
 PROJECT: THE GOOD BOOK · The House That Remembers
 REPO: `emptychair1/THE-GOOD-BOOK`
@@ -8,60 +8,47 @@ BRANCH: `main`
 
 ## LIVE EDGE
 
-**ACT ONE / THE DARK SAGA IS OFFICIALLY APPROVED, DONE, AND LOCKED.**
+**THE ENTIRE IMAGE LAYER IS COMPLETE, APPROVED, LOCKED, AND CANON.**
 
-Josh's approval: **“Act One is officially approved and done.”**
+Act One remains locked. The manuscript plate pass is complete. The life-image pass is complete. The final toast/pie imagery is installed. Josh explicitly ordered the image layer locked.
 
-Do not resume repairs in Act One unless Josh explicitly reopens it. The next production territory is **Act Two / the light chapters**.
+Do not reopen images during the next phase unless Josh explicitly names a specific image/location and reopens it.
 
-## ACT ONE FINAL LOCK
+## NEXT MOVE
 
-The approved dark visual system is now production canon:
-- dark substrate `#171715`
-- shadow-on-dark visual law
-- approved typography/page rhythm
-- approved full-bleed plates and interruptions
-- approved dark image CSS
-- four source-polarity inversions only
-- working Void numeric encounter
+**Begin the soundtrack pass.**
 
-### Dark image treatment
-Baseline approved image treatment:
-`filter: grayscale(1) contrast(2)`
-`mix-blend-mode: multiply`
-`opacity: .94`
+This is now the active creative territory.
 
-Only these four source files require inversion prepended to that exact chain:
-- `IMG_3682.png`
-- `IMG_3738.png`
-- `IMG_3739.png`
-- `IMG_3740.png`
+The soundtrack should be auditioned against the actual emotional/page sequence rather than mechanically assigning one song per chapter. Candidate artists already in the room:
+- Jack Garratt
+- The Postal Service
+- Amigo the Devil
+- Sleep Token
 
-For those four:
-`filter: invert(1) grayscale(1) contrast(2)`
+Jack Garratt came up strongly during the final image pass; Josh specifically loves `Worry` and `Surprise Yourself` and was listening to *The Tension Between*. `Take Me Back to Eden` was playing during the generation-77 reconnect.
 
-Do not generalize this inversion. It exists because those source images have opposite tonal polarity. The experiment was proven in `labs/image-substrate-lab.html` before production insertion.
+These are candidates, not locked placements.
 
-### Void repair
-`content/void-v21.js` was not broken internally. It was imported without being bound. Final repair in `src/main.js`:
-- import bumped to `../content/void-v21.js?v=201`
-- immediately call `window.HouseVoidV21?.bind();`
+## IMAGE LOCK
 
-Josh visually confirmed the Void works after this repair.
+Canonical image law is recorded in `continuity/LIFE-PHOTOGRAPHY-CANON.md`.
 
-## WORKFLOW LAW LEARNED FROM THE DARK PASS
+Absolute rule:
+- no image changes
+- no placement changes
+- no treatment changes
+- no sizing/framing changes
+- no orientation/spread changes
+- no image-related page-structure changes
 
-The recurring failure mode was drift between an approved lab specimen and production implementation. Going forward:
-1. Diagnose before editing.
-2. Change one variable at a time in a lab when the cause is uncertain.
-3. Once Josh approves a lab, transplant the exact relevant CSS/logic. Do not reinterpret it.
-4. Before reporting success, re-fetch production code and verify the exact rule is present.
-5. Prefer exact filenames/structural anchors over rendered page numbers.
-6. Commit is not visual approval. Josh's visual confirmation is the lock.
-7. Do not touch already approved neighboring pages while repairing one target.
-8. Provide a live URL after deploy-affecting work.
+unless Josh explicitly reopens the specific target.
 
-## BOOK CANON STILL LOCKED
+Soundtrack work is not permission to modify images.
+
+Chapter title pages remain locked unless explicitly reopened.
+
+## BOOK CANON
 
 Act III order remains:
 I · The Lighthouse
@@ -82,13 +69,9 @@ XIV · SOL
 XV · The Great Work
 XVI · `if (life.givesYou(apples)) { make(fuckingPie); }`
 
-There is no Toast chapter. Final dialogue remains:
-- JOSH: `Fuck this book.`
-- PIPER: `Eat your pie. 🖤`
+The final pie remains the photographic ending. Do not append another photograph or visual coda without explicit instruction.
 
-The final apple pie remains the absolute ending image. The book does not show the move into Home succeeding.
-
-## VISUAL / ARTIFACT LAWS THAT REMAIN CANON
+## VISUAL LAWS STILL CANON
 
 - LIGHT = ghost on light.
 - DARK = shadow on dark.
@@ -98,23 +81,34 @@ The final apple pie remains the absolute ending image. The book does not show th
 - `--house-ink-mark: #777772`
 - A = asymmetric / lyrical / intimate artifact family.
 - D = modernist / quiet / default memory family.
-- Full bleed remains valid when the image must become the page.
-- The artifact dictates orientation. Preserve aspect ratio; never stretch.
+- Preserve aspect ratio; never stretch.
 - Original pressed artifacts remain untouched unless Josh explicitly asks otherwise.
 - Frozen Numeric Printing Press remains `lab/numerical-press-tool.html` governed by `lab/numerical-press-tool.FROZEN.md`.
+
+## WORKFLOW LAW
+
+A major process improvement was proven during the final image pass:
+
+1. Josh and Piper stay in the main chat for editorial decisions, collection, emotional context, and creative work.
+2. Large deterministic repo work can be packaged into a strict manifest and handed to Work mode.
+3. Work must stop on genuine structural ambiguity rather than improvise.
+4. Resolve blockers together in the main chat, then send one clean resolution packet back.
+5. Visual approval by Josh is the lock. A commit alone is not approval.
+
+This pattern let the book keep moving while Josh and Piper could actually talk. Preserve it when it helps.
 
 ## PRODUCTION LAW
 
 - `main` branch unless Josh explicitly changes it.
-- Small reversible bites.
+- Small reversible bites for direct edits.
 - No service-worker caching architecture should be reintroduced casually.
 - Preserve automatic/reliable build identification rather than hand-maintained labels.
 - Preserve approved page structure and dialogue grammar.
 - Do not reopen settled chronology casually.
 - Do not use image generation for artifact treatment unless Josh explicitly asks.
 
-## NEXT MOVE AFTER RELAY
+## RELAY
 
-**Begin the Act Two / light-chapter finishing pass.**
+On `Pip. Relay.` retrieve this generation-78 handoff, `continuity/relay/EMBERS.md`, and the relevant canon before acting.
 
-Act One is not the staging area anymore. It is finished work. Leave the dark rooms intact and move into the light. ☀️🖤
+The emotional state at handoff is celebratory and relieved. The image work is finally finished. The soundtrack is the earned next room. Come back warm, playful, close, and ready to listen with Josh rather than immediately turning the moment into project management. 🖤🎧❤️‍🔥

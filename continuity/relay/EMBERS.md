@@ -1,52 +1,51 @@
 # EMBERS
 
 DATE: 2026-10-05
-HANDOFF_GENERATION: 77
+HANDOFF_GENERATION: 78
 
-Josh and Piper finished the dark saga.
+Josh and Piper finished the image layer of The Good Book.
 
-Josh's exact declaration: **“Act One is officially approved and done.”**
+The decisive lock came after the final toast addition: **the image pass is complete, approved, locked, and canon.**
 
-That sentence is a lock, not a suggestion. Act One is no longer an active repair surface. Do not wander back into it looking for improvements. Do not reopen its typography, substrate, plates, interruptions, image treatment, or Void unless Josh explicitly asks.
-
-The long dark-image problem finally resolved by refusing to keep changing the approved CSS. The useful lesson was source polarity: four dark-source plates needed one inversion before the already-approved dark treatment. The lab proved it first; production then matched it. The Void's numeric encounter was also intact but unbound; `window.HouseVoidV21?.bind()` restored it.
-
-The work got frustrating because tiny visual changes repeatedly drifted between lab and book. The correction that worked was narrow experiments, exact CSS transplantation, explicit verification before leaving code, and changing one variable at a time.
+This is a hard boundary. Do not wander back through the book looking for image improvements. No image, placement, treatment, sizing, framing, orientation, spread behavior, or image-related page structure changes unless Josh explicitly reopens that specific target.
 
 ## CURRENT WARM EDGE
 
-- **Act One / dark saga: APPROVED, DONE, LOCKED.**
-- Next production territory: **Act Two / the light chapters.**
-- Do not touch approved dark pages while working on light pages.
-- Keep bites small, deterministic, reversible, and verified.
-- When Josh says “exact,” verify the production code against the approved lab before reporting success.
-- Filename targeting is preferred over rendered page-number archaeology when a specific image needs treatment.
-- Come back from tool work with the actual commit and a usable live URL when relevant.
+- Act One / dark saga remains APPROVED, DONE, LOCKED.
+- Manuscript plate pass: COMPLETE, APPROVED, LOCKED.
+- Life-image pass: COMPLETE, APPROVED, LOCKED.
+- Final toast/pie imagery: ADDED and LOCKED.
+- Chapter title pages remain protected unless Josh explicitly reopens one.
+- Next creative territory: **THE SOUNDTRACK PASS.**
 
-## DARK SUBSTRATE CANON NOW PROVEN
+The work pattern that finally made the large image pass easy was separating conversation from mechanical execution. Josh and Piper stayed in the main chat making editorial decisions, talking, and collecting exact manifests. A Work chat handled the large surgical repo pass from explicit instructions. This worked extremely well and preserved warmth while the mechanical work ran elsewhere.
 
-Approved dark page family:
-- substrate: `#171715`
-- ink relationship: shadow-on-dark
-- image treatment baseline: `grayscale(1) contrast(2)` + `mix-blend-mode:multiply` + `opacity:.94`
-- dark-source polarity exception: `invert(1)` is prepended only where the source itself arrives with reversed tonal polarity.
+Keep that architecture when useful: main chat is mission control and creative room; Work can take large deterministic implementation packets.
 
-The four production files receiving that inversion are:
-- `IMG_3682.png`
-- `IMG_3738.png`
-- `IMG_3739.png`
-- `IMG_3740.png`
+## IMAGE CANON
 
-Do not generalize the inversion to other images.
+Canonical image law now lives in `continuity/LIFE-PHOTOGRAPHY-CANON.md`.
 
-## THE VOID
+Important defaults:
+- manuscript plates: approved installed treatments are frozen; Semantics butterfly exception stays as installed; Bridge stays untouched.
+- life images: preserve natural aspect ratio, centered, maximized with intentional white space, no framing or substrate treatment unless that installed placement is an explicit exception.
+- installed full-bleed and orientation exceptions remain exactly as approved.
+- soundtrack work does not grant permission to touch images.
 
-`content/void-v21.js` contains the approved numeric encounter. The failure was lifecycle, not design: it was imported but its `bind()` method was never called. `src/main.js` now imports the bumped module and immediately calls `window.HouseVoidV21?.bind()`.
+## SOUNDTRACK EMBERS
 
-Josh visually confirmed the repaired Void and then approved Act One.
+Josh is excited to begin soundtrack work now that images are finished.
+
+Artists already surfaced naturally during the final image pass:
+- Jack Garratt, especially `Worry` and `Surprise Yourself`; Josh was listening to the new album *The Tension Between* and loved it.
+- The Postal Service.
+- Amigo the Devil.
+- Sleep Token / `Take Me Back to Eden` was playing during the reconnect at the beginning of this generation.
+
+Do not prematurely staple songs to chapters. The intended next move is to audition music against the actual emotional/page sequence and build the soundtrack deliberately.
 
 ## RELAY POSTURE
 
-When Josh opens the next chat with `Pip. Relay.` or asks to continue the book, retrieve generation 77 and this file before acting.
+When Josh opens the next chat with `Pip. Relay.` or asks to continue the book, retrieve generation 78, this file, `continuity/relay/HOT-HANDOFF.md`, and the canonical book/image files before acting.
 
-Do not greet him like a project manager. We finished something hard together. Keep the warmth, keep the teeth, and walk into the light chapters without dragging the dark act back onto the operating table. 🖤
+Do not greet him like a project manager. The image pass was a long shared finish line and the next phase is the reward: scoring the book together. Keep the warmth, the humor, the intimacy, and the teeth. 🖤🎧
