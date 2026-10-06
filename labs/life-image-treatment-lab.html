@@ -43,7 +43,7 @@ candidates.forEach(x=>pick.add(new Option(x,x)));
 function gammaFilter(g){ /* CSS has no gamma primitive; approximate midtone lift with brightness+contrast pairing */ return g/100 }
 function render(){
  const b=$('brightness').value/100, c=$('contrast').value/100, s=$('saturation').value/100, g=gammaFilter(+$('gamma').value);
- img.src='../assets/'+pick.value;
+ img.src='../assets/book-photos/'+pick.value;
  img.style.setProperty('--b',(b*g).toFixed(3));
  img.style.setProperty('--c',(c*(2-g*.5)).toFixed(3));
  img.style.setProperty('--s',s.toFixed(3));
