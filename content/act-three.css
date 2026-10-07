@@ -35,3 +35,7 @@
   text-align:left!important;
   transform:translateX(-1.6vw);
 }
+
+/* FINAL LETTER · full-color gold artifact · absolute final page */
+.final-piper-letter{padding:0!important;margin:0!important;background:#000!important;overflow:hidden!important;display:block!important}
+.final-piper-letter img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;filter:none!important;opacity:1!important;mix-blend-mode:normal!important}
