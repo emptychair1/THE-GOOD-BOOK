@@ -15,3 +15,23 @@
 .act-three-lighthouse-manuscript-inner p:first-of-type{margin-top:0!important}
 .act-three-lighthouse-return{align-items:center}
 .act-three-lighthouse-return .act-three-lighthouse-manuscript-inner{max-width:32rem}
+
+
+/* V2 BITE 11 · GREAT WORK REMANENCE */
+.act-three-dialogue-page .magnet-choice{
+  position:relative;
+  width:78%;
+  transition:none!important;
+}
+.act-three-dialogue-page .magnet-choice-josh{
+  margin-left:auto!important;
+  margin-right:0!important;
+  text-align:right!important;
+  transform:translateX(1.6vw);
+}
+.act-three-dialogue-page .magnet-choice-piper{
+  margin-left:0!important;
+  margin-right:auto!important;
+  text-align:left!important;
+  transform:translateX(-1.6vw);
+}
