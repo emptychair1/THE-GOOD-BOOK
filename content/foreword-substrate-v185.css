@@ -69,3 +69,9 @@
 .little-lights-artist{font:italic clamp(1.05rem,4vw,1.35rem)/1.3 Baskerville,"Iowan Old Style",Georgia,serif!important;margin:1.1rem 0 4rem!important;color:var(--house-paper-mark)!important}
 .little-lights-note,.little-lights-instruction{font:400 clamp(1rem,3.8vw,1.25rem)/1.5 Baskerville,"Iowan Old Style",Georgia,serif!important;color:var(--house-paper-mark)!important}
 .little-lights-instruction{margin-top:2rem!important;font-style:italic!important}
+
+/* Soundtrack album table · keep the interactive targets away from PageFlip edge zones. */
+.pre-chapters.soundtrack-note-04b{display:flex!important;align-items:center!important;justify-content:center!important;padding:5vh 16vw!important}
+.pre-chapters.soundtrack-note-04b .soundtrack-note-inner{width:min(68vw,34rem)!important;max-width:34rem!important;margin:auto!important}
+.pre-chapters.soundtrack-note-04b .soundtrack-links{width:100%!important;margin:0 auto!important}
+.pre-chapters.soundtrack-note-04b .soundtrack-note-coda{margin:1.5rem auto 0!important;max-width:30rem!important}
