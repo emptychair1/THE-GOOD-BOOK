@@ -75,3 +75,12 @@
 .pre-chapters.soundtrack-note-04b .soundtrack-note-inner{width:min(68vw,34rem)!important;max-width:34rem!important;margin:auto!important}
 .pre-chapters.soundtrack-note-04b .soundtrack-links{width:100%!important;margin:0 auto!important}
 .pre-chapters.soundtrack-note-04b .soundtrack-note-coda{margin:1.5rem auto 0!important;max-width:30rem!important}
+
+/* Soundtrack links · simple centered list, safely inside PageFlip gesture boundaries. */
+.pre-chapters.soundtrack-note-04b{display:block!important;padding-top:5vh!important}
+.pre-chapters.soundtrack-note-04b .soundtrack-note-inner{width:100%!important;max-width:none!important;margin:0!important;text-align:center!important}
+.pre-chapters .soundtrack-link-list{list-style:none!important;padding:0!important;margin:1.25rem auto 0!important;width:58%!important;max-width:28rem!important;text-align:center!important}
+.pre-chapters .soundtrack-link-list li{display:block!important;margin:0 auto 1.35rem!important;padding:0!important;text-align:center!important}
+.pre-chapters .soundtrack-link-list strong,.pre-chapters .soundtrack-link-list a{display:block!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+.pre-chapters .soundtrack-link-list a{padding:.18rem 1rem!important;position:relative!important;z-index:20!important;pointer-events:auto!important}
+.pre-chapters.soundtrack-note-04b .soundtrack-note-coda{width:58%!important;max-width:28rem!important;margin:1.5rem auto 0!important;text-align:center!important}
