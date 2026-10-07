@@ -15,13 +15,6 @@
   const pages=[...book.querySelectorAll('.page')],last=pages.length-1,sealIndex=pages.indexOf(sealPage),forewordPages=pages.map((p,i)=>({p,i})).filter(x=>x.p.classList.contains('foreword'));
   function syncStatusPolarity(){const page=pages[current];if(!page)return;const light=page.classList.contains('foreword')||page.classList.contains('foreword-seal')||page.classList.contains('toc-page');status.style.color=light?'rgba(23,21,19,.58)':'rgba(246,240,230,.68)'}
   status.textContent=`1 / ${pages.length}`;syncStatusPolarity();
-  // Interactive links must win the gesture before PageFlip interprets it as a turn.
-  book.querySelectorAll('a[data-house-interactive][href]').forEach(link=>{
-    const hold=e=>e.stopPropagation();
-    link.addEventListener('pointerdown',hold,{capture:true});
-    link.addEventListener('touchstart',hold,{capture:true,passive:true});
-    link.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();window.open(link.href,'_blank','noopener,noreferrer')},{capture:true});
-  });
   const pf=new St.PageFlip(book,{width:Math.max(1,Math.round(innerWidth)),height:Math.max(1,Math.round(innerHeight)),size:'stretch',minWidth:300,maxWidth:1000,minHeight:520,maxHeight:1600,autoSize:true,usePortrait:true,showCover:true,startPage:0,flippingTime:700,drawShadow:true,maxShadowOpacity:.32,mobileScrollSupport:false});pf.loadFromHTML(pages);
   const lockNavigation=()=>{navigationLocked=true;book.style.pointerEvents='none';document.querySelector('.tap-left').style.pointerEvents='none';document.querySelector('.tap-right').style.pointerEvents='none'};
   const unlockNavigation=()=>{navigationLocked=false;book.style.pointerEvents='';document.querySelector('.tap-left').style.pointerEvents='';document.querySelector('.tap-right').style.pointerEvents=''};
@@ -37,6 +30,10 @@
   pf.on('flip',e=>setPage(e.data));
   const next=()=>{if(navigationLocked)return;if(current<last){if(current===sealIndex-1)beginVacuum();pf.flipNext()}},prev=()=>{if(navigationLocked)return;if(current>0)pf.flipPrev()},goToPage=i=>{if(navigationLocked)return false;const target=Math.max(0,Math.min(last,Number(i)));if(!Number.isFinite(target))return false;pf.flip(target);return true};
   const interactiveAt=(x,y)=>{const el=document.elementFromPoint(x,y),control=el?.closest('button,a,input,select,textarea,[role="button"],[data-house-interactive]');return !!control&&!control.classList.contains('tap-left')&&!control.classList.contains('tap-right')};
+  // PageFlip owns the sheet surface, so soundtrack links use an explicit center-page hit test.
+  // This works identically whether the page is rendered on the left or right side of a spread.
+  const soundtrackLinkAt=(x,y)=>{const els=document.elementsFromPoint(x,y);return els.map(el=>el?.closest?.('.soundtrack-link-list a[href]')).find(Boolean)||null};
+  document.addEventListener('pointerup',e=>{const link=soundtrackLinkAt(e.clientX,e.clientY);if(!link)return;e.preventDefault();e.stopImmediatePropagation();window.open(link.href,'_blank','noopener,noreferrer')},{capture:true});
   document.querySelector('.tap-right').addEventListener('pointerup',e=>{e.preventDefault();if(navigationLocked||interactiveAt(e.clientX,e.clientY))return;next()});document.querySelector('.tap-left').addEventListener('pointerup',e=>{e.preventDefault();if(navigationLocked||interactiveAt(e.clientX,e.clientY))return;prev()});addEventListener('keydown',e=>{if(navigationLocked)return;if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev()});
   function draw(ts){if(!start)start=ts;const t=(ts-start)/1000;if(vacuumStarted)vacuum=clamp((performance.now()-vacuumStarted)/1350);if(canvas.style.display!=='none'&&w&&h){ctx.clearRect(0,0,w,h);const s=glyphState(),count=Math.floor(stream.length*s.pop),direction=s.direction,exitX=w*1.12,exitY=h*.5;ctx.textAlign='center';ctx.textBaseline='middle';ctx.globalCompositeOperation='source-over';ctx.shadowBlur=0;
     for(let i=0;i<count;i++){const g=stream[i],baseX=hash(i+701)*w,baseY=hash(i+801)*h,driftX=Math.sin(t*.24+g.phase)*w*.018,driftY=Math.cos(t*.19+g.phase*1.3)*h*.014,flow=t*18*g.speed*s.velocity;let x=(baseX+driftX+flow*direction)%(w*1.12)-w*.06,y=baseY+driftY+Math.sin(t*.6+i)*h*.006*direction,alpha=g.alpha*(.62+.38*s.pop);
