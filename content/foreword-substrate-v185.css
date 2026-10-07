@@ -35,7 +35,8 @@
 .pre-chapters .soundtrack-links{width:min(34rem,100%);display:grid;grid-template-columns:1fr 1fr;margin:2rem auto 0;border-top:1px solid var(--house-paper-mark);text-align:left;color:var(--house-paper-mark)}
 .pre-chapters .soundtrack-links>div{padding:.7rem 0;border-bottom:1px solid var(--house-paper-mark)}
 .pre-chapters .soundtrack-links>div:nth-child(odd){padding-right:1rem}.pre-chapters .soundtrack-links>div:nth-child(even){padding-left:1rem;border-left:1px solid var(--house-paper-mark)}
-.pre-chapters .soundtrack-links strong,.pre-chapters .soundtrack-links span{display:block}
+.pre-chapters .soundtrack-links strong,.pre-chapters .soundtrack-links span,.pre-chapters .soundtrack-links a{display:block}
+.pre-chapters .soundtrack-links a{font:600 .56rem/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;opacity:.55;color:var(--house-paper-mark)!important;text-decoration:none;border:0}
 .pre-chapters .soundtrack-links strong{font:700 .58rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase}
 .pre-chapters .soundtrack-links span{font:600 .56rem/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;opacity:.55}
 .pre-chapters.soundtrack-note-02 .soundtrack-note-body{margin-top:0}
