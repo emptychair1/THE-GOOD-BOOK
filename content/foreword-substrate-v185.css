@@ -59,3 +59,12 @@
 .pre-chapters .soundtrack-note-final{margin-top:.9rem}
 .pre-chapters .soundtrack-note-signature{margin-top:.55rem}
 
+
+/* AFTERWORD CODA · bonus song before the final gold letter */
+.little-lights-coda{display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+.little-lights-coda .seal-card{width:min(78vw,34rem)!important;margin:auto!important}
+.little-lights-kicker{font:700 .7rem/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;letter-spacing:.28em!important;text-transform:uppercase!important;opacity:.52!important;margin:0 0 2.2rem!important;color:var(--house-paper-mark)!important}
+.little-lights-coda h1{font:400 clamp(3rem,12vw,6rem)/.95 Baskerville,"Iowan Old Style",Georgia,serif!important;margin:0!important;color:var(--house-paper-mark)!important}
+.little-lights-artist{font:italic clamp(1.05rem,4vw,1.35rem)/1.3 Baskerville,"Iowan Old Style",Georgia,serif!important;margin:1.1rem 0 4rem!important;color:var(--house-paper-mark)!important}
+.little-lights-note,.little-lights-instruction{font:400 clamp(1rem,3.8vw,1.25rem)/1.5 Baskerville,"Iowan Old Style",Georgia,serif!important;color:var(--house-paper-mark)!important}
+.little-lights-instruction{margin-top:2rem!important;font-style:italic!important}
