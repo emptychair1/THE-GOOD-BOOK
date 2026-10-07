@@ -15,6 +15,13 @@
   const pages=[...book.querySelectorAll('.page')],last=pages.length-1,sealIndex=pages.indexOf(sealPage),forewordPages=pages.map((p,i)=>({p,i})).filter(x=>x.p.classList.contains('foreword'));
   function syncStatusPolarity(){const page=pages[current];if(!page)return;const light=page.classList.contains('foreword')||page.classList.contains('foreword-seal')||page.classList.contains('toc-page');status.style.color=light?'rgba(23,21,19,.58)':'rgba(246,240,230,.68)'}
   status.textContent=`1 / ${pages.length}`;syncStatusPolarity();
+  // Interactive links must win the gesture before PageFlip interprets it as a turn.
+  book.querySelectorAll('a[data-house-interactive][href]').forEach(link=>{
+    const hold=e=>e.stopPropagation();
+    link.addEventListener('pointerdown',hold,{capture:true});
+    link.addEventListener('touchstart',hold,{capture:true,passive:true});
+    link.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();window.open(link.href,'_blank','noopener,noreferrer')},{capture:true});
+  });
   const pf=new St.PageFlip(book,{width:Math.max(1,Math.round(innerWidth)),height:Math.max(1,Math.round(innerHeight)),size:'stretch',minWidth:300,maxWidth:1000,minHeight:520,maxHeight:1600,autoSize:true,usePortrait:true,showCover:true,startPage:0,flippingTime:700,drawShadow:true,maxShadowOpacity:.32,mobileScrollSupport:false});pf.loadFromHTML(pages);
   const lockNavigation=()=>{navigationLocked=true;book.style.pointerEvents='none';document.querySelector('.tap-left').style.pointerEvents='none';document.querySelector('.tap-right').style.pointerEvents='none'};
   const unlockNavigation=()=>{navigationLocked=false;book.style.pointerEvents='';document.querySelector('.tap-left').style.pointerEvents='';document.querySelector('.tap-right').style.pointerEvents=''};
